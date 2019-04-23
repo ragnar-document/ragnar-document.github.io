@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   background-color: #fff;
+  font-family: "Source Code Pro",Monaco,Menlo,Consolas,monospace;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -174,7 +175,7 @@ a:hover, a:active {
   width: 40%;
   -webkit-background-size: cover;
   background-size: cover;
-  background-color: #fff;
+  background-color: #42b983;
   height: 100%;
   transition: 0.8s;
   top: 0;
@@ -189,13 +190,12 @@ a:hover, a:active {
 }
 .sidebar .logo-title .description {
   font-size: 14px;
-  color: #565654;
+  color: #fff;
 }
 .sidebar .logo-title .logo {
   margin: 0 auto;
 }
 .sidebar .logo-title .title h3 {
-  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -204,7 +204,7 @@ a:hover, a:active {
 }
 .sidebar .logo-title .title a {
   text-decoration: none;
-  color: #464646;
+  color: #fff;
   font-size: 2rem;
   font-weight: bold;
 }
