@@ -660,6 +660,7 @@ a.btn {
     position: absolute;
     border-right: none;
     z-index: 1;
+    background-color: #fff;
   }
   .sidebar .logo-title {
     padding-top: 120px;
