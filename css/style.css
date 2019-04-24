@@ -661,6 +661,7 @@ a.btn {
     border-right: none;
     z-index: 1;
     background-color: #fff;
+    color: darkgreen;
   }
   .sidebar .logo-title {
     padding-top: 120px;
