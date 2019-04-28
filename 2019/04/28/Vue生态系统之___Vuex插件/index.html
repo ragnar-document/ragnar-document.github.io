@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="dongxinglong"><title>Vue生态系统之___Vuex插件 · Ragnar</title><meta name="description" content="Vue生态系统之___Vuex插件Vuex是啥❓Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。简单来说就像一个超级商店里面有许多你需要的的东西。每一个 Vuex 应用的核心就是 store（"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/touxiang.png" style="width:127px;"><h3 title><a href="/">Ragnar</a></h3><div class="description"><p>不断学习/不断请教/不断尝试/</p></div></div><div class="div"><img src="/images/ewm.png" style="width:80px;"></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://ragnar-document.github.io"> Ragnar</a><span>&</span><a href="https://segmentfault.com/u/tonyge"> 思否¨</a><div class="by_farbox"><a href="https://github.com/xiaojilinggui" target="_blank">欢迎查看我的GitHub 👉点我&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags/css/">Css</a></li><li><a href="/tags/vue/">Vue</a></li><li><a href="/tags/js/">JavaScript</a></li><li><a href="/tags/es6/">ES6学习</a></li><li><a href="/about">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Vue生态系统之___Vuex插件</a></h3></div><div class="post-content"><h1 id="Vue生态系统之-Vuex插件"><a href="#Vue生态系统之-Vuex插件" class="headerlink" title="Vue生态系统之___Vuex插件"></a>Vue生态系统之___Vuex插件</h1><h4 id="Vuex是啥❓"><a href="#Vuex是啥❓" class="headerlink" title="Vuex是啥❓"></a>Vuex是啥❓</h4><p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。简单来说就像一个超级商店里面有许多你需要的的东西。每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器</p>
+<p>Vuex使用单一状态🌲</p>
+<h4 id="重点词汇-🏁"><a href="#重点词汇-🏁" class="headerlink" title="重点词汇 🏁"></a>重点词汇 🏁</h4><ul>
+<li><p><strong>state</strong>（状态/steit/）驱动应用的数据源；每个应用将仅仅包含一个 store 实例</p>
+</li>
+<li><p><strong>mutation</strong>  改变 你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地<strong>提交 (commit)</strong> </p>
+</li>
+<li><p><strong>getters</strong>  获取</p>
+</li>
+<li><p><strong>commit</strong> 指派修改 例：store.commit(‘item’) 通过指派任务触发mutation中的事件</p>
+</li>
+<li><p><strong>modules</strong> 模块</p>
+</li>
+<li><p><strong>methods</strong> 方法</p>
+</li>
+<li><p><strong>view</strong>，以声明方式将 <strong>state</strong> 映射到视图；</p>
+</li>
+<li><p><strong>actions</strong>，响应在 <strong>view</strong> 上的用户输入导致的状态变化。</p>
+</li>
+<li><p><strong>computed</strong>  计算属性</p>
+</li>
+<li><p><strong>dispatch</strong> 分派</p>
+</li>
+<li><p><strong>mapstate</strong> 辅助函数 为了减少声明帮我们生成计算属性</p>
+<p><img src="https://vuex.vuejs.org/vuex.png" alt></p>
+</li>
+</ul>
+<p>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。</p>
+<p>什么情况使用？？不用想肯定是麻烦大型的单页应用才使用吧要不然要你何用😂直接使用store模式就👌了</p>
+<h4 id="如何从Vue组件中获取Vuex状态呢❓❓❓"><a href="#如何从Vue组件中获取Vuex状态呢❓❓❓" class="headerlink" title="如何从Vue组件中获取Vuex状态呢❓❓❓"></a>如何从Vue组件中获取Vuex状态呢❓❓❓</h4><p>第一种：不推荐使用</p>
+<p>每次使用都需要频繁导入<code>state</code></p>
+<p>组件依赖全局状态单例</p>
+<p>这样是相当的不方便的所有我们当然会有比他好的方案在下面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个 Counter 组件</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count () &#123;</span><br><span class="line">      <span class="keyword">return</span> store.state.count</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种:    通过store选项从根注入到每个子组件中类似于注册全局组件之类的</p>
+<p>⚠️    需要调用Vue.use(Vuex)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  <span class="comment">// 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件</span></span><br><span class="line">  store,</span><br><span class="line">  components: &#123; Counter &#125;,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div class="app"&gt;</span></span><br><span class="line"><span class="string">      &lt;counter&gt;&lt;/counter&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们可以使用<code>this.$store</code>进行访问</p>
+<h3 id="mapstate-辅助函数"><a href="#mapstate-辅助函数" class="headerlink" title="mapstate 辅助函数"></a>mapstate 辅助函数</h3><blockquote>
+<p>⚠️需要引入    <code>import { mapState } from &#39;vuex&#39;</code></p>
+</blockquote>
+<p>优点无需多次声明computed</p>
+<p><a href="https://github.com/ragnar-document/Vuex_Dm/blob/master/mapstate.html" target="_blank" rel="noopener">查看Github例子文件</a></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-04-28</span><i class="fa fa-tag"></i><a class="tag" href="/tags/前端/" title="前端">前端 </a><a class="tag" href="/tags/vue/" title="vue">vue </a><a class="tag" href="/tags/vuex/" title="vuex">vuex </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/,Ragnar,Vue生态系统之___Vuex插件,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/04/27/CSS命名规范指南_BEM风格/" title="CSS命名规范指南_BEM风格">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
