@@ -1,1 +1,1098 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="dongxinglong"><title>js · Ragnar</title><meta name="description" content="标签：js - Ragnar"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/touxiang.png" style="width:127px;"><h3 title><a href="/">Ragnar</a></h3><div class="description"><p>不断学习/不断请教/不断尝试/</p></div></div><div class="div"><img src="/images/ewm.png" style="width:80px;"></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://ragnar-document.github.io"> Ragnar</a><span>&</span><a href="https://segmentfault.com/u/tonyge"> 思否¨</a><div class="by_farbox"><a href="https://github.com/xiaojilinggui" target="_blank">欢迎查看我的GitHub 👉点我&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags/css/">Css</a></li><li><a href="/tags/vue/">Vue</a></li><li><a href="/tags/js/">JavaScript</a></li><li><a href="/tags/ES6/">ES6学习</a></li><li><a href="/about">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="archive animated fadeInDown"><ul class="list-with-title"><div class="archive"><div class="listing-title">2019</div><ul class="listing"><div class="listing-item"><div class="listing-post"><a href="/2019/04/30/ES6之箭头函数/" title="Es6学习笔记：箭头函数">Es6学习笔记：箭头函数</a><div class="post-time"><span class="date">04-30</span></div></div></div><div class="listing-item"><div class="listing-post"><a href="/2019/04/24/关于Js循环操作/" title="forEach,map,filter循环操作整理">forEach,map,filter循环操作整理</a><div class="post-time"><span class="date">04-24</span></div></div></div><div class="listing-item"><div class="listing-post"><a href="/2019/04/24/滚动吸顶的方法/" title="Vue 关于滚动吸顶的方法">Vue 关于滚动吸顶的方法</a><div class="post-time"><span class="date">04-24</span></div></div></div></ul></div><div class="pagination"><ul class="clearfix"></ul></div></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Tag: js | Ragnar</title>
+  
+  
+  <meta name="description" content="不断学习/不断请教/不断尝试/">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class="cover  half">
+      
+        
+  <h1 class="title">Material X</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder>
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class="menu navgation">
+  <ul class="h-list">
+    
+      
+        <li>
+          <a class="nav home" href="/" id="home">
+            <i class="fas fa-rss fa-fw"></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/" id="projects">
+            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
+            <i class="fas fa-link fa-fw"></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/" rel="nofollow" id="about">
+            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href="/">
+        
+          Ragnar
+        
+      </a>
+			<div class="menu navgation">
+				<ul class="h-list">
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/" id="home">
+									<i class="fas fa-grin fa-fw"></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/" rel="nofollow" id="blogcategories">
+									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/" rel="nofollow" id="blogtags">
+									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search">
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+				
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo flat-box"></a>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+        
+          <li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/" id="home">
+								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/" id="projects">
+								<i class="fas fa-code-branch fa-fw"></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
+								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/" rel="nofollow" id="https:xaoxuu.comwikimaterial-x">
+								<i class="fas fa-book fa-fw"></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/" rel="nofollow" id="about">
+								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+<div class="l_main">
+  
+    
+      
+  <section class="post-list">
+    
+      
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/04/30/ES6之箭头函数/">
+      Es6学习笔记：箭头函数
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="http://yoursite.com" rel="nofollow">
+      
+        <img src="/images/logo.png">
+      
+      <p>dongxinglong</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="箭头函数-它长这样-gt-是不是很抽象呢😁"><a href="#箭头函数-它长这样-gt-是不是很抽象呢😁" class="headerlink" title="箭头函数 它长这样    =&gt;  是不是很抽象呢😁"></a>箭头函数 它长这样    <code>=&gt;</code>  是不是很抽象呢😁</h2><p>在Es6中箭头函数是其中最有趣的新增特性那么它有什么呢？？</p>
+<ol>
+<li><strong>没有this、super（特级）、arguments（参数）和new.target绑定</strong> 箭头函数中的<strong>this</strong>、<strong>super</strong>、以及<strong>new.target</strong>这些值由外围最近一层非箭头函数决定</li>
+<li><strong>不能通过new关键字调用箭头函数没有[[construct]]方法</strong>，所以不能被用作构造函数，如果通过new关键字调用箭头函数，程序会抛出错误</li>
+</ol>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line">&gt; <span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(); <span class="comment">// TypeError: Foo is not a constructor</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ol>
+<li><strong>没用原形由于不能通过new关键字调用箭头函数</strong>，因而没有构建原型的需求所以箭头函数不存在prototype这个属性</li>
+</ol>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line">&gt; <span class="built_in">console</span>.log(Foo.prototype); <span class="comment">// undefined</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ol>
+<li>不支持<strong>arguments</strong> 对象箭头函数<strong>没有arguments绑定</strong>，所以你必须通过命名参数和不定参数这两种形式访问函数的参数</li>
+<li><strong>不支持重复命名参数</strong> 无论在严格还是非严格模式下箭头函数都不能支持重复的命名参数；而在传统函数的规定中只有在严格模式下才不能有重复的命名参数</li>
+</ol>
+<h2 id="箭头函数的的大型选美现场👙"><a href="#箭头函数的的大型选美现场👙" class="headerlink" title="箭头函数的的大型选美现场👙"></a>箭头函数的的大型选美现场👙</h2><p>一号佳丽🐱    当你只有单一参数和只需要返回简单的值时可以使用以下这种</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let refletct = value =&gt; value;</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">		</span><br><span class="line">		let reflect = funciton(value)&#123;</span><br><span class="line">			return value;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>二号佳丽🐶    两个以上的就比较豪气啦！弄个括号包起来毕竟不像 single dog嘛😂</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum = (num1 , num2) =&gt; num1 + num2</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function(num1 , num2)&#123;</span><br><span class="line">		return sum1 + sum2</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>三号佳丽🏃‍♀️    因为跑步啥也没带所以我们啥也不用传那么要怎么写呢❓</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum = ( ) =&gt; &apos;hellow world&apos;</span><br><span class="line">	</span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function()&#123;</span><br><span class="line">		return &apos;hellow world&apos;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>四号佳丽🏃    色即是空，🈳️即是色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum =( ) =&gt; &#123;&#125;</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function()&#123;</span><br><span class="line">		//....</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>五号佳丽🐍    花括号代表函数体的部分如果想在箭头函数外返回一个对象字面量，则需要将该字面量包括在小括号里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let getTempItem = id =&gt;(&#123;	id:id, name:&quot;Temp&quot;&#125;)</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function(id)&#123;</span><br><span class="line">		return	&#123;</span><br><span class="line">			id:id,</span><br><span class="line">			name:&quot;Temp&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="不绑定This"><a href="#不绑定This" class="headerlink" title="不绑定This"></a>不绑定This</h2><p>在箭头函数出现之前，每个新定义的函数都有它自己的 <code>this</code>值（在构造函数的情况下是一个新对象，在严格模式的函数调用中为 undefined，如果该函数被作为“对象方法”调用则为基础对象等）。<code>This</code>被证明是令人厌烦的面向对象风格的编程。</p>
+<p>⚠️箭头函数不会创建自己的<code>this,</code>它只会从自己的作用域链的上一层继承 <code>this</code> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.age++; <span class="comment">// |this| 正确地指向 p 实例</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<p>如果指向错误除了使用箭头函数还可以把值分配给封闭的变量，可以解决<code>this</code>问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">  that.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="keyword">function</span> <span class="title">growUp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//  回调引用的是`that`变量, 其值是预期的对象. </span></span><br><span class="line">    that.age++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="函数的写法"><a href="#函数的写法" class="headerlink" title="函数的写法"></a>函数的写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="params">x</span> =&gt;</span> x * x;                  </span><br><span class="line"><span class="comment">// 简写函数 省略return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123; <span class="keyword">return</span> x + y; &#125;; </span><br><span class="line"><span class="comment">//常规编写 明确的返回值</span></span><br></pre></td></tr></table></figure>
+<h4 id="箭头函数也能使用三元表达式"><a href="#箭头函数也能使用三元表达式" class="headerlink" title="箭头函数也能使用三元表达式"></a>箭头函数也能使用三元表达式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> simple = <span class="function"><span class="params">a</span> =&gt;</span> a &gt; <span class="number">15</span> ? <span class="number">15</span> : a;</span><br><span class="line">simple(<span class="number">16</span>); <span class="comment">// 15</span></span><br><span class="line">simple(<span class="number">10</span>); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<h4 id="更简明的promise链"><a href="#更简明的promise链" class="headerlink" title="更简明的promise链"></a>更简明的promise链</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promise.then(<span class="function"><span class="params">a</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">b</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="箭头函数进行排序"><a href="#箭头函数进行排序" class="headerlink" title="箭头函数进行排序"></a>箭头函数进行排序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x-y</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> x-y);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br></pre></td></tr></table></figure>
+<p>参考资料：深入了解ES6</p>
+<p>​                    <a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001438565969057627e5435793645b7acaee3b6869d1374000" target="_blank" rel="noopener">廖雪峰</a></p>
+<p>​                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN web docs</a></p>
+<p>有待更新</p>
+<p>👏👏点我<a href="https://github.com/ragnar-document/ragnar-document.github.io/issues" target="_blank" rel="noopener">提issue</a></p>
+
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/css/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>css</a>
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+          <a href="/tags/前端/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>前端</a>
+        
+          <a href="/tags/ES6/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>ES6</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/04/24/关于Js循环操作/">
+      forEach,map,filter循环操作整理
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="http://yoursite.com" rel="nofollow">
+      
+        <img src="/images/logo.png">
+      
+      <p>dongxinglong</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-24</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="本文作者来自掘金——呜啦啦火车笛！为了避免原作者删除特此搬运记录"><a href="#本文作者来自掘金——呜啦啦火车笛！为了避免原作者删除特此搬运记录" class="headerlink" title="本文作者来自掘金——呜啦啦火车笛！为了避免原作者删除特此搬运记录"></a>本文作者来自掘金——呜啦啦火车笛！为了避免原作者删除特此搬运记录</h2><h1 id="forEach、map、filter、find、sort、some等易错点整理"><a href="#forEach、map、filter、find、sort、some等易错点整理" class="headerlink" title="forEach、map、filter、find、sort、some等易错点整理"></a>forEach、map、filter、find、sort、some等易错点整理</h1><p>  最近手头上做了一个很大的后台管理项目，前端对复杂数据的处理要求颇高，也确实让自己发现了很多之前被忽视的细节。在此特整理出来，希望不熟悉的朋友们们以后可以绕开我踩的这些坑。本文初衷在于帮助大家梳理一些数组操作上的重点和易错点，希望也能帮助和提醒大家，我会尽可能写的幽默些，加深大家的记忆。水平有限，真心无限。希望大家喜欢，请不要吝啬你们的赞，谢谢</p>
+<h2 id="一、常用方法解析"><a href="#一、常用方法解析" class="headerlink" title="一、常用方法解析"></a>一、常用方法解析</h2><p>  说起数组操作，我们肯定第一反应就是想到forEach()、map()、filter()等方法，下面分别阐述一下各方法的优劣。</p>
+<h3 id="1、forEach"><a href="#1、forEach" class="headerlink" title="1、forEach"></a>1、forEach</h3><h4 id="1-1-基础点"><a href="#1-1-基础点" class="headerlink" title="1.1 基础点"></a>1.1 基础点</h4><p>  forEach的使用频率很高，多用于对数组自身的改变和各元素相关统计性的计算，重要特性如下：</p>
+<ol>
+<li>可以改变数组自身，没有返回值；</li>
+<li>中途不能用常规操作跳出循环，可以用抛出异常（try/catch）的方式，但不推荐这样做；</li>
+</ol>
+<h4 id="1-2-易错点"><a href="#1-2-易错点" class="headerlink" title="1.2 易错点"></a>1.2 易错点</h4><ol>
+<li>forEach()不一定改变自身数组。我们可以看看数组中的元素是值类型和引用类型场景下，是否都能获得改变：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var arr1 = [</span><br><span class="line">   &#123;name:&apos;鸣人&apos;,age:16&#125;,</span><br><span class="line">   &#123;name:&apos;佐助&apos;,age:17&#125;</span><br><span class="line">];</span><br><span class="line">var arr2 = [1,2,3];</span><br><span class="line"></span><br><span class="line">arr1.forEach(item =&gt; &#123; </span><br><span class="line">  item.age = item.age + 1&#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">//=&gt; [&#123;name:&apos;鸣人&apos;,age:17&#125;,&#123;name:&apos;佐助&apos;,age:18&#125;]</span><br><span class="line"></span><br><span class="line">arr2.forEach(item =&gt; &#123;</span><br><span class="line">  item = item * 2&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// =&gt; [1,2,3]</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>最后的结果是，arr1发生了改变，鸣人、佐助都长了一岁，arr2没有任何改变。所以，可以粗暴得出结论：<strong>当数组中元素是值类型，forEach绝对不会改变数组；当是引用类型，则可以改变数组</strong></p>
+<ol start="2">
+<li>不支持链式操作，所以以下代码是错误的：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[1,2,3,4,5].forEach(</span><br><span class="line">   item =&gt; console.log(item)</span><br><span class="line">).filter(item =&gt; &#123; </span><br><span class="line">   return item &gt; 2 </span><br><span class="line">&#125;)</span><br><span class="line">// Uncaught TypeError: Cannot read property &apos;filter&apos; of undefined</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>注意这里我们说仅仅是forEach()这个方法不支持链式调用，在调用forEach之前，前面的数组你怎么玩链式都没问题，最后返回一个正常数组即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 这个没问题</span><br><span class="line">[1,2,3,4,5].filter(item =&gt; &#123; </span><br><span class="line">  return item &gt; 2 </span><br><span class="line">&#125;).forEach(tem =&gt; &#123;</span><br><span class="line">   console.log(item) </span><br><span class="line">&#125;)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>不会在迭代之前创建数组的副本，这个使用场景太少太少了，忽略了…</li>
+</ol>
+<h3 id="2、map"><a href="#2、map" class="headerlink" title="2、map"></a>2、map</h3><p>  map()功能很强大，forEach()的一些局限性它很多都能解决。”map”即”映射”，也就是原数组被”映射”成对应新数组。</p>
+<h4 id="2-1-基础点"><a href="#2-1-基础点" class="headerlink" title="2.1 基础点"></a>2.1 基础点</h4><ol>
+<li>新建一个数组，需要有承载对象，也意味着原始数组在调用它后不会发生变化;</li>
+<li>该数组中的每个元素都调用一个提供的函数后返回结果。</li>
+</ol>
+<h4 id="2-2-易错点"><a href="#2-2-易错点" class="headerlink" title="2.2 易错点"></a>2.2 易错点</h4><ol>
+<li>创建新数组不代表不能用它改变原有数组，你用原有数组去承载就可以：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3];</span><br><span class="line">arr = arr.map(item =&gt; &#123; return item * 2 &#125;)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>arr同样也会改变，所以这也不费事嘛。。。</p>
+<ol start="2">
+<li>map()中每个元素都要执行相应的回调函数，所以必须要有return（千万别学某些人，判断过程一复杂，忘了return，最后得到的是个空数组，哭天喊地的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>let newArr = [1,2,3,4,5].map(item =&gt; { if(item &gt; 3) return item })<br>// =&gt; [undefined, undefined, undefined, 4, 5]<br>复制代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">最终得到的结果是\[undefined, undefined, undefined, 4, 5\]。别和我说你简单处理一下就能凑合用，人生不能凑合，代码也是！</span><br><span class="line"></span><br><span class="line">### 3、filter</span><br><span class="line"></span><br><span class="line">  map()没法做到的过滤，就交给filter()去完成，这个大家肯定也都知道。filter()和map()很像，就像周董《东风破》和《发如雪》一样像，也是创建一个新数组，新数组中的元素是筛选出来的符合条件的所有对象。简单写个例子：</span><br></pre></td></tr></table></figure></p>
+<p>let newArr = [1,2,3,4,5].filter(item =&gt;{<br>   if(item &gt; 3) return item<br>})<br>//  =&gt; [4,5]<br>复制代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这个相信也没啥易错点，有的话欢迎评论指出</span><br></pre></td></tr></table></figure></p>
+<h3 id="4、sort"><a href="#4、sort" class="headerlink" title="4、sort()"></a>4、sort()</h3><p>sort()用于对数组的元素进行排序。排序顺序可以是字母或数字，并按升序或降序。</p>
+<h4 id="4-1-基础点"><a href="#4-1-基础点" class="headerlink" title="4.1 基础点"></a>4.1 基础点</h4><p>1.默认排序按字母升序（更准确一些是根据字符串Unicode码点）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[3,4,2,1,5].sort()</span><br><span class="line">// =&gt; [1,2,3,4,5]</span><br><span class="line"></span><br><span class="line">[&apos;Javascript&apos;,&apos;Vue&apos;,&apos;React&apos;,&apos;Node&apos;,&apos;Webpack&apos;].sort();</span><br><span class="line">// =&gt; [&quot;Javascript&quot;, &quot;Node&quot;, &quot;React&quot;, &quot;Vue&quot;, &quot;Webpack&quot;]</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="4-2-易错点"><a href="#4-2-易错点" class="headerlink" title="4.2 易错点"></a>4.2 易错点</h4><ol>
+<li><p>sort()与map()、filter()等不同，它直接改变原始数组（很重要！）；</p>
+</li>
+<li><p>如果想按照其他标准进行排序，就需提供比较函数compareFunction(a,b)，数组会按照调用该函数的返回值排序，即a和b是两个将要比较的元素：</p>
+</li>
+</ol>
+<ul>
+<li>如果compareFunction(a,b)小于0，则a排列到b之前；</li>
+<li>如果 compareFunction(a, b)等于0，a和b的相对位置不变（并不保证）;</li>
+<li>如果 compareFunction(a, b)大于0，b排列到a之前； 直接上例子：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let Users = [</span><br><span class="line">  &#123;name:&apos;鸣人&apos;,age:16&#125;,</span><br><span class="line">  &#123;name:&apos;卡卡西&apos;,age:28&#125;,</span><br><span class="line">  &#123;name:&apos;自来也&apos;,age:50&#125;,</span><br><span class="line">  &#123;name:&apos;佐助&apos;,age:17&#125;</span><br><span class="line">];</span><br><span class="line">Users.sort((a,b)=&gt; &#123;</span><br><span class="line">    a.age - b.age</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// =&gt; 鸣人、佐助、卡卡西、自来也</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h3 id="5、some"><a href="#5、some" class="headerlink" title="5、some()"></a>5、some()</h3><p>some()也是很好的一个方法，用于检查数组中是否有某些符合条件。</p>
+<h4 id="5-1-基础点"><a href="#5-1-基础点" class="headerlink" title="5.1 基础点"></a>5.1 基础点</h4><ol>
+<li>只要有一个满足即返回true，之后的不再执行(所以说对性能很友好！)。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var result = [</span><br><span class="line">   &#123;name:&apos;鸣人&apos;,age:16&#125;,</span><br><span class="line">   &#123;name:&apos;佐助&apos;,age:17&#125;</span><br><span class="line">].some(item =&gt; &#123;</span><br><span class="line">	return item.age &gt; 16 </span><br><span class="line">&#125;);</span><br><span class="line">=&gt; true</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="5-2-易错点"><a href="#5-2-易错点" class="headerlink" title="5.2 易错点"></a>5.2 易错点</h4><p>  some()和下面讲的every()返回的都是<code>Boolean</code>值，仅此而此，别多想……</p>
+<h3 id="6、every"><a href="#6、every" class="headerlink" title="6、every()"></a>6、every()</h3><p>  如果说some()是”||”判断，那every()就是”&amp;&amp;”判断，它用于检测数组中的每一项是否都满足条件，只有都满足了才会返回true。这点也很好理解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var result = [</span><br><span class="line">   &#123;name:&apos;鸣人&apos;,age:16&#125;,</span><br><span class="line">   &#123;name:&apos;佐助&apos;,age:17&#125;</span><br><span class="line">].every(item =&gt; &#123;</span><br><span class="line">	return item.age &gt; 16 </span><br><span class="line">&#125;);</span><br><span class="line">=&gt; false</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h2 id="二、其他经典方法"><a href="#二、其他经典方法" class="headerlink" title="二、其他经典方法"></a>二、其他经典方法</h2><p>  在我们的日常工作中，会有很多业务需求是上述方法做不到的，比如下面三个需求：</p>
+<ol>
+<li>给一个数组做去重处理;</li>
+<li>判定当前数组里是否有某个元素，并返回该元素;</li>
+<li>判定当前数组里是否有某个元素，并把它去除;</li>
+</ol>
+<p>针对需求1，我相信看到”去重”，你肯定会想到<code>new Set()</code>，这也是个经常出现的面试题；针对需求2，当你看到判定当前数组中是否有某个元素，也许会说<code>filter()</code>不就是干这脏活累活的吗？ 还真不是，不信，我们分别展开讨论一下吧。</p>
+<h3 id="1-数组去重（没你想的那么简单）"><a href="#1-数组去重（没你想的那么简单）" class="headerlink" title="1. 数组去重（没你想的那么简单）"></a>1. 数组去重（没你想的那么简单）</h3><h4 id="1-1-new-Set-的局限性"><a href="#1-1-new-Set-的局限性" class="headerlink" title="1.1 new Set() 的局限性"></a>1.1 new Set() 的局限性</h4><p>  数组去重，基本上论坛上各位大神的面试题里都会有这个，没错，正是new Set()，很经典的办法，面试必备：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let tempArr = new Set([1,2,3,3,4,4,5])</span><br><span class="line">// =&gt; &#123;1,2,3,4,5&#125; </span><br><span class="line"></span><br><span class="line">//并且已有元素是添加不进去的：</span><br><span class="line">tempArr.add(3) </span><br><span class="line">// =&gt; &#123;1,2,3,4,5&#125;</span><br><span class="line"></span><br><span class="line">tempArr.add(6)</span><br><span class="line">// =&gt; &#123;1,2,3,4,5,6&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>恩，很棒，一定注意new Set()会将结果转换成对象！但实际工作中我们很少会和元素是值类型的数组打交道，那看看元素是引用类型还行不行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let mySet = new Set();</span><br><span class="line">mySet.add(1); // Set(1) &#123;1&#125;</span><br><span class="line">mySet.add(5); // Set(2) &#123;1, 5&#125;</span><br><span class="line">mySet.add(5); // Set(2) &#123;1, 5&#125; 这里体现了值的唯一性</span><br><span class="line">mySet.add(&apos;some text&apos;); </span><br><span class="line">[...mySet]</span><br><span class="line">// =&gt; [1,5,&apos;some text&apos;]</span><br><span class="line"></span><br><span class="line">mySet.add(&#123;name:&apos;jay Chou&apos;,age:40&#125;);</span><br><span class="line">mySet.add(&#123;name:&apos;jay Chou&apos;,age:40&#125;);</span><br><span class="line"></span><br><span class="line">[...mySet]</span><br><span class="line">// =&gt; [1,5,&apos;some text&apos;,&#123;name:&apos;jay Chou&apos;,age:40&#125;,&#123;name:&apos;jay Chou&apos;,age:40&#125;]</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>看到了吧，Set()没法去重元素是引用对象的数组。那接下来咋整呀？</p>
+<h4 id="1-2-uniqWith"><a href="#1-2-uniqWith" class="headerlink" title="1.2 _.uniqWith()"></a>1.2 _.uniqWith()</h4><p>别担心，<a href="https://link.juejin.im/?target=https%3A%2F%2Fwww.lodashjs.com%2F" target="_blank" rel="noopener">Lodash</a>帮我们，Lodash是一个一致性、模块化、高性能的JavaScript实用工具库。它有提供给了我们一个很好的方法——_.uniqWith()：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import _ from &apos;lodash&apos;;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var objects = [&#123; &apos;x&apos;: 1, &apos;y&apos;: 2 &#125;, &#123; &apos;x&apos;: 2, &apos;y&apos;: 1 &#125;, &#123; &apos;x&apos;: 1, &apos;y&apos;: 2 &#125;];</span><br><span class="line">_.uniqWith(objects, _.isEqual);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">//=&gt; [&#123; &apos;x&apos;: 1, &apos;y&apos;: 2 &#125;, &#123; &apos;x&apos;: 2, &apos;y&apos;: 1 &#125;]</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>其中，<code>_.isEqual(value,other)</code>用于执行深比较来确定两者的值是否相等。<code>_.uniqWith()</code>做去重处理。</p>
+<h3 id="2-获取数组中的指定元素"><a href="#2-获取数组中的指定元素" class="headerlink" title="2. 获取数组中的指定元素"></a>2. 获取数组中的指定元素</h3><p>  在工作中我们还有一个比较常见的场景，就是在数组中找到我想要的那一个，并且返回给我。好的，some()已经办不到了，它只会告诉我是否存在，filter()确实可以做到，但是如果我本身就知道这个数组里即使有我想的那个，也肯定只有一个，不可能出现多个，所以，出于性能的考虑，我不想用filter()给我从头遍历到尾，这样怎么办？</p>
+<h4 id="2-1-findIndex"><a href="#2-1-findIndex" class="headerlink" title="2.1 findIndex()"></a>2.1 findIndex()</h4><p>  好了，既然filter()不支持中断遍历，那我们就要找一个能中断遍历的方法，我们可以使用<code>for...of</code>，该方法支持中断遍历，但是该方法代码量较大，不建议使用，感兴趣的同学可以查阅一下。针对这个场景，我们可以使用<code>findIndex()</code>帮我们先获取到所需元素的索引值，拿到索引后，你要杀要剐随你便</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let testArr = [&#123;name:&apos;鸣人&apos;,age:16&#125;,&#123;name:&apos;佐助&apos;,age:17&#125;,&#123;name:&apos;卡卡西&apos;,age:26&#125;]</span><br><span class="line">let index = testArr.findIndex(item =&gt; &#123; return item.age &gt; 16 &#125;);</span><br><span class="line">// =&gt; 1</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>或者也可以使用Lodash提供的<code>_.findIndex()</code>，通过对象属性值直接获取对应索引：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let testArr = [&#123;name:&apos;鸣人&apos;,age:16&#125;,&#123;name:&apos;佐助&apos;,age:17&#125;,&#123;name:&apos;卡卡西&apos;,age:26&#125;]</span><br><span class="line">let index = _.findIndex(testArr, &#123;name:&apos;佐助&apos;&#125;);</span><br><span class="line">// =&gt; 1</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>注意：IE 11 及更早版本不支持<code>findIndex()</code>方法。所以，如果对浏览器兼容有要求，那就用Lodash的<code>_.findIndex()</code></p>
+<h4 id="2-2-find"><a href="#2-2-find" class="headerlink" title="2.2 find()"></a>2.2 find()</h4><p>  <code>find()</code>顾名思义，就是用来在数组中找到我们所需要的元素，并且和<code>some()</code>一样，只要有一个满足即返回该元素，不会多余遍历，对性能很友善。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let testArr = [&#123;name:&apos;鸣人&apos;,age:16&#125;,&#123;name:&apos;佐助&apos;,age:17&#125;,&#123;name:&apos;卡卡西&apos;,age:27&#125;,&#123;name:&apos;佐助&apos;,age:17&#125;]</span><br><span class="line">let result = testArr.find(item =&gt; &#123; return item.name == &apos;佐助&apos;&#125;);</span><br><span class="line">// =&gt; &#123; name:&apos;佐助&apos;,age:17 &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>但是！很遗憾IE 11 及更早版本也不支持 find()。</p>
+
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+          <a href="/tags/前端/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>前端</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/04/24/滚动吸顶的方法/">
+      Vue 关于滚动吸顶的方法
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="http://yoursite.com" rel="nofollow">
+      
+        <img src="/images/logo.png">
+      
+      <p>dongxinglong</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-24</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="第一种使用CSS中的position-sticky-实现"><a href="#第一种使用CSS中的position-sticky-实现" class="headerlink" title="第一种使用CSS中的position:sticky    实现"></a>第一种使用CSS中的<code>position:sticky</code>    实现</h2><p>使用条件：</p>
+<ol>
+<li>父元素不能 <code>overflow:hidden</code> 或者 <code>overflow:auto</code> 属性</li>
+<li>必须指定 <code>top、bottom、left、right</code> 4 个值之一，否则只会处于相对定位</li>
+<li>父元素的高度不能低于 <code>sticky</code> 元素的高度</li>
+<li><code>sticky</code> 元素仅在其父元素内生效<h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">     position: -webkit-sticky; </span><br><span class="line">     position: sticky;</span><br><span class="line">     top: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>并不是很好因为这个 API 还只是<strong>实验性的属性</strong>。不过这个 API 在 IOS 系统的兼容性还是比较好的。</p>
+<h2 id="使用Jquery-的-offset（）-top-实现"><a href="#使用Jquery-的-offset（）-top-实现" class="headerlink" title="使用Jquery 的 offset（）.top 实现"></a>使用Jquery 的 offset（）.top 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,self.handleScrollone);</span><br><span class="line">....</span><br><span class="line">handleScrollone: function( ) &#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    let scrrollTop = $(&apos;html&apos;).scrollTop( ); //获取滚动高度</span><br><span class="line">    let offsetTop = $(&apos;.title_box&apos;).offset( ).top;    //盒子高度</span><br><span class="line">    self.titleFixed = scrollTop &gt; Top;    //判断滚动高度是否大于盒子高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用原生JavaScript 实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,Navflexd);</span><br><span class="line">Navflexd:function( )&#123;</span><br><span class="line">    let scrollTop = document.documentElement.scrollTop;</span><br><span class="line">    //需要定位的距离 </span><br><span class="line">    let    navigatorBarTop = 需要定位的距离；</span><br><span class="line">    //判断滚动距离大于定位距离就定位</span><br><span class="line">    //获取当前浏览器是否在定位状态如果和上一步结构不一样就执行下面</span><br><span class="line">    if（设定好的定位值 ！== 导航需要定位距离）&#123;</span><br><span class="line">        //更新设定好的值  </span><br><span class="line">        X = Y;</span><br><span class="line">        //获取需要定位的元素</span><br><span class="line">        //判断是否需要定位if（导航需要定位距离）classname上添加上active</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><ul>
+<li>说明：vm.$refs 一个对象，持有已注册过 ref 的所有子组件（或HTML元素）</li>
+<li>使用：在 HTML元素 中，添加ref属性，然后在JS中通过vm.$refs.属性来获取</li>
+<li>注意：如果获取的是一个子组件，那么通过ref就能获取到子组件中的data和methods<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;, self.handleScrollTwo); </span><br><span class="line">handleScrollTwo: function() &#123; </span><br><span class="line">    let self = this;</span><br><span class="line">    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    let offsetTop = self.getOffset(self.$refs.prode_tab_fixed);</span><br><span class="line">    self.titleFixed = scrollTop &gt; offsetTop;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>### </p>
+<p>使用 <code>obj.getBoundingClientRect().top</code> 实现 <a href="[https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">MDN</a>)</p>
+<p><strong>定义：</strong></p>
+<p>这个 <code>API</code> 可以告诉你页面中某个元素<strong>相对浏览器视窗</strong>上下左右的距离。</p>
+<p><strong>使用：</strong><br>tab 吸顶可以使用 <code>obj.getBoundingClientRect().top</code> 代替 <code>scrollTop - offsetTop</code>,代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;div class=&quot;pride_tab_fixed&quot; ref=&quot;pride_tab_fixed&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pride_tab&quot; :class=&quot;titleFixed == true ? &apos;isFixed&apos; :&apos;&apos;&quot;&gt;</span><br><span class="line">        // some code</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// vue</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return&#123;</span><br><span class="line">        titleFixed: false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    activated()&#123;</span><br><span class="line">      this.titleFixed = false;</span><br><span class="line">      window.addEventListener(&apos;scroll&apos;, this.handleScroll);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      //滚动监听，头部固定</span><br><span class="line">      handleScroll: function () &#123;</span><br><span class="line">        let offsetTop = this.$refs.pride_tab_fixed.getBoundingClientRect().top;</span><br><span class="line">        this.titleFixed = offsetTop &lt; 0;</span><br><span class="line">        // some code</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="offsetTop-和-getBoundingClientRect-区别"><a href="#offsetTop-和-getBoundingClientRect-区别" class="headerlink" title="offsetTop 和 getBoundingClientRect() 区别"></a>offsetTop 和 getBoundingClientRect() 区别</h4><p><strong>1. getBoundingClientRect():</strong></p>
+<p>该<code>**Element.getBoundingClientRect()**</code>方法返回元素的大小及其相对于视口的位置。。</p>
+<p>该函数返回一个 <code>object</code> 对象，有6个属性： <code>top, right, buttom, left, width, height。</code> (在 IE 中，默认坐标从(2,2)开始计算，只返回 <code>top,lef,right,bottom</code> 四个值)</p>
+<p><strong>2. offsetTop:</strong></p>
+<p>用于获得当前元素到定位父级（ element.offsetParent ）顶部的距离（偏移值）。</p>
+
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+          <a href="/tags/前端/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>前端</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
+
+
+    
+  
+</div>
+<aside class="l_side">
+  
+    
+    
+      
+        
+          
+          
+            <section class="widget author">
+  <div class="content pure">
+    
+      <div class="avatar">
+        <img class="avatar" src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png">
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            <section class="widget grid">
+  
+<header class="pure">
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class="content pure">
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/" id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/" rel="nofollow" id="blogarchives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/projects/" href="/projects/" id="projects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/" rel="nofollow" id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/" rel="nofollow" id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/" rel="nofollow" id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+  <section class="widget tagcloud">
+    
+<header class="pure">
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/blog/tags/" title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      <a href="/tags/ES6/" style="font-size: 14px; color: #999">ES6</a> <a href="/tags/css/" style="font-size: 16.5px; color: #888">css</a> <a href="/tags/js/" style="font-size: 19px; color: #777">js</a> <a href="/tags/vue/" style="font-size: 21.5px; color: #666">vue</a> <a href="/tags/vue-router/" style="font-size: 16.5px; color: #888">vue-router</a> <a href="/tags/vuepress/" style="font-size: 14px; color: #999">vuepress</a> <a href="/tags/vuex/" style="font-size: 14px; color: #999">vuex</a> <a href="/tags/前端/" style="font-size: 24px; color: #555">前端</a> <a href="/tags/命名规范/" style="font-size: 14px; color: #999">命名规范</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class="widget music">
+    
+<header class="pure">
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=63035382" title="https://music.163.com/#/user/home?id=63035382">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2615636388" data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/xaoxuu" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
