@@ -112,12 +112,12 @@ a:hover, a:active {
 .content {
   height: auto;
   float: right;
-  width: 60%;
+  width: 80%;
   margin-top: 60px;
 }
 
 .page-top {
-  width: 60%;
+  width: 80%;
   position: fixed;
   right: 0;
   z-index: 3;
@@ -138,7 +138,7 @@ a:hover, a:active {
   padding-right: 20px;
 }
 .page-top .nav a {
-  color: #42b983;
+  color: #000;
 }
 .page-top .nav a:hover {
   color: #4786D6;
@@ -172,10 +172,10 @@ a:hover, a:active {
 }
 
 .sidebar {
-  width: 40%;
+  width: 20%;
   -webkit-background-size: cover;
   background-size: cover;
-  background-color: #42b983;
+  background-color: #fff;
   height: 100%;
   transition: 0.8s;
   top: 0;
@@ -204,7 +204,6 @@ a:hover, a:active {
 }
 .sidebar .logo-title .title a {
   text-decoration: none;
-  color: #fff;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -232,6 +231,7 @@ a:hover, a:active {
 .post {
   background-color: #FFF;
   margin: 30px;
+  padding: 20px;
 }
 .post .post-title h1 {
   text-transform: uppercase;
