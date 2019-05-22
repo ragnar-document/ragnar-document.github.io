@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Vue 向导 | Ragnar</title>
+  
+  
+  <meta name="description" content="不断学习/不断请教/不断尝试/">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class="cover page half">
+      
+        
+  <h1 class="title">Material X</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder>
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class="menu navgation">
+  <ul class="h-list">
+    
+      
+        <li>
+          <a class="nav home" href="/" id="home">
+            <i class="fas fa-rss fa-fw"></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/" id="projects">
+            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
+            <i class="fas fa-link fa-fw"></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/" rel="nofollow" id="about">
+            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href="/">
+        
+          Ragnar
+        
+      </a>
+			<div class="menu navgation">
+				<ul class="h-list">
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/" id="home">
+									<i class="fas fa-grin fa-fw"></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/" rel="nofollow" id="blogcategories">
+									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/" rel="nofollow" id="blogtags">
+									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search">
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+				
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo flat-box"></a>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+        
+          <li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/" id="home">
+								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/" id="projects">
+								<i class="fas fa-code-branch fa-fw"></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
+								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/" rel="nofollow" id="https:xaoxuu.comwikimaterial-x">
+								<i class="fas fa-book fa-fw"></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/" rel="nofollow" id="about">
+								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class="l_main">
+  
+
+  
+    <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/vue/Vue向导.html">
+        Vue 向导
+      </a>
+    </h1>
+  
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="http://yoursite.com" rel="nofollow">
+      
+        <img src="/images/logo.png">
+      
+      <p>dongxinglong</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="章节引导"><a href="#章节引导" class="headerlink" title="章节引导"></a>章节引导</h1><hr>
+<h1 id="1-Vue-js是什么"><a href="#1-Vue-js是什么" class="headerlink" title="1. Vue.js是什么?"></a>1. Vue.js是什么?</h1><pre><code>1). 一位华裔前Google工程师(尤雨溪)开发的前端js库
+2). 作用: 动态构建用户界面
+3). 特点:
+    * 遵循MVVM模式
+    * 编码简洁, 体积小, 运行效率高, 移动/PC端开发
+    * 它本身只关注UI, 可以轻松引入vue插件和其它第三库开发项目
+4). 与其它框架的关联:
+    * 借鉴angular的模板和数据绑定技术
+    * 借鉴react的组件化和虚拟DOM技术
+5). vue包含一系列的扩展插件(库):
+    * vue-cli: vue脚手架
+    * vue-resource(axios): ajax请求
+    * vue-router: 路由
+    * vuex: 状态管理
+    * vue-lazyload: 图片懒加载
+    * vue-scroller: 页面滑动相关
+    * mint-ui: 基于vue的组件库(移动端)
+    * element-ui: 基于vue的组件库(PC端)
+</code></pre><h1 id="2-基本使用"><a href="#2-基本使用" class="headerlink" title="2. 基本使用"></a>2. 基本使用</h1><pre><code>1). 引入vue.js
+2). 创建Vue实例对象(vm), 指定选项(配置)对象
+    el : 指定dom标签容器的选择器
+    data : 指定初始化状态数据的对象/函数(返回一个对象)
+3). 在页面模板中使用{{}}或vue指令
+</code></pre><h1 id="3-Vue对象的选项"><a href="#3-Vue对象的选项" class="headerlink" title="3. Vue对象的选项"></a>3. Vue对象的选项</h1><h2 id="1-el"><a href="#1-el" class="headerlink" title="1). el"></a>1). el</h2><pre><code>指定dom标签容器的选择器
+Vue就会管理对应的标签及其子标签
+</code></pre><h2 id="2-data"><a href="#2-data" class="headerlink" title="2). data"></a>2). data</h2><pre><code>对象或函数类型
+指定初始化状态属性数据的对象
+vm也会自动拥有data中所有属性
+页面中可以直接访问使用
+数据代理: 由vm对象来代理对data中所有属性的操作(读/写)
+</code></pre><h2 id="3-methods"><a href="#3-methods" class="headerlink" title="3). methods"></a>3). methods</h2><pre><code>包含多个方法的对象
+供页面中的事件指令来绑定回调
+回调函数默认有event参数, 但也可以指定自己的参数
+所有的方法由vue对象来调用, 访问data中的属性直接使用this.xxx
+</code></pre><h2 id="4-computed"><a href="#4-computed" class="headerlink" title="4). computed"></a>4). computed</h2><pre><code>包含多个方法的对象
+对状态属性进行计算返回一个新的数据, 供页面获取显示
+一般情况下是相当于是一个只读的属性
+利用set/get方法来实现属性数据的计算读取, 同时监视属性数据的变化
+如何给对象定义get/set属性
+    在创建对象时指定: get name () {return xxx} / set name (value) {}
+      对象创建之后指定: Object.defineProperty(obj, age, {get(){}, set(value){}})
+</code></pre><h2 id="5-watch"><a href="#5-watch" class="headerlink" title="5). watch"></a>5). watch</h2><pre><code>包含多个属性监视的对象
+分为一般监视和深度监视
+    xxx: function(value){}
+    xxx : {
+        deep : true,
+        handler : fun(value)
+    }
+另一种添加监视方式: vm.$watch(&apos;xxx&apos;, function(value){})
+</code></pre><h1 id="4-过渡动画"><a href="#4-过渡动画" class="headerlink" title="4. 过渡动画"></a>4. 过渡动画</h1><pre><code>利用vue去操控css的transition/animation动画
+模板: 使用&lt;transition name=&apos;xxx&apos;&gt;包含带动画的标签
+css样式
+    .fade-enter-active: 进入过程, 指定进入的transition
+    .fade-leave-active: 离开过程, 指定离开的transition
+    .xxx-enter, .xxx-leave-to: 指定隐藏的样式
+编码例子
+    .xxx-enter-active, .xxx-leave-active {
+      transition: opacity .5s
+    }
+    .xxx-enter, .xxx-leave-to {
+      opacity: 0
+    }
+
+    &lt;transition name=&quot;xxx&quot;&gt;
+      &lt;p v-if=&quot;show&quot;&gt;hello&lt;/p&gt;
+    &lt;/transition&gt;
+</code></pre><h1 id="5-生命周期"><a href="#5-生命周期" class="headerlink" title="5. 生命周期"></a>5. 生命周期</h1><pre><code>vm/组件对象
+生命周期图
+主要的生命周期函数(钩子)
+    created() / mounted(): 启动异步任务(启动定时器,发送ajax请求, 绑定监听)
+    beforeDestroy(): 做一些收尾的工作
+</code></pre><h1 id="6-自定义过滤器"><a href="#6-自定义过滤器" class="headerlink" title="6. 自定义过滤器"></a>6. 自定义过滤器</h1><h2 id="1-理解"><a href="#1-理解" class="headerlink" title="1). 理解"></a>1). 理解</h2><pre><code>对需要显示的数据进行格式化后再显示
+</code></pre><h2 id="2-编码"><a href="#2-编码" class="headerlink" title="2). 编码"></a>2). 编码</h2><pre><code>1). 定义过滤器
+    Vue.filter(filterName, function(value[,arg1,arg2,...]){
+      // 进行一定的数据处理
+      return newValue
+    })
+2). 使用过滤器
+    &lt;div&gt;{{myData | filterName}}&lt;/div&gt;
+    &lt;div&gt;{{myData | filterName(arg)}}&lt;/div&gt;
+</code></pre><h1 id="7-vue内置指令"><a href="#7-vue内置指令" class="headerlink" title="7. vue内置指令"></a>7. vue内置指令</h1><pre><code>v-text/v-html: 指定标签体
+    * v-text : 当作纯文本
+    * v-html : 将value作为html标签来解析
+v-if v-else v-show: 显示/隐藏元素
+    * v-if : 如果vlaue为true, 当前标签会输出在页面中
+    * v-else : 与v-if一起使用, 如果value为false, 将当前标签输出到页面中
+    * v-show: 就会在标签中添加display样式, 如果vlaue为true, display=block, 否则是none
+v-for : 遍历
+    * 遍历数组 : v-for=&quot;(person, index) in persons&quot;   
+    * 遍历对象 : v-for=&quot;value in person&quot;   $key
+v-on : 绑定事件监听
+    * v-on:事件名, 可以缩写为: @事件名
+    * 监视具体的按键: @keyup.keyCode   @keyup.enter
+    * 停止事件的冒泡和阻止事件默认行为: @click.stop   @click.prevent
+    * 隐含对象: $event
+v-bind : 强制绑定解析表达式  
+    * html标签属性是不支持表达式的, 就可以使用v-bind
+    * 可以缩写为:  :id=&apos;name&apos;
+    * :class
+      * :class=&quot;a&quot;
+        * :class=&quot;{classA : isA, classB : isB}&quot;
+        * :class=&quot;[classA, classB]&quot;
+    * :style
+        :style=&quot;{color : color}&quot;
+v-model
+    * 双向数据绑定
+    * 自动收集用户输入数据
+ref : 标识某个标签
+    * ref=&apos;xxx&apos;
+    * 读取得到标签对象: this.$refs.xxx
+</code></pre><h1 id="8-自定义指令"><a href="#8-自定义指令" class="headerlink" title="8. 自定义指令"></a>8. 自定义指令</h1><h2 id="1-注册全局指令"><a href="#1-注册全局指令" class="headerlink" title="1). 注册全局指令"></a>1). 注册全局指令</h2><pre><code>Vue.directive(&apos;my-directive&apos;, function(el, binding){
+  el.innerHTML = binding.value.toUpperCase()
+})
+</code></pre><h2 id="2-注册局部指令"><a href="#2-注册局部指令" class="headerlink" title="2). 注册局部指令"></a>2). 注册局部指令</h2><pre><code>directives : {
+  &apos;my-directive&apos; : function(el, binding) {
+      el.innerHTML = binding.value.toUpperCase()
+  }
+}
+</code></pre><h2 id="3-使用指令"><a href="#3-使用指令" class="headerlink" title="3). 使用指令"></a>3). 使用指令</h2><pre><code>&lt;div v-my-directive=&apos;xxx&apos;&gt;
+</code></pre>
+        </div>
+        
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+</div>
+<aside class="l_side">
+  
+    
+    
+      
+        
+          
+          
+            <section class="widget author">
+  <div class="content pure">
+    
+      <div class="avatar">
+        <img class="avatar" src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png">
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xaoxuu" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            <section class="widget grid">
+  
+<header class="pure">
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class="content pure">
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/" id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/" rel="nofollow" id="blogarchives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/projects/" href="/projects/" id="projects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/" rel="nofollow" id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/" rel="nofollow" id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/" rel="nofollow" id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+
+          
+        
+      
+        
+          
+          
+            
+  <section class="widget tagcloud">
+    
+<header class="pure">
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/blog/tags/" title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      <a href="/tags/Bootstrap/" style="font-size: 16.5px; color: #888">Bootstrap</a> <a href="/tags/Chameleon/" style="font-size: 14px; color: #999">Chameleon</a> <a href="/tags/css/" style="font-size: 21.5px; color: #666">css</a> <a href="/tags/es6/" style="font-size: 19px; color: #777">es6</a> <a href="/tags/js/" style="font-size: 21.5px; color: #666">js</a> <a href="/tags/mvvn/" style="font-size: 14px; color: #999">mvvn</a> <a href="/tags/node-js/" style="font-size: 16.5px; color: #888">node.js</a> <a href="/tags/wx/" style="font-size: 16.5px; color: #888">wx</a> <a href="/tags/前端/" style="font-size: 24px; color: #555">前端</a> <a href="/tags/前端框架/" style="font-size: 14px; color: #999">前端框架</a> <a href="/tags/动画效果/" style="font-size: 14px; color: #999">动画效果</a> <a href="/tags/后端/" style="font-size: 16.5px; color: #888">后端</a> <a href="/tags/命名规范/" style="font-size: 14px; color: #999">命名规范</a> <a href="/tags/实例/" style="font-size: 14px; color: #999">实例</a> <a href="/tags/微信小程序/" style="font-size: 16.5px; color: #888">微信小程序</a> <a href="/tags/组件/" style="font-size: 14px; color: #999">组件</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class="widget music">
+    
+<header class="pure">
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=63035382" title="https://music.163.com/#/user/home?id=63035382">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2615636388" data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/xaoxuu" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
