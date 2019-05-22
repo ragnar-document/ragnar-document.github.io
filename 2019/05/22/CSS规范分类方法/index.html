@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS规范_分类方法 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS规范_分类方法 CSS文件的分类和引用顺序 通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局">
+<meta name="keywords" content="css,前端,命名规范,网易开发规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS规范_分类方法">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/CSS规范分类方法/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="CSS规范_分类方法 CSS文件的分类和引用顺序 通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-22T12:29:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS规范_分类方法">
+<meta name="twitter:description" content="CSS规范_分类方法 CSS文件的分类和引用顺序 通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CSS规范分类方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS规范_分类方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS规范-分类方法"><a href="#CSS规范-分类方法" class="headerlink" title="CSS规范_分类方法"></a>CSS规范_分类方法</h2><ul>
+<li><p>CSS文件的分类和引用顺序</p>
+<p>通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。`</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;assets/css/global.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">&lt;link href=&quot;assets/css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">&lt;link href=&quot;assets/css/skin.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>CSS内部的分类及其顺序</p>
+<p>重置（reset）和默认（base）（tags）：消除默认样式和浏览器差异，并设置部分标签的初始样式，以减少后面的重复劳动！你可以根据你的网站需求设置！统一处理：建议在这个位置统一调用背景图（这里指多个布局或模块或元件共用的图）和清除浮动（这里指通用性较高的布局、模块、元件内的清除）等统一设置处理的样式！布局（grid）（.g-）：将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等！模块（module）（.m-）：通常是一个语义化的可以重复使用的较大的整体！比如导航、登录、注册、各种列表、评论、搜索等！元件（unit）（.u-）：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！功能（function）（.f-）：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！皮肤（skin）（.s-）：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！状态（.z-）：为状态类样式加入前缀，统一标识，方便识别，她只能组合使用或作为后代出现（.u-ipt.z-dis{}，.m-list li.z-sel{}），具体详见命名规则的扩展相关项。功能类和皮肤类样式为表现化的样式，请不要滥用！以上顺序可以按需求适当调整。以上分类的命名方法详见命名规则</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 重置 */</span></span><br><span class="line"><span class="selector-tag">div</span>,<span class="selector-tag">p</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">li</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="comment">/* 默认 */</span></span><br><span class="line"><span class="selector-tag">strong</span>,<span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>:normal;<span class="attribute">font-weight</span>:bold;&#125;</span><br><span class="line"><span class="comment">/* 统一调用背景图 */</span></span><br><span class="line"><span class="selector-class">.m-logo</span> <span class="selector-tag">a</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">em</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(images/sprite.png) no-repeat <span class="number">9999px</span> <span class="number">9999px</span>;&#125;</span><br><span class="line"><span class="comment">/* 统一清除浮动 */</span></span><br><span class="line"><span class="selector-class">.g-bdc</span><span class="selector-pseudo">:after</span>,<span class="selector-class">.m-dimg</span> <span class="selector-tag">ul</span><span class="selector-pseudo">:after</span>,<span class="selector-class">.u-tab</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">visibility</span>:hidden;<span class="attribute">clear</span>:both;<span class="attribute">height</span>:<span class="number">0</span>;<span class="attribute">overflow</span>:hidden;<span class="attribute">content</span>:<span class="string">'.'</span>;&#125;</span><br><span class="line"><span class="selector-class">.g-bdc</span>,<span class="selector-class">.m-dimg</span> <span class="selector-tag">ul</span>,<span class="selector-class">.u-tab</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>;&#125;</span><br><span class="line"><span class="comment">/* 布局 */</span></span><br><span class="line"><span class="selector-class">.g-sd</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">300px</span>;&#125;</span><br><span class="line"><span class="comment">/* 模块 */</span></span><br><span class="line"><span class="selector-class">.m-logo</span>&#123;<span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">50px</span>;&#125;</span><br><span class="line"><span class="comment">/* 元件 */</span></span><br><span class="line"><span class="selector-class">.u-btn</span>&#123;<span class="attribute">height</span>:<span class="number">20px</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#333</span>;&#125;</span><br><span class="line"><span class="comment">/* 功能 */</span></span><br><span class="line"><span class="selector-class">.f-tac</span>&#123;<span class="attribute">text-align</span>:center;&#125;</span><br><span class="line"><span class="comment">/* 皮肤 */</span></span><br><span class="line"><span class="selector-class">.s-fc</span>,<span class="selector-tag">a</span><span class="selector-class">.s-fc</span><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">color</span>:<span class="number">#fff</span>;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Copyright © 1997-2013 NetEase. All Rights Reserved.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjvz9wsqr00023cfh1uxep2yk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/22/CSS规范命名规则/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          CSS规范_命名规则
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/22/HTML规范代码格式/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">HTML规范_代码格式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

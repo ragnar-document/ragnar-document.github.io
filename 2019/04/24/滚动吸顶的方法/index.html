@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于滚动吸顶的方法 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一种使用CSS中的position:sticky    实现使用条件：  父元素不能 overflow:hidden 或者 overflow:auto 属性 必须指定 top、bottom、left、right 4 个值之一，否则只会处于相对定位 父元素的高度不能低于 sticky 元素的高度 sticky 元素仅在其父元素内生效例如：12345.nav &amp;#123;     position:">
+<meta name="keywords" content="前端,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于滚动吸顶的方法">
+<meta property="og:url" content="http://yoursite.com/2019/04/24/滚动吸顶的方法/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="第一种使用CSS中的position:sticky    实现使用条件：  父元素不能 overflow:hidden 或者 overflow:auto 属性 必须指定 top、bottom、left、right 4 个值之一，否则只会处于相对定位 父元素的高度不能低于 sticky 元素的高度 sticky 元素仅在其父元素内生效例如：12345.nav &amp;#123;     position:">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-03T11:16:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于滚动吸顶的方法">
+<meta name="twitter:description" content="第一种使用CSS中的position:sticky    实现使用条件：  父元素不能 overflow:hidden 或者 overflow:auto 属性 必须指定 top、bottom、left、right 4 个值之一，否则只会处于相对定位 父元素的高度不能低于 sticky 元素的高度 sticky 元素仅在其父元素内生效例如：12345.nav &amp;#123;     position:">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-滚动吸顶的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于滚动吸顶的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一种使用CSS中的position-sticky-实现"><a href="#第一种使用CSS中的position-sticky-实现" class="headerlink" title="第一种使用CSS中的position:sticky    实现"></a>第一种使用CSS中的<code>position:sticky</code>    实现</h2><p>使用条件：</p>
+<ol>
+<li>父元素不能 <code>overflow:hidden</code> 或者 <code>overflow:auto</code> 属性</li>
+<li>必须指定 <code>top、bottom、left、right</code> 4 个值之一，否则只会处于相对定位</li>
+<li>父元素的高度不能低于 <code>sticky</code> 元素的高度</li>
+<li><code>sticky</code> 元素仅在其父元素内生效<h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">     position: -webkit-sticky; </span><br><span class="line">     position: sticky;</span><br><span class="line">     top: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>并不是很好因为这个 API 还只是<strong>实验性的属性</strong>。不过这个 API 在 IOS 系统的兼容性还是比较好的。</p>
+<h2 id="使用Jquery-的-offset（）-top-实现"><a href="#使用Jquery-的-offset（）-top-实现" class="headerlink" title="使用Jquery 的 offset（）.top 实现"></a>使用Jquery 的 offset（）.top 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,self.handleScrollone);</span><br><span class="line">....</span><br><span class="line">handleScrollone: function( ) &#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    let scrrollTop = $(&apos;html&apos;).scrollTop( ); //获取滚动高度</span><br><span class="line">    let offsetTop = $(&apos;.title_box&apos;).offset( ).top;    //盒子高度</span><br><span class="line">    self.titleFixed = scrollTop &gt; Top;    //判断滚动高度是否大于盒子高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用原生JavaScript 实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,Navflexd);</span><br><span class="line">Navflexd:function( )&#123;</span><br><span class="line">    let scrollTop = document.documentElement.scrollTop;</span><br><span class="line">    //需要定位的距离 </span><br><span class="line">    let    navigatorBarTop = 需要定位的距离；</span><br><span class="line">    //判断滚动距离大于定位距离就定位</span><br><span class="line">    //获取当前浏览器是否在定位状态如果和上一步结构不一样就执行下面</span><br><span class="line">    if（设定好的定位值 ！== 导航需要定位距离）&#123;</span><br><span class="line">        //更新设定好的值  </span><br><span class="line">        X = Y;</span><br><span class="line">        //获取需要定位的元素</span><br><span class="line">        //判断是否需要定位if（导航需要定位距离）classname上添加上active</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><ul>
+<li>说明：vm.$refs 一个对象，持有已注册过 ref 的所有子组件（或HTML元素）</li>
+<li>使用：在 HTML元素 中，添加ref属性，然后在JS中通过vm.$refs.属性来获取</li>
+<li>注意：如果获取的是一个子组件，那么通过ref就能获取到子组件中的data和methods<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;, self.handleScrollTwo); </span><br><span class="line">handleScrollTwo: function() &#123; </span><br><span class="line">    let self = this;</span><br><span class="line">    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    let offsetTop = self.getOffset(self.$refs.prode_tab_fixed);</span><br><span class="line">    self.titleFixed = scrollTop &gt; offsetTop;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>### </p>
+<p>使用 <code>obj.getBoundingClientRect().top</code> 实现 <a href="[https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">MDN</a>)</p>
+<p><strong>定义：</strong></p>
+<p>这个 <code>API</code> 可以告诉你页面中某个元素<strong>相对浏览器视窗</strong>上下左右的距离。</p>
+<p><strong>使用：</strong><br>tab 吸顶可以使用 <code>obj.getBoundingClientRect().top</code> 代替 <code>scrollTop - offsetTop</code>,代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;div class=&quot;pride_tab_fixed&quot; ref=&quot;pride_tab_fixed&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pride_tab&quot; :class=&quot;titleFixed == true ? &apos;isFixed&apos; :&apos;&apos;&quot;&gt;</span><br><span class="line">        // some code</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// vue</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return&#123;</span><br><span class="line">        titleFixed: false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    activated()&#123;</span><br><span class="line">      this.titleFixed = false;</span><br><span class="line">      window.addEventListener(&apos;scroll&apos;, this.handleScroll);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      //滚动监听，头部固定</span><br><span class="line">      handleScroll: function () &#123;</span><br><span class="line">        let offsetTop = this.$refs.pride_tab_fixed.getBoundingClientRect().top;</span><br><span class="line">        this.titleFixed = offsetTop &lt; 0;</span><br><span class="line">        // some code</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="offsetTop-和-getBoundingClientRect-区别"><a href="#offsetTop-和-getBoundingClientRect-区别" class="headerlink" title="offsetTop 和 getBoundingClientRect() 区别"></a>offsetTop 和 getBoundingClientRect() 区别</h4><p><strong>1. getBoundingClientRect():</strong></p>
+<p>该<code>**Element.getBoundingClientRect()**</code>方法返回元素的大小及其相对于视口的位置。。</p>
+<p>该函数返回一个 <code>object</code> 对象，有6个属性： <code>top, right, buttom, left, width, height。</code> (在 IE 中，默认坐标从(2,2)开始计算，只返回 <code>top,lef,right,bottom</code> 四个值)</p>
+<p><strong>2. offsetTop:</strong></p>
+<p>用于获得当前元素到定位父级（ element.offsetParent ）顶部的距离（偏移值）。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/24/滚动吸顶的方法/" data-id="cjvz9wssc000w3cfhe7tavofk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/24/关于Js循环操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          forEach,map,filter循环操作整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/22/闪亮登场/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">初来乍到HEXO</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

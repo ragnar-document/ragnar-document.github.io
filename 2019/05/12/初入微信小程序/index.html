@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>初入微信小程序 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初入微信小程序小程序在这一两年内发展迅速，因为它无需安装用完即走非常的方便对比应用它体积小启动速度快，内容丰富。除了一些大型游戏或者应用外一些小应用对于微信小程序来说是非常轻而易举的，在走了一遍vue后大致了解和应用以后才来学习微信小程序。这样就会非常容易了解小程序的操作和概念，他们都是mvvn模型视图。具体请点开文档这里就不再搬运 MVC，MVP 和 MVVM 的图示 我们通过下面这几张图初步认">
+<meta name="keywords" content="微信小程序,wx,mvvn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初入微信小程序">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/初入微信小程序/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="初入微信小程序小程序在这一两年内发展迅速，因为它无需安装用完即走非常的方便对比应用它体积小启动速度快，内容丰富。除了一些大型游戏或者应用外一些小应用对于微信小程序来说是非常轻而易举的，在走了一遍vue后大致了解和应用以后才来学习微信小程序。这样就会非常容易了解小程序的操作和概念，他们都是mvvn模型视图。具体请点开文档这里就不再搬运 MVC，MVP 和 MVVM 的图示 我们通过下面这几张图初步认">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx1.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx2.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx3.png?raw=true">
+<meta property="og:updated_time" content="2019-05-12T12:33:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初入微信小程序">
+<meta name="twitter:description" content="初入微信小程序小程序在这一两年内发展迅速，因为它无需安装用完即走非常的方便对比应用它体积小启动速度快，内容丰富。除了一些大型游戏或者应用外一些小应用对于微信小程序来说是非常轻而易举的，在走了一遍vue后大致了解和应用以后才来学习微信小程序。这样就会非常容易了解小程序的操作和概念，他们都是mvvn模型视图。具体请点开文档这里就不再搬运 MVC，MVP 和 MVVM 的图示 我们通过下面这几张图初步认">
+<meta name="twitter:image" content="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx1.png?raw=true">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-初入微信小程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初入微信小程序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初入微信小程序"><a href="#初入微信小程序" class="headerlink" title="初入微信小程序"></a>初入微信小程序</h2><p>小程序在这一两年内发展迅速，因为它无需安装用完即走非常的方便对比应用它体积小启动速度快，内容丰富。除了一些大型游戏或者应用外一些小应用对于微信小程序来说是非常轻而易举的，在走了一遍vue后大致了解和应用以后才来学习微信小程序。这样就会非常容易了解小程序的操作和概念，他们都是mvvn模型视图。具体请点开文档这里就不再搬运</p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">MVC，MVP 和 MVVM 的图示</a></p>
+<p>我们通过下面这几张图初步认识一下什么是小程序//以下是我学习过程做的截图笔记</p>
+<p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx1.png?raw=true" alt></p>
+<p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx2.png?raw=true" alt></p>
+<p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/xcx3.png?raw=true" alt></p>
+<p>当你操作完以上步骤以后就可以打开我们的小程序开发工具</p>
+<p>界面非常简洁创建项目打开项目不必多说</p>
+<p>对于小程序app码需要到小程序网页后台设置那边获取//也可以获取临时体验码快速体验一下</p>
+<p>首先我们创建好项目以后他自动创建了一个<code>hello world</code>的demo😂我们已经习惯了万年helloworld</p>
+<p>好的为了让自己理解的更好我们把原有的模版给他删的一干二净</p>
+<p>接下来我们开始创建他必须要有的东西好吧～～</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//初始化配置</span><br><span class="line">pages：存放页面使用</span><br><span class="line">	--home 主页页面文件夹</span><br><span class="line">		--home.js			==	.js</span><br><span class="line">		--home.json		==	.json</span><br><span class="line">		--home.wxml		==	.html</span><br><span class="line">		--home.wxss		==	.css</span><br><span class="line">app.js</span><br><span class="line">app.json</span><br><span class="line">app.wxss</span><br></pre></td></tr></table></figure>
+<p>创建好结构后我们会看见控制面板上出现了报错红惶惶的贼吓人但是我们不需要太紧张没有人一开始就能做好。我们接着看一下报错内容那是因为我们的json文件不能是空的必须得装点玩意才能让他不闹</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"pages"</span>:[<span class="string">"pages/home/home"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里装了主页的路由这应该不用解释了吧一目了然</p>
+<p>同样我们也给home中的json填上内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"navigationBarTitleText"</span>:<span class="string">"关于"</span>,		<span class="comment">//顶部内容</span></span><br><span class="line">  <span class="string">"navigationBarBackgroundColor"</span>:<span class="string">"#fff"</span>,	<span class="comment">//顶部背景颜色</span></span><br><span class="line">  <span class="string">"navigationBarTextStyle"</span>:<span class="string">"black"</span>	<span class="comment">//顶部文字只能是黑或白</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们消除了json的报错后会发现js文件也报错了它是没有定义page内容参考文档我们输入page后回车他会自动给我们生成一个模版我们暂时也不需要去改动之间shift+s保存我们就可以看见报错内容消失了，但是我们页面也是空白的难道不是吗？？因为我们还没在.wxml中输入任何内容！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面的初始数据</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  data: &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面加载</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面初次渲染完成</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onReady: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面显示</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onShow: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面隐藏</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onHide: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面卸载</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onUnload: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面相关事件处理函数--监听用户下拉动作</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onPullDownRefresh: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面上拉触底事件的处理函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onReachBottom: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 用户点击右上角分享</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onShareAppMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="基础组件分为以下八大类："><a href="#基础组件分为以下八大类：" class="headerlink" title="基础组件分为以下八大类："></a>基础组件分为以下八大类：</h3><p>当然小程序和html还是有一些不一样滴！view类似于div，其实大部分还是认识的所有没啥毛病就是开发时要记住不要搞混了</p>
+<p>小程序视图容器(View Container)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>view</td>
+<td>视图容器</td>
+</tr>
+<tr>
+<td>scroll-view</td>
+<td>可滚动视图容器</td>
+</tr>
+<tr>
+<td>swiper</td>
+<td>可滑动的视图容器</td>
+</tr>
+</tbody>
+</table>
+<p>小程序基础内容(Basic Content)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>icon</td>
+<td>图标</td>
+</tr>
+<tr>
+<td>text</td>
+<td>文字</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>进度条</td>
+</tr>
+</tbody>
+</table>
+<p>小程序表单(Form)：</p>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>button</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td>form</td>
+<td>表单</td>
+</tr>
+<tr>
+<td>input</td>
+<td>输入框</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>多项选择器</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>单项选择器</td>
+</tr>
+<tr>
+<td>picker</td>
+<td>列表选择器</td>
+</tr>
+<tr>
+<td>picker-view</td>
+<td>内嵌列表选择器</td>
+</tr>
+<tr>
+<td>slider</td>
+<td>滑动选择器</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>开关选择器</td>
+</tr>
+<tr>
+<td>label</td>
+<td>标签</td>
+</tr>
+</tbody>
+</table>
+<p>小程序导航(Navigation)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>navigator</td>
+<td>应用内跳转</td>
+</tr>
+</tbody>
+</table>
+<p>小程序多媒体(Media)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audio</td>
+<td>音频</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图片</td>
+</tr>
+<tr>
+<td>video</td>
+<td>视频</td>
+</tr>
+</tbody>
+</table>
+<p>小程序地图(Map)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>map</td>
+<td>地图</td>
+</tr>
+</tbody>
+</table>
+<p>小程序画布(Canvas)：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canvas</td>
+<td>画布</td>
+</tr>
+</tbody>
+</table>
+<p>小程序客服会话：</p>
+<table>
+<thead>
+<tr>
+<th>组件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contact-button</td>
+<td>进入客服会话按钮</td>
+</tr>
+</tbody>
+</table>
+<h3 id="我们再来看一下微信小程序js的一些交互吧"><a href="#我们再来看一下微信小程序js的一些交互吧" class="headerlink" title="我们再来看一下微信小程序js的一些交互吧"></a>我们再来看一下微信小程序js的一些交互吧</h3><p>微信：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//插值模版</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">//点击绑定</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"clickMe"</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  clickMe() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;<span class="attr">message</span>: <span class="string">'Hello World'</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>vue：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;	message	&#125;&#125;&lt;/div&gt;</span><br><span class="line">//未简写</span><br><span class="line">&lt;button v-on:click=&quot;clickMe&quot;&gt;&lt;/button&gt;</span><br><span class="line">//简写后</span><br><span class="line">&lt;button @click=&quot;clickMe&quot;&gt;打击我&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app5 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app-5'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello Vue.js!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    clickMe: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.message = <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjvz9wss8000t3cfhedagn6l4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvn/">mvvn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/14/firstWachatitem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          微信小程序之电影周周刊
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/10/Css3之探索动画效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">CSS3之探索动画效果</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

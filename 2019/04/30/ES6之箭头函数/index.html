@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Es6学习笔记：箭头函数 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="箭头函数 它长这样    =&amp;gt;  是不是很抽象呢😁在Es6中箭头函数是其中最有趣的新增特性那么它有什么呢？？  没有this、super（特级）、arguments（参数）和new.target绑定 箭头函数中的this、super、以及new.target这些值由外围最近一层非箭头函数决定 不能通过new关键字调用箭头函数没有[[construct]]方法，所以不能被用作构造函数，如果通">
+<meta name="keywords" content="css,前端,js,es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Es6学习笔记：箭头函数">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/ES6之箭头函数/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="箭头函数 它长这样    =&amp;gt;  是不是很抽象呢😁在Es6中箭头函数是其中最有趣的新增特性那么它有什么呢？？  没有this、super（特级）、arguments（参数）和new.target绑定 箭头函数中的this、super、以及new.target这些值由外围最近一层非箭头函数决定 不能通过new关键字调用箭头函数没有[[construct]]方法，所以不能被用作构造函数，如果通">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-05T12:31:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Es6学习笔记：箭头函数">
+<meta name="twitter:description" content="箭头函数 它长这样    =&amp;gt;  是不是很抽象呢😁在Es6中箭头函数是其中最有趣的新增特性那么它有什么呢？？  没有this、super（特级）、arguments（参数）和new.target绑定 箭头函数中的this、super、以及new.target这些值由外围最近一层非箭头函数决定 不能通过new关键字调用箭头函数没有[[construct]]方法，所以不能被用作构造函数，如果通">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ES6之箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Es6学习笔记：箭头函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="箭头函数-它长这样-gt-是不是很抽象呢😁"><a href="#箭头函数-它长这样-gt-是不是很抽象呢😁" class="headerlink" title="箭头函数 它长这样    =&gt;  是不是很抽象呢😁"></a>箭头函数 它长这样    <code>=&gt;</code>  是不是很抽象呢😁</h2><p>在Es6中箭头函数是其中最有趣的新增特性那么它有什么呢？？</p>
+<ol>
+<li><strong>没有this、super（特级）、arguments（参数）和new.target绑定</strong> 箭头函数中的<strong>this</strong>、<strong>super</strong>、以及<strong>new.target</strong>这些值由外围最近一层非箭头函数决定</li>
+<li><strong>不能通过new关键字调用箭头函数没有[[construct]]方法</strong>，所以不能被用作构造函数，如果通过new关键字调用箭头函数，程序会抛出错误</li>
+</ol>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line">&gt; <span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(); <span class="comment">// TypeError: Foo is not a constructor</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ol>
+<li><strong>没用原形由于不能通过new关键字调用箭头函数</strong>，因而没有构建原型的需求所以箭头函数不存在prototype这个属性</li>
+</ol>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line">&gt; <span class="built_in">console</span>.log(Foo.prototype); <span class="comment">// undefined</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ol>
+<li>不支持<strong>arguments</strong> 对象箭头函数<strong>没有arguments绑定</strong>，所以你必须通过命名参数和不定参数这两种形式访问函数的参数</li>
+<li><strong>不支持重复命名参数</strong> 无论在严格还是非严格模式下箭头函数都不能支持重复的命名参数；而在传统函数的规定中只有在严格模式下才不能有重复的命名参数</li>
+</ol>
+<h2 id="箭头函数的的大型选美现场👙"><a href="#箭头函数的的大型选美现场👙" class="headerlink" title="箭头函数的的大型选美现场👙"></a>箭头函数的的大型选美现场👙</h2><p>一号佳丽🐱    当你只有单一参数和只需要返回简单的值时可以使用以下这种</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let refletct = value =&gt; value;</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">		</span><br><span class="line">		let reflect = funciton(value)&#123;</span><br><span class="line">			return value;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>二号佳丽🐶    两个以上的就比较豪气啦！弄个括号包起来毕竟不像 single dog嘛😂</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum = (num1 , num2) =&gt; num1 + num2</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function(num1 , num2)&#123;</span><br><span class="line">		return sum1 + sum2</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>三号佳丽🏃‍♀️    因为跑步啥也没带所以我们啥也不用传那么要怎么写呢❓</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum = ( ) =&gt; &apos;hellow world&apos;</span><br><span class="line">	</span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function()&#123;</span><br><span class="line">		return &apos;hellow world&apos;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>四号佳丽🏃    色即是空，🈳️即是色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sum =( ) =&gt; &#123;&#125;</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function()&#123;</span><br><span class="line">		//....</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>五号佳丽🐍    花括号代表函数体的部分如果想在箭头函数外返回一个对象字面量，则需要将该字面量包括在小括号里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let getTempItem = id =&gt;(&#123;	id:id, name:&quot;Temp&quot;&#125;)</span><br><span class="line"></span><br><span class="line">	等价于</span><br><span class="line">	</span><br><span class="line">	let sum = function(id)&#123;</span><br><span class="line">		return	&#123;</span><br><span class="line">			id:id,</span><br><span class="line">			name:&quot;Temp&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="不绑定This"><a href="#不绑定This" class="headerlink" title="不绑定This"></a>不绑定This</h2><p>在箭头函数出现之前，每个新定义的函数都有它自己的 <code>this</code>值（在构造函数的情况下是一个新对象，在严格模式的函数调用中为 undefined，如果该函数被作为“对象方法”调用则为基础对象等）。<code>This</code>被证明是令人厌烦的面向对象风格的编程。</p>
+<p>⚠️箭头函数不会创建自己的<code>this,</code>它只会从自己的作用域链的上一层继承 <code>this</code> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.age++; <span class="comment">// |this| 正确地指向 p 实例</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<p>如果指向错误除了使用箭头函数还可以把值分配给封闭的变量，可以解决<code>this</code>问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">  that.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="keyword">function</span> <span class="title">growUp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//  回调引用的是`that`变量, 其值是预期的对象. </span></span><br><span class="line">    that.age++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="函数的写法"><a href="#函数的写法" class="headerlink" title="函数的写法"></a>函数的写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="params">x</span> =&gt;</span> x * x;                  </span><br><span class="line"><span class="comment">// 简写函数 省略return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123; <span class="keyword">return</span> x + y; &#125;; </span><br><span class="line"><span class="comment">//常规编写 明确的返回值</span></span><br></pre></td></tr></table></figure>
+<h4 id="箭头函数也能使用三元表达式"><a href="#箭头函数也能使用三元表达式" class="headerlink" title="箭头函数也能使用三元表达式"></a>箭头函数也能使用三元表达式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> simple = <span class="function"><span class="params">a</span> =&gt;</span> a &gt; <span class="number">15</span> ? <span class="number">15</span> : a;</span><br><span class="line">simple(<span class="number">16</span>); <span class="comment">// 15</span></span><br><span class="line">simple(<span class="number">10</span>); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<h4 id="更简明的promise链"><a href="#更简明的promise链" class="headerlink" title="更简明的promise链"></a>更简明的promise链</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promise.then(<span class="function"><span class="params">a</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">b</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="箭头函数进行排序"><a href="#箭头函数进行排序" class="headerlink" title="箭头函数进行排序"></a>箭头函数进行排序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x-y</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> x-y);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br></pre></td></tr></table></figure>
+<p>参考资料：深入了解ES6</p>
+<p>​                    <a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001438565969057627e5435793645b7acaee3b6869d1374000" target="_blank" rel="noopener">廖雪峰</a></p>
+<p>​                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN web docs</a></p>
+<p>有待更新</p>
+<p>👏👏点我<a href="https://github.com/ragnar-document/ragnar-document.github.io/issues" target="_blank" rel="noopener">提issue</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjvz9wsrf00093cfhtufj5arv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/01/Es6之关于this （上）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          Es6学习笔记：这就是This （上）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/27/CSS命名规范指南_BEM风格/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">CSS命名规范指南_BEM风格</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

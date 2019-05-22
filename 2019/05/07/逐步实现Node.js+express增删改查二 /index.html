@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>逐步实现Node.js+express增删改查（ 二 ） | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="逐步实现Node.js+express增删改查（ 二 ）知识储备insert创建插入查询，将要插入行的属性的哈希或插入的数组作为单个插入命令执行。使用包含插入模型的第一个插入标识的数组或者包含所有插入的postgresql标识的数组或Amazon Redshift的行数解析承诺/实现回调。insert 创建插入查询，将要插入行的属性的哈希或插入数组 12345// Returns [1] in &quot;">
+<meta name="keywords" content="js,后端,node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逐步实现Node.js+express增删改查（ 二 ）">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="逐步实现Node.js+express增删改查（ 二 ）知识储备insert创建插入查询，将要插入行的属性的哈希或插入的数组作为单个插入命令执行。使用包含插入模型的第一个插入标识的数组或者包含所有插入的postgresql标识的数组或Amazon Redshift的行数解析承诺/实现回调。insert 创建插入查询，将要插入行的属性的哈希或插入数组 12345// Returns [1] in &quot;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-05-07T11:45:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="逐步实现Node.js+express增删改查（ 二 ）">
+<meta name="twitter:description" content="逐步实现Node.js+express增删改查（ 二 ）知识储备insert创建插入查询，将要插入行的属性的哈希或插入的数组作为单个插入命令执行。使用包含插入模型的第一个插入标识的数组或者包含所有插入的postgresql标识的数组或Amazon Redshift的行数解析承诺/实现回调。insert 创建插入查询，将要插入行的属性的哈希或插入数组 12345// Returns [1] in &quot;">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-逐步实现Node.js+express增删改查二 " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      逐步实现Node.js+express增删改查（ 二 ）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="逐步实现Node-js-express增删改查（-二-）"><a href="#逐步实现Node-js-express增删改查（-二-）" class="headerlink" title="逐步实现Node.js+express增删改查（ 二 ）"></a>逐步实现Node.js+express增删改查（ 二 ）</h1><h3 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h3><h4 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h4><p>创建插入查询，将要插入行的属性的哈希或插入的数组作为单个插入命令执行。使用包含插入模型的第一个插入标识的数组或者包含所有插入的postgresql标识的数组或Amazon Redshift的行数解析承诺/实现回调。insert 创建插入查询，将要插入行的属性的哈希或插入数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns [1] in "mysql", "sqlite", "oracle"; [] in "postgresql" unless the 'returning' parameter is set.</span></span><br><span class="line">knex(<span class="string">'books'</span>).insert(&#123;<span class="attr">title</span>: <span class="string">'Slaughterhouse Five'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">insert into <span class="string">`books`</span> (<span class="string">`title`</span>) values (<span class="string">'Slaughterhouse Five'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Where-语句"><a href="#Where-语句" class="headerlink" title="Where 语句"></a>Where 语句</h4><p>有几种方法可以帮助动态地从句。在很多地方，函数可以用来代替值，构造子查询。在大多数地方，现有的knex查询可能用于组成子查询等。</p>
+<p>这里我们用到的是对象语法</p>
+<p>例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">knex(<span class="string">'users'</span>).where(&#123;</span><br><span class="line">  first_name: <span class="string">'Test'</span>,</span><br><span class="line">  last_name:  <span class="string">'User'</span></span><br><span class="line">&#125;).select(<span class="string">'id'</span>)</span><br><span class="line">..</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">select <span class="string">`id`</span> <span class="keyword">from</span> <span class="string">`users`</span> where <span class="string">`first_name`</span> = <span class="string">'Test'</span> and <span class="string">`last_name`</span> = <span class="string">'User'</span></span><br></pre></td></tr></table></figure>
+<p>对于<strong>async</strong>和<strong>await</strong><a href="https://www.kancloud.cn/xiaojilinggui/qianduan/1015353" target="_blank" rel="noopener">关键字的理解</a></p>
+<h4 id="第一步添加增删改查方法models-user-js"><a href="#第一步添加增删改查方法models-user-js" class="headerlink" title="第一步添加增删改查方法models/user.js"></a>第一步添加增删改查方法models/user.js</h4><p>添加insert、updata、delete方法</p>
+<p>使用knex知识</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="comment">//.catch()是一种简单的处理错误的方法大致都一样所以不需要太大修改根据实际情况走</span></span><br><span class="line"><span class="comment">//then() 方法返回一个  Promise 。它最多需要有两个参数：Promise 的成功和失败情况的回调函数。</span></span><br><span class="line">insert: <span class="function"><span class="keyword">function</span>(<span class="params">params</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove,reject</span>)=&gt;</span>&#123;</span><br><span class="line">      knex(TABLE).insert(params)</span><br><span class="line">      .then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        reslove(res)</span><br><span class="line">      &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="第二步在controllers-user-js-添加增删改查的参数和逻辑"><a href="#第二步在controllers-user-js-添加增删改查的参数和逻辑" class="headerlink" title="第二步在controllers/user.js 添加增删改查的参数和逻辑"></a>第二步在controllers/user.js 添加增删改查的参数和逻辑</h4><p><strong>请求 </strong> <a href="http://expressjs.com/en/api.html#req.body" target="_blank" rel="noopener">Req.body</a> 包含请求正文中提交的键值对数据</p>
+<p><strong>响应</strong>  <a href="http://expressjs.com/en/api.html#res.json" target="_blank" rel="noopener">Res.json</a> 发送JSON响应。此方法使用<strong>JSON.stringify</strong>发送响应（具有正确的内容类型），该响应是转换为JSON字符串的参数。</p>
+<p>该参数可以是任何JSON类型，包括对象，数组，字符串，布尔值，数字或null，您还可以使用它将其他值转换为JSON。</p>
+<p>例1：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.json(&#123; <span class="attr">code</span>: <span class="number">200</span>, <span class="attr">data</span>: users&#125;)</span><br></pre></td></tr></table></figure>
+<p>例2:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.json(<span class="literal">null</span>);</span><br><span class="line">res.json(&#123; <span class="attr">user</span>: <span class="string">'tobi'</span> &#125;);</span><br><span class="line">res.status(<span class="number">500</span>).json(&#123; <span class="attr">error</span>: <span class="string">'message'</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="res-render（view-，locals-，callback-）"><a href="#res-render（view-，locals-，callback-）" class="headerlink" title="res.render（view [，locals] [，callback]）"></a>res.render（view [，locals] [，callback]）</h5><p>Locals 是一个对象，其属性定义视图局部变量</p>
+<p>callback 一个回调函数如果提供，则该方法返回可能的错误和呈现的字符串，但不执行自动响应。发生错误时，该方法在<code>next(err)</code>内部调用。</p>
+<p>例子中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.render(<span class="string">'user/show.tpl'</span>,res.locals)</span><br></pre></td></tr></table></figure>
+<p>Res.locals 包含作用于请求的响应局部变量对象，因此仅对在请求响应周期呈现的视图可用</p>
+<p>此属性对于公开请求级别信息（例如请求路径名，经过身份验证的用户，用户设置等）非常有用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.use(function(req, res, next)&#123;</span><br><span class="line">  res.locals.user = req.user;</span><br><span class="line">  res.locals.authenticated = ! req.user.anonymous;</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="第三步请求数据"><a href="#第三步请求数据" class="headerlink" title="第三步请求数据"></a>第三步请求数据</h4><p>把基本设施建设完毕以后我们需要把我们的东西运送出去这个任务我们需要交给我们的路由去处理</p>
+<p><strong>路由方法</strong></p>
+<p>Express 支持对应于 HTTP 方法的以下路由方法：<code>get</code>、<code>post</code>、<code>put</code>、<code>head</code>、<code>delete</code>、<code>options</code>、<code>trace</code>、<code>copy</code>、<code>lock</code>、<code>mkcol</code>、<code>move</code>、<code>purge</code>、<code>propfind</code>、<code>proppatch</code>、<code>unlock</code>、<code>report</code>、<code>mkactivity</code>、<code>checkout</code>、<code>merge</code>、<code>m-search</code>、<code>notify</code>、<code>subscribe</code>、<code>unsubscribe</code>、<code>patch</code>、<code>search</code> 和 <code>connect</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 同一个接口地址，但是不同的请求方法</span></span><br><span class="line">router.post(<span class="string">'/user'</span> , userController.insert);</span><br><span class="line">router.put(<span class="string">'/user'</span> , userController.update);</span><br><span class="line">router.delete(<span class="string">'/user'</span> , userController.delete);</span><br></pre></td></tr></table></figure>
+<h4 id="第四步展现出来"><a href="#第四步展现出来" class="headerlink" title="第四步展现出来"></a>第四步展现出来</h4><p>给show.tpl添加jquery点击事件等</p>
+<h5 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h5><p>该方法用于执行Ajax请求常用与其他jquery ajax请不能完成的请求 </p>
+<h5 id="可选字段"><a href="#可选字段" class="headerlink" title="可选字段"></a>可选字段</h5><p>Url:     链接地址，字符串表示</p>
+<p>Data:    需要发送到服务器的数据 GET与POST都可以    </p>
+<p>Type:    请求类型</p>
+<p>Timeout:    请求超时时间</p>
+<p>Cache:    是否缓存请求结果bool表示</p>
+<p>contentType:    内容类型</p>
+<p>dataType:    服务器响应数据类型字符串表示当填写为json时，回调函数中无需再对数据反序列化为json</p>
+<p>Success:    请求成功后服务器回调的函数</p>
+<p>Error:    请求失败后服务器回调的函数</p>
+<p>Complete:    请求完成后调用的函数无论请求成功还是失败都会调用该函数如果设置了success与error函数，则该函数在它们之后被调用</p>
+<p>Async:    是否异步处理 bool表示 默认true<strong>设置该值为false后，JS不会向下执行，而是原地等待服务器返回数据，并完成相应的回调函数后，再向下执行</strong></p>
+<p>Username: 访问认证请求中携带的用户名，字符串表示</p>
+<p>Password: 返回认证请求中携带的密码，字符串表示</p>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">let</span> id = $(<span class="keyword">this</span>).data(<span class="string">'id'</span>);</span><br><span class="line">     </span><br><span class="line">     $.ajax(&#123;</span><br><span class="line">         url: <span class="string">'/api/user'</span>,</span><br><span class="line">         data: &#123; id &#125;,</span><br><span class="line">         type: <span class="string">'DELETE'</span>,</span><br><span class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span><br><span class="line">             alert(<span class="string">'删除成功！'</span>)</span><br><span class="line">             location.reload()</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(data)</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(err)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
+<p><a href>例子下载</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjvz9wssg000z3cfh92swtkvk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/09/卡梅龙Chameleon体验/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          卡梅龙Chameleon体验
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/06/逐步实现Node.js+express增删改查一/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">逐步实现Node.js+express增删改查（ 一 ）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
