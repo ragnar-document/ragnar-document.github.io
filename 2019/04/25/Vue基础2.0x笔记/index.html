@@ -1,10 +1,90 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="dongxinglong"><title>Vue基础2.0X笔记 · Ragnar</title><meta name="description" content="Vue基础2.0X 详细解毒淘宝镜像安装
-12$ npm install cnpm -g --registry = https：//registry.npm.taobao.org//npm有的它都有加速安装，只要在原有命令加上c就可以了
-安装CDN学习版本：
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
 
+  
+  <title>Vue基础2.0X笔记 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue基础2.0X 详细解毒淘宝镜像安装 12$ npm install cnpm -g --registry = https：//registry.npm.taobao.org//npm有的它都有加速安装，只要在原有命令加上c就可以了 安装CDN学习版本：   使用包管理器全局安装 12$ npm install vue$ cnpm install vue 安装vue-cli  12npm in">
+<meta name="keywords" content="前端,vue,vue-router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue基础2.0X笔记">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="Vue基础2.0X 详细解毒淘宝镜像安装 12$ npm install cnpm -g --registry = https：//registry.npm.taobao.org//npm有的它都有加速安装，只要在原有命令加上c就可以了 安装CDN学习版本：   使用包管理器全局安装 12$ npm install vue$ cnpm install vue 安装vue-cli  12npm in">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-1.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-2.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-3.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-4.png?raw=true">
+<meta property="og:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-5.png?raw=true">
+<meta property="og:updated_time" content="2019-05-03T11:17:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue基础2.0X笔记">
+<meta name="twitter:description" content="Vue基础2.0X 详细解毒淘宝镜像安装 12$ npm install cnpm -g --registry = https：//registry.npm.taobao.org//npm有的它都有加速安装，只要在原有命令加上c就可以了 安装CDN学习版本：   使用包管理器全局安装 12$ npm install vue$ cnpm install vue 安装vue-cli  12npm in">
+<meta name="twitter:image" content="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-1.png?raw=true">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/project/">Project</a>
+        
+          <a class="main-nav-link" href="/everyday/">everyday</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
 
-使用包管理器全局安装
-12$ npm"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/touxiang.png" style="width:127px;"><h3 title><a href="/">Ragnar</a></h3><div class="description"><p>不断学习/不断请教/不断尝试/</p></div></div><div class="div"><img src="/images/ewm.png" style="width:80px;"></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://ragnar-document.github.io"> Ragnar</a><span>&</span><a href="https://segmentfault.com/u/tonyge"> 思否¨</a><div class="by_farbox"><a href="https://github.com/xiaojilinggui" target="_blank">欢迎查看我的GitHub 👉点我&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags/css/">Css</a></li><li><a href="/tags/vue/">Vue</a></li><li><a href="/tags/js/">JavaScript</a></li><li><a href="/tags/ES6/">ES6学习</a></li><li><a href="/about">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Vue基础2.0X笔记</a></h3></div><div class="post-content"><h1 id="Vue基础2-0X-详细解毒"><a href="#Vue基础2-0X-详细解毒" class="headerlink" title="Vue基础2.0X 详细解毒"></a>Vue基础2.0X 详细解毒</h1><p><a href="https://github.com/cnpm/cnpm" target="_blank" rel="noopener">淘宝镜像安装</a></p>
+      <div class="outer">
+        <section id="main"><article id="post-Vue基础2.0x笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue基础2.0X笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue基础2-0X-详细解毒"><a href="#Vue基础2-0X-详细解毒" class="headerlink" title="Vue基础2.0X 详细解毒"></a>Vue基础2.0X 详细解毒</h1><p><a href="https://github.com/cnpm/cnpm" target="_blank" rel="noopener">淘宝镜像安装</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install cnpm -g --registry = https：//registry.npm.taobao.org</span><br><span class="line">//npm有的它都有加速安装，只要在原有命令加上c就可以了</span><br></pre></td></tr></table></figure>
 <p>安装CDN学习版本：</p>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -39,4 +119,79 @@
 <h4 id="v-for-v-if-lt-tempalate-gt-的综合使用"><a href="#v-for-v-if-lt-tempalate-gt-的综合使用" class="headerlink" title="v-for/v-if/&lt;tempalate&gt; 的综合使用"></a><code>v-for/v-if/&lt;tempalate&gt; 的综合使用</code></h4><p>当它们处于同一节点，<code>v-for</code> 的优先级比 <code>v-if</code> 更高，这意味着 <code>v-if</code> 将分别重复运行于每个 <code>v-for</code> 循环中。当你想为仅有的<em>一些</em>项渲染节点时，这种优先级的机制会十分有用，</p>
 <p>⚠️警告：<a href="https://cn.vuejs.org/v2/style-guide/#%E9%81%BF%E5%85%8D-v-if-%E5%92%8C-v-for-%E7%94%A8%E5%9C%A8%E4%B8%80%E8%B5%B7-%E5%BF%85%E8%A6%81" target="_blank" rel="noopener"><strong>永远不要把 v-if 和 v-for 同时用在同一个元素上。</strong></a></p>
 <p><img src="https://github.com/ragnar-document/Vue-Base/blob/master/images/vue-5.png?raw=true" alt></p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-04-25</span><i class="fa fa-tag"></i><a class="tag" href="/tags/前端/" title="前端">前端 </a><a class="tag" href="/tags/vue/" title="vue">vue </a><a class="tag" href="/tags/vue-router/" title="vue-router">vue-router </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2019/04/25/Vue基础2.0x笔记/,Ragnar,Vue基础2.0X笔记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/04/26/使用vuepress搭建简易文档/" title="使用vuepress搭建简易文档">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/04/24/Vue-router 基础1.0X/" title="Vue-router 基础1.0X">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjvzycyf1002n0afhrf6emm67" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/26/使用vuepress搭建简易文档/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          使用vuepress搭建简易文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/24/Vue-router 基础1.0X/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">Vue-router 基础1.0X</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      我的仓库 <a href="https://github.com/ragnar-document" target="_blank">Hexo</a> 
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/project/" class="mobile-nav-link">Project</a>
+  
+    <a href="/everyday/" class="mobile-nav-link">everyday</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
