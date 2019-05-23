@@ -59,6 +59,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-微信小程序学习mpvue框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/23/微信小程序学习mpvue框架/">初入微信小程序</a>
+    </h1>
+  
+
+        <a href="/2019/05/23/微信小程序学习mpvue框架/" class="article-date">
+  <time datetime="2019-05-23T12:36:19.000Z" itemprop="datePublished">2019-05-23</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h1 id="微信小程序学习mpvue框架"><a href="#微信小程序学习mpvue框架" class="headerlink" title="微信小程序学习mpvue框架"></a>微信小程序学习mpvue框架</h1><p>简介</p>
+<p>mpvue继承自vue技术规范和语法特点与vue保持一致需要有一定vue使用经验，这是由美团技术团队开发的一个小程序前端框架，因为美团的技术栈是主vue又认为小程序学习起来成本有点高想到如何能多端复用所以就开发了mpvue出来。所以懒惰使人进步（滑稽）</p>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 <span class="selector-tag">vue-cli</span></span><br><span class="line">$ npm install --global vue-cli</span><br><span class="line"></span><br><span class="line"># 创建一个基于 <span class="selector-tag">mpvue-quickstart</span> 模板的新项目</span><br><span class="line">$ vue init mpvue/mpvue-quickstart my-project</span><br><span class="line"></span><br><span class="line"># 安装依赖</span><br><span class="line">$ cd my-project</span><br><span class="line">$ npm install</span><br><span class="line"># 启动构建</span><br><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>同 vue，不同的是我们会在小程序 onReady 后，再去触发 vue mounted 生命周期，详细的 vue 生命周期文档</p>
+<p>除了 Vue 本身的生命周期外，mpvue 还兼容了小程序生命周期，这部分生命周期钩子的来源于<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/page.html" target="_blank" rel="noopener">微信小程序的 Page</a>， 除特殊情况外，不建议使用小程序的生命周期钩子。</p>
+<h3 id="不支持过于复杂的JavaScript渲染表达式！！！"><a href="#不支持过于复杂的JavaScript渲染表达式！！！" class="headerlink" title="不支持过于复杂的JavaScript渲染表达式！！！"></a>不支持过于复杂的JavaScript渲染表达式！！！</h3><h3 id="不支持函数！！！"><a href="#不支持函数！！！" class="headerlink" title="不支持函数！！！"></a>不支持函数！！！</h3><h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h3><p>只是需要注意一点，<strong>嵌套列表渲染，必须指定不同的索引！</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这种嵌套循环的时候， index 和 itemIndex 这种索引是必须指定，且别名不能相同，正确的写法如下 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;ul v-for=&quot;(card, index) in list&quot;&gt;</span><br><span class="line">        &lt;li v-for=&quot;(item, itemIndex) in card&quot;&gt;</span><br><span class="line">            &#123;&#123;item.value&#125;&#125;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>踩坑注意：</strong></p>
+<ul>
+<li>列表中没有的原生事件也可以使用例如 bindregionchange 事件直接在 dom 上将bind改为@ <code>@regionchange</code>,同时这个事件也非常特殊，它的 event type 有 begin 和 end 两个，导致我们无法在<code>handleProxy</code> 中区分到底是什么事件，所以你在监听此类事件的时候同时监听事件名和事件类型既 <code>&lt;map @regionchange=&quot;functionName&quot; @end=&quot;functionName&quot; @begin=&quot;functionName&quot;&gt;&lt;map&gt;</code></li>
+<li>小程序能力所致，bind 和 catch 事件同时绑定时候，只会触发 bind ,catch 不会被触发，要避免踩坑。</li>
+<li>事件修饰符<ul>
+<li><code>.stop</code> 的使用会阻止冒泡，但是同时绑定了一个非冒泡事件，会导致该元素上的 catchEventName 失效！</li>
+<li><code>.prevent</code> 可以直接干掉，因为小程序里没有什么默认事件，比如submit并不会跳转页面</li>
+<li><code>.capture</code> 支持 <code>1.0.9</code></li>
+<li><code>.self</code> 没有可以判断的标识</li>
+<li><code>.once</code> 也不能做，因为小程序没有 removeEventListener, 虽然可以直接在 handleProxy 中处理，但非常的不优雅，违背了原意，暂不考虑</li>
+</ul>
+</li>
+<li>其他 键值修饰符 等在小程序中压根没键盘，所以。。。</li>
+</ul>
+<h3 id="如果不确定会不会出毛病的请使用查阅微信小程序文档使用微信原生代码！！！！"><a href="#如果不确定会不会出毛病的请使用查阅微信小程序文档使用微信原生代码！！！！" class="headerlink" title="如果不确定会不会出毛病的请使用查阅微信小程序文档使用微信原生代码！！！！"></a>如果不确定会不会出毛病的请使用查阅微信小程序文档使用微信原生代码！！！！</h3><p>例如表单控件</p>
+<p>mpvue 可以支持小程序的原生组件，比如： <code>picker,map</code> 等，需要注意的是原生组件上的事件绑定，需要以 <code>vue</code> 的事件绑定语法来绑定，如 <code>bindchange=&quot;eventName&quot;</code> 事件，需要写成 <code>@change=&quot;eventName&quot;</code></p>
+<h2 id="个人实践总结"><a href="#个人实践总结" class="headerlink" title="个人实践总结"></a>个人实践总结</h2><p>新建页面需要包含<code>index.vue</code> <code>main.js</code> <code>main.json</code> 微信中的html、css、js都包含在<code>index.vue</code>中<code>main.js</code></p>
+<p>需要引入vue文件还有挂载index.vue</p>
+<p>Main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'./index.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> index = <span class="keyword">new</span> Vue(Index)</span><br><span class="line"></span><br><span class="line">index.$mount()</span><br></pre></td></tr></table></figure>
+<p>组件使用和vue一样生成template在使用页面中引入注册，注意组件必须包含main.js文件</p>
+<p>每次生成新的网页都需要<code>npm run dev</code>重新打包dist文件才能正常显示</p>
+<p>暂时实践出来的总结就这些还有更多需要接下来去实践</p>
+<p>希望能把知识融汇贯通～～</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/23/微信小程序学习mpvue框架/" data-id="cjw0nase90015xjfhdak0r4m6" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/美团技术团队/">美团技术团队</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS规范命名规则" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -124,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjvzylgp800038ffh426mistx" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjw0nascv0004xjfhnp4t3cov" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -175,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjvzylgp100018ffh65lurevh" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjw0nascc0001xjfhpz08zgld" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -238,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjvzylgq5000s8ffh202494ie" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjw0nasd20007xjfh7ljzowcb" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -300,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjvzylgq1000n8ffhzosl4018" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjw0nasd9000bxjfh3o58i8zx" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -373,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjvzylgq9000w8ffhf0yh4tzn" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjw0nase2000xxjfh6k06lu02" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实例/">实例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -618,7 +687,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjvzylgqc00108ffhlqeozo0a" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjw0nasdw000sxjfh7k48wnd3" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvn/">mvvn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -676,7 +745,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjvzylgpe00058ffhcj0o6t58" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjw0nascy0005xjfh19z4t8s3" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画效果/">动画效果</a></li></ul>
@@ -737,7 +806,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjvzylgqe00138ffhq4a2jfpe" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjw0nase70013xjfh3gcl7bgn" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chameleon/">Chameleon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架/">前端框架</a></li></ul>
@@ -821,130 +890,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjvzylgqj00188ffh4x8lpjtr" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-逐步实现Node.js+express增删改查一" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/逐步实现Node.js+express增删改查一/">逐步实现Node.js+express增删改查（ 一 ）</a>
-    </h1>
-  
-
-        <a href="/2019/05/06/逐步实现Node.js+express增删改查一/" class="article-date">
-  <time datetime="2019-05-06T12:27:57.000Z" itemprop="datePublished">2019-05-06</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="逐步实现Node-js-express增删改查（-一-）"><a href="#逐步实现Node-js-express增删改查（-一-）" class="headerlink" title="逐步实现Node.js+express增删改查（ 一 ）"></a>逐步实现Node.js+express增删改查（ 一 ）</h1><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>全局安装 express-generator 项目构建工具：<code>npm install -g express-generator</code></p>
-<p>初始化文件    <code>cd ~/Desktop &amp;&amp; express expressApp &amp;&amp; cd expressApp</code></p>
-<p>安装依赖    <code>npm install</code></p>
-<p>替换原有语法模版因为这个更好用更贴近我们<code>npm install --save nunjucks</code></p>
-<p>View替换文件下载⏬：<a href="https://github.com/ragnar-document/Document-dish/tree/master/node" target="_blank" rel="noopener">点击下载</a></p>
-<p>把安装好的nunjucks 引入我们的app.js中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nunjucks =<span class="built_in">require</span>(<span class="string">'nunjucks'</span>);</span><br><span class="line">....</span><br><span class="line">app.set(<span class="string">'view engine'</span>,<span class="string">'tpl'</span>);</span><br><span class="line">nunjucks.configure(<span class="string">'views'</span>,&#123;</span><br><span class="line">  autoescape: <span class="literal">true</span>,</span><br><span class="line">  express: app,</span><br><span class="line">  watch:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>跑起来测试一下看看有没有问题<code>npm start</code>  地址<a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a></p>
-<p>安装项目依赖 <code>npm install -save knex mysql</code></p>
-<p>knex类似于查询器文档&gt;&gt;&gt;<a href="https://www.songxingguo.com/2018/06/30/knex.js-query/" target="_blank" rel="noopener">https://www.songxingguo.com/2018/06/30/knex.js-query/</a></p>
-<p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/WX20190506-193449.png?raw=true" alt></p>
-<h3 id="配置数据库里面的内容"><a href="#配置数据库里面的内容" class="headerlink" title="配置数据库里面的内容"></a>配置数据库里面的内容</h3><ul>
-<li>Field:id</li>
-<li>Field:name Type:VARCHAR LENGTH:255 Comment:姓名</li>
-<li>Field:email  Type:VARCHAR LENGTH:255 Comment:邮箱</li>
-<li>Field:password Type:VARCHAR LENGTH:255 Comment:密码</li>
-<li><p>手动设置几个默认值，例如：</p>
-</li>
-<li><p>name:Jay email:<a href="mailto:jay@qq.com" target="_blank" rel="noopener">jay@qq.com</a> password:123456</p>
-</li>
-<li>name:Jeo email:<a href="mailto:jay@qq.com" target="_blank" rel="noopener">jay@qq.com</a> password:123456</li>
-<li>name:Jax email:<a href="mailto:jay@qq.com" target="_blank" rel="noopener">jay@qq.com</a> password:123456</li>
-</ul>
-<h5 id="配置一下config-js文件链接数据库"><a href="#配置一下config-js文件链接数据库" class="headerlink" title="配置一下config.js文件链接数据库"></a>配置一下config.js文件链接数据库</h5><p>根目录下新建<code>config.js</code>文件    📃</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> configs = &#123;</span><br><span class="line">  mysql: &#123;</span><br><span class="line">    host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">    port: <span class="string">'3306'</span>,</span><br><span class="line">    user: <span class="string">'root'</span>,</span><br><span class="line">    password: <span class="string">''</span>,</span><br><span class="line">    database: <span class="string">'expressapp'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config</span><br></pre></td></tr></table></figure>
-<p>为了避免上传私密文件或者一些重要的我们需要创建</p>
-<p><strong>gitignore</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">.idea</span><br><span class="line">npm-debug.log</span><br><span class="line">yarn-error.log</span><br><span class="line">node_modules</span><br><span class="line">config.js</span><br></pre></td></tr></table></figure>
-<p>新建model层在其下添加knex.js 数据库的配置并初始化</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用配置文件</span></span><br><span class="line"><span class="keyword">const</span> configs = <span class="built_in">require</span>(<span class="string">'../config'</span>);</span><br><span class="line"><span class="comment">// 把配置文件中的信息，设置在初始化配置中</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="built_in">require</span>(<span class="string">'knex'</span>)(&#123;</span><br><span class="line">  client: <span class="string">'mysql'</span>,</span><br><span class="line">  connection: &#123;</span><br><span class="line">    host: configs.mysql.host,</span><br><span class="line">    port: configs.mysql.port,</span><br><span class="line">    user: configs.mysql.user,</span><br><span class="line">    password: configs.mysql.password,</span><br><span class="line">    database: configs.mysql.database</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>接下来就是要把数据库里设计好的数据通过    <strong>models/user.js</strong> 中设置获取所有用户的方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为数据是从数据库中取出所以需要通过knex的连接来获取数据库的数据</span></span><br><span class="line"><span class="keyword">const</span> knew = <span class="built_in">require</span>(<span class="string">'./../models/knex'</span>);</span><br><span class="line"><span class="comment">//定义数据库表</span></span><br><span class="line"><span class="keyword">const</span> TABLE = <span class="string">'users'</span>;</span><br><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  <span class="comment">// 获取所有用户的方法</span></span><br><span class="line">  all: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 返回 Promise</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove,reject</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// knex select 操作相关方法</span></span><br><span class="line">      knex.select().table(TABLE).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        reslove(res)</span><br><span class="line">      &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = User</span><br><span class="line"></span><br><span class="line"><span class="comment">//查询构建器通过指定要查询的表名或通过直接在knex对象上调用任何方法来启动。这将启动类似jQuery的链，您可以根据需要调用其他查询构建器方法来构造查询，最终调用任何接口方法，将其转换为toString或返回一个promise对象，回调或链式执行查询。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个select查询，为查询提供可选的列数组，如果在构建查询时没有指定，则最终默认为*。select调用的响应将使用从数据库中选择的对象数组来解析。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例：knex.select().table('books')</span></span><br></pre></td></tr></table></figure>
-<p>紧接着我们创建<strong>controllers/user.js</strong> 用户控制器设置展示方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用用户模版数据</span></span><br><span class="line"><span class="keyword">const</span> User = <span class="built_in">require</span>(<span class="string">'./../models/user.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userController = &#123;</span><br><span class="line">  <span class="comment">// show 获取用户数据并返回到页面</span></span><br><span class="line">  show: <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">      <span class="comment">// 从模型中获取所有用户数据</span></span><br><span class="line">      <span class="keyword">const</span> users = <span class="keyword">await</span> User.all();</span><br><span class="line">      <span class="comment">// 把用户数据设置到 res.locals 中</span></span><br><span class="line">      res.locals.users = users;</span><br><span class="line">      <span class="comment">// 渲染到 views 视图目录的 user/show.tpl 路径中。</span></span><br><span class="line">      res.render(<span class="string">'user/show.tpl'</span>,res.locals)</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">      res.locals.error = e;</span><br><span class="line">      res.render(<span class="string">'error'</span>,res.locals)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = userController;</span><br></pre></td></tr></table></figure>
-<p>创建好控制器后我们需要去路由中引入使用</p>
-<p>Express 支持对应于 HTTP 方法的以下路由方法法：<code>get</code>、<code>post</code>、<code>put</code>、<code>head</code>、<code>delete</code>、<code>options</code>、<code>trace</code>、<code>copy</code>、<code>lock</code>、<code>mkcol</code>、<code>move</code>、<code>purge</code>、<code>propfind</code>、<code>proppatch</code>、<code>unlock</code>、<code>report</code>、<code>mkactivity</code>、<code>checkout</code>、<code>merge</code>、<code>m-search</code>、<code>notify</code>、<code>subscribe</code>、<code>unsubscribe</code>、<code>patch</code>、<code>search</code> 和 <code>connect</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userController = <span class="built_in">require</span>(<span class="string">'./../controllers/users.js'</span>);</span><br><span class="line">...</span><br><span class="line">router.get(<span class="string">'/user'</span>,userController.show)</span><br></pre></td></tr></table></figure>
-<h3 id="响应方法"><a href="#响应方法" class="headerlink" title="响应方法"></a>响应方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.download" target="_blank" rel="noopener">res.download()</a></td>
-<td>提示将要下载文件。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.end" target="_blank" rel="noopener">res.end()</a></td>
-<td>结束响应进程。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.json" target="_blank" rel="noopener">res.json()</a></td>
-<td>发送 JSON 响应。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.jsonp" target="_blank" rel="noopener">res.jsonp()</a></td>
-<td>在 JSONP 的支持下发送 JSON 响应。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.redirect" target="_blank" rel="noopener">res.redirect()</a></td>
-<td>重定向请求。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.render" target="_blank" rel="noopener">res.render()</a></td>
-<td>呈现视图模板。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.send" target="_blank" rel="noopener">res.send()</a></td>
-<td>发送各种类型的响应。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.sendFile" target="_blank" rel="noopener">res.sendFile</a></td>
-<td>以八位元流形式发送文件。</td>
-</tr>
-<tr>
-<td><a href="https://expressjs.com/zh-cn/4x/api.html#res.sendStatus" target="_blank" rel="noopener">res.sendStatus()</a></td>
-<td>设置响应状态码并以响应主体形式发送其字符串表示。</td>
-</tr>
-</tbody>
-</table>
-<p>第一部分到这结束下一部分进入增删改查的主要过程～～～</p>
-<p>我的GitHub地址：<a href="https://github.com/ragnar-document" target="_blank" rel="noopener">https://github.com/ragnar-document</a></p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/06/逐步实现Node.js+express增删改查一/" data-id="cjvzylgqh00158ffhnpdx3kb8" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjw0naseb0018xjfhz86ayps1" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
