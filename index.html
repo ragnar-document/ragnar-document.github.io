@@ -55,6 +55,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数组排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/25/数组排序/">在维基百科学数组排序</a>
+    </h1>
+  
+
+        <a href="/2019/05/25/数组排序/" class="article-date">
+  <time datetime="2019-05-25T12:17:06.000Z" itemprop="datePublished">2019-05-25</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h1 id="在维基百科学数组排序"><a href="#在维基百科学数组排序" class="headerlink" title="在维基百科学数组排序"></a>在维基百科学数组排序</h1><h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><p>对比相邻的两个数值顺序错了就会互换一遍一遍的走访知道不需要交换为止</p>
+<p>冒泡排序算法的运作如下：</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<p>改进后的冒泡又叫鸡尾酒排序实例如下</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.cocktail_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i, left = <span class="number">0</span>, right = <span class="keyword">this</span>.length - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> temp;</span><br><span class="line">	<span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">		<span class="keyword">for</span> (i = left; i &lt; right; i++)</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>[i] &gt; <span class="keyword">this</span>[i + <span class="number">1</span>]) &#123;</span><br><span class="line">				temp = <span class="keyword">this</span>[i];</span><br><span class="line">				<span class="keyword">this</span>[i] = <span class="keyword">this</span>[i + <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">this</span>[i + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		right--;</span><br><span class="line">		<span class="keyword">for</span> (i = right; i &gt; left; i--)</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>[i - <span class="number">1</span>] &gt; <span class="keyword">this</span>[i]) &#123;</span><br><span class="line">				temp = <span class="keyword">this</span>[i];</span><br><span class="line">				<span class="keyword">this</span>[i] = <span class="keyword">this</span>[i - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">this</span>[i - <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		left++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-插入排序"><a href="#2-插入排序" class="headerlink" title="2.插入排序"></a>2.插入排序</h2><p>由后往前扫描找到相应位置并插入，为了给插入值位置已排序值会不断的向后挪动</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Insertion-sort-example-300px.gif/220px-Insertion-sort-example-300px.gif" alt></p>
+<p><strong>举例：</strong></p>
+<p>Input: {5 2 4 6 1 3}。</p>
+<p>首先拿起第一张牌, 手上有 {5}。</p>
+<p>拿起第二张牌 2, 把 2 insert 到手上的牌 {5}, 得到 {2 5}。</p>
+<p>拿起第三张牌 4, 把 4 insert 到手上的牌 {2 5}, 得到 {2 4 5}。</p>
+<p>以此类推。</p>
+<h2 id="3-选择排序"><a href="#3-选择排序" class="headerlink" title="3.选择排序"></a>3.选择排序</h2><p>工作原理就是找到最小的存放在数组开头再找一个最大的放在数组末尾知道排序结束</p>
+<p>选择排序的优点就是如果那个数在正确的位置就不会移动</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt></p>
+<h2 id="4-递归排序也叫归并排序"><a href="#4-递归排序也叫归并排序" class="headerlink" title="4.递归排序也叫归并排序"></a>4.递归排序也叫归并排序</h2><p>简单来说就是把一个数组拆分为两份然后在把值分成对对比交换位置依次类推直到数组结束</p>
+<p>官方说法：归并操作（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
+<p>采用分治法:</p>
+<ul>
+<li>分割：递归地把当前序列平均分割成两半。</li>
+<li>整合：在保持元素顺序的同时将上一步得到的子序列整合到一起（归并）。</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-sort-example-300px.gif" alt></p>
+<h2 id="5-计数排序"><a href="#5-计数排序" class="headerlink" title="5.计数排序"></a>5.计数排序</h2><p>通俗地理解，例如有10个年龄不同的人，统计出有8个人的年龄比A小，那A的年龄就排在第9位，用这个方法可以得到其他每个人的位置，也就排好了序。当然，年龄有重复时需要特殊处理（保证稳定性），这就是为什么最后要反向填充目标数组，以及将每个数字的统计减去1</p>
+<p>计数排序不是<a href="https://zh.wikipedia.org/wiki/比较排序" target="_blank" rel="noopener">比较排序</a>，排序的速度快于任何比较排序算法。</p>
+<p>由于用来计数的数组{\displaystyle C}<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4fc55753007cd3c18576f7933f6f089196732029" alt=" C ">的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。例如：计数排序是用来排序0到100之间的数字的最好的算法，但是它不适合按字母顺序排序人名。但是，计数排序可以用在<a href="https://zh.wikipedia.org/wiki/基数排序" target="_blank" rel="noopener">基数排序</a>算法中，能够更有效的排序数据范围很大的数组。</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/25/数组排序/" data-id="cjw3idwkd0013njfhmkib2bc0" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-微信小程序学习mpvue框架" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -66,7 +137,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/微信小程序学习mpvue框架/">初入微信小程序</a>
+      <a class="article-title" href="/2019/05/23/微信小程序学习mpvue框架/">微信小程序学习mpvue框架</a>
     </h1>
   
 
@@ -112,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/23/微信小程序学习mpvue框架/" data-id="cjw0o53af001az6fh9q06bsrx" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/23/微信小程序学习mpvue框架/" data-id="cjw3idwk7000ynjfhwawd32dk" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/美团技术团队/">美团技术团队</a></li></ul>
@@ -189,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjw0o537v0004z6fh2snin7c2" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjw3idwid0004njfhycr5oxxj" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -240,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjw0o53740001z6fhpdb9zpqn" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjw3idwi10002njfhjxwpd5bv" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -303,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjw0o5399000mz6fhnse81irh" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjw3idwjq000nnjfhj3g43x01" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -365,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjw0o538c0009z6fhhb7tcmxf" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjw3idwj1000bnjfh1g4o0lki" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -438,7 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjw0o539n000vz6fhaghygdmg" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjw3idwk5000vnjfh8pn3wjum" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实例/">实例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -683,7 +754,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjw0o539x0010z6fh1hr1ggih" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjw3idwka0010njfh86n4x7t9" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvn/">mvvn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -741,7 +812,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjw0o537l0002z6fh4k360pu3" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjw3idwif0005njfhpyt56m3m" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画效果/">动画效果</a></li></ul>
@@ -802,94 +873,10 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjw0o53a00013z6fhsbszle74" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjw3idwki0014njfhpu44m2u5" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chameleon/">Chameleon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架/">前端框架</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-逐步实现Node.js+express增删改查二 " class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/07/逐步实现Node.js+express增删改查二 /">逐步实现Node.js+express增删改查（ 二 ）</a>
-    </h1>
-  
-
-        <a href="/2019/05/07/逐步实现Node.js+express增删改查二 /" class="article-date">
-  <time datetime="2019-05-07T06:47:46.000Z" itemprop="datePublished">2019-05-07</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="逐步实现Node-js-express增删改查（-二-）"><a href="#逐步实现Node-js-express增删改查（-二-）" class="headerlink" title="逐步实现Node.js+express增删改查（ 二 ）"></a>逐步实现Node.js+express增删改查（ 二 ）</h1><h3 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h3><h4 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h4><p>创建插入查询，将要插入行的属性的哈希或插入的数组作为单个插入命令执行。使用包含插入模型的第一个插入标识的数组或者包含所有插入的postgresql标识的数组或Amazon Redshift的行数解析承诺/实现回调。insert 创建插入查询，将要插入行的属性的哈希或插入数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns [1] in "mysql", "sqlite", "oracle"; [] in "postgresql" unless the 'returning' parameter is set.</span></span><br><span class="line">knex(<span class="string">'books'</span>).insert(&#123;<span class="attr">title</span>: <span class="string">'Slaughterhouse Five'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">insert into <span class="string">`books`</span> (<span class="string">`title`</span>) values (<span class="string">'Slaughterhouse Five'</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="Where-语句"><a href="#Where-语句" class="headerlink" title="Where 语句"></a>Where 语句</h4><p>有几种方法可以帮助动态地从句。在很多地方，函数可以用来代替值，构造子查询。在大多数地方，现有的knex查询可能用于组成子查询等。</p>
-<p>这里我们用到的是对象语法</p>
-<p>例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">knex(<span class="string">'users'</span>).where(&#123;</span><br><span class="line">  first_name: <span class="string">'Test'</span>,</span><br><span class="line">  last_name:  <span class="string">'User'</span></span><br><span class="line">&#125;).select(<span class="string">'id'</span>)</span><br><span class="line">..</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">select <span class="string">`id`</span> <span class="keyword">from</span> <span class="string">`users`</span> where <span class="string">`first_name`</span> = <span class="string">'Test'</span> and <span class="string">`last_name`</span> = <span class="string">'User'</span></span><br></pre></td></tr></table></figure>
-<p>对于<strong>async</strong>和<strong>await</strong><a href="https://www.kancloud.cn/xiaojilinggui/qianduan/1015353" target="_blank" rel="noopener">关键字的理解</a></p>
-<h4 id="第一步添加增删改查方法models-user-js"><a href="#第一步添加增删改查方法models-user-js" class="headerlink" title="第一步添加增删改查方法models/user.js"></a>第一步添加增删改查方法models/user.js</h4><p>添加insert、updata、delete方法</p>
-<p>使用knex知识</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="comment">//.catch()是一种简单的处理错误的方法大致都一样所以不需要太大修改根据实际情况走</span></span><br><span class="line"><span class="comment">//then() 方法返回一个  Promise 。它最多需要有两个参数：Promise 的成功和失败情况的回调函数。</span></span><br><span class="line">insert: <span class="function"><span class="keyword">function</span>(<span class="params">params</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove,reject</span>)=&gt;</span>&#123;</span><br><span class="line">      knex(TABLE).insert(params)</span><br><span class="line">      .then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        reslove(res)</span><br><span class="line">      &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<h4 id="第二步在controllers-user-js-添加增删改查的参数和逻辑"><a href="#第二步在controllers-user-js-添加增删改查的参数和逻辑" class="headerlink" title="第二步在controllers/user.js 添加增删改查的参数和逻辑"></a>第二步在controllers/user.js 添加增删改查的参数和逻辑</h4><p><strong>请求 </strong> <a href="http://expressjs.com/en/api.html#req.body" target="_blank" rel="noopener">Req.body</a> 包含请求正文中提交的键值对数据</p>
-<p><strong>响应</strong>  <a href="http://expressjs.com/en/api.html#res.json" target="_blank" rel="noopener">Res.json</a> 发送JSON响应。此方法使用<strong>JSON.stringify</strong>发送响应（具有正确的内容类型），该响应是转换为JSON字符串的参数。</p>
-<p>该参数可以是任何JSON类型，包括对象，数组，字符串，布尔值，数字或null，您还可以使用它将其他值转换为JSON。</p>
-<p>例1：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.json(&#123; <span class="attr">code</span>: <span class="number">200</span>, <span class="attr">data</span>: users&#125;)</span><br></pre></td></tr></table></figure>
-<p>例2:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.json(<span class="literal">null</span>);</span><br><span class="line">res.json(&#123; <span class="attr">user</span>: <span class="string">'tobi'</span> &#125;);</span><br><span class="line">res.status(<span class="number">500</span>).json(&#123; <span class="attr">error</span>: <span class="string">'message'</span> &#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="res-render（view-，locals-，callback-）"><a href="#res-render（view-，locals-，callback-）" class="headerlink" title="res.render（view [，locals] [，callback]）"></a>res.render（view [，locals] [，callback]）</h5><p>Locals 是一个对象，其属性定义视图局部变量</p>
-<p>callback 一个回调函数如果提供，则该方法返回可能的错误和呈现的字符串，但不执行自动响应。发生错误时，该方法在<code>next(err)</code>内部调用。</p>
-<p>例子中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.render(<span class="string">'user/show.tpl'</span>,res.locals)</span><br></pre></td></tr></table></figure>
-<p>Res.locals 包含作用于请求的响应局部变量对象，因此仅对在请求响应周期呈现的视图可用</p>
-<p>此属性对于公开请求级别信息（例如请求路径名，经过身份验证的用户，用户设置等）非常有用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.use(function(req, res, next)&#123;</span><br><span class="line">  res.locals.user = req.user;</span><br><span class="line">  res.locals.authenticated = ! req.user.anonymous;</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="第三步请求数据"><a href="#第三步请求数据" class="headerlink" title="第三步请求数据"></a>第三步请求数据</h4><p>把基本设施建设完毕以后我们需要把我们的东西运送出去这个任务我们需要交给我们的路由去处理</p>
-<p><strong>路由方法</strong></p>
-<p>Express 支持对应于 HTTP 方法的以下路由方法：<code>get</code>、<code>post</code>、<code>put</code>、<code>head</code>、<code>delete</code>、<code>options</code>、<code>trace</code>、<code>copy</code>、<code>lock</code>、<code>mkcol</code>、<code>move</code>、<code>purge</code>、<code>propfind</code>、<code>proppatch</code>、<code>unlock</code>、<code>report</code>、<code>mkactivity</code>、<code>checkout</code>、<code>merge</code>、<code>m-search</code>、<code>notify</code>、<code>subscribe</code>、<code>unsubscribe</code>、<code>patch</code>、<code>search</code> 和 <code>connect</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 同一个接口地址，但是不同的请求方法</span></span><br><span class="line">router.post(<span class="string">'/user'</span> , userController.insert);</span><br><span class="line">router.put(<span class="string">'/user'</span> , userController.update);</span><br><span class="line">router.delete(<span class="string">'/user'</span> , userController.delete);</span><br></pre></td></tr></table></figure>
-<h4 id="第四步展现出来"><a href="#第四步展现出来" class="headerlink" title="第四步展现出来"></a>第四步展现出来</h4><p>给show.tpl添加jquery点击事件等</p>
-<h5 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h5><p>该方法用于执行Ajax请求常用与其他jquery ajax请不能完成的请求 </p>
-<h5 id="可选字段"><a href="#可选字段" class="headerlink" title="可选字段"></a>可选字段</h5><p>Url:     链接地址，字符串表示</p>
-<p>Data:    需要发送到服务器的数据 GET与POST都可以    </p>
-<p>Type:    请求类型</p>
-<p>Timeout:    请求超时时间</p>
-<p>Cache:    是否缓存请求结果bool表示</p>
-<p>contentType:    内容类型</p>
-<p>dataType:    服务器响应数据类型字符串表示当填写为json时，回调函数中无需再对数据反序列化为json</p>
-<p>Success:    请求成功后服务器回调的函数</p>
-<p>Error:    请求失败后服务器回调的函数</p>
-<p>Complete:    请求完成后调用的函数无论请求成功还是失败都会调用该函数如果设置了success与error函数，则该函数在它们之后被调用</p>
-<p>Async:    是否异步处理 bool表示 默认true<strong>设置该值为false后，JS不会向下执行，而是原地等待服务器返回数据，并完成相应的回调函数后，再向下执行</strong></p>
-<p>Username: 访问认证请求中携带的用户名，字符串表示</p>
-<p>Password: 返回认证请求中携带的密码，字符串表示</p>
-<p>例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">let</span> id = $(<span class="keyword">this</span>).data(<span class="string">'id'</span>);</span><br><span class="line">     </span><br><span class="line">     $.ajax(&#123;</span><br><span class="line">         url: <span class="string">'/api/user'</span>,</span><br><span class="line">         data: &#123; id &#125;,</span><br><span class="line">         type: <span class="string">'DELETE'</span>,</span><br><span class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span><br><span class="line">             alert(<span class="string">'删除成功！'</span>)</span><br><span class="line">             location.reload()</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(data)</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(err)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
-<p><a href>例子下载</a></p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjw0o53a90018z6fh99ec9qh9" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
 
     </footer>
   </div>

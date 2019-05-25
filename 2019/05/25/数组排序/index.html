@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>在维基百科学数组排序 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在维基百科学数组排序1.冒泡排序对比相邻的两个数值顺序错了就会互换一遍一遍的走访知道不需要交换为止 冒泡排序算法的运作如下：  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。">
+<meta name="keywords" content="前端,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在维基百科学数组排序">
+<meta property="og:url" content="http://yoursite.com/2019/05/25/数组排序/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="在维基百科学数组排序1.冒泡排序对比相邻的两个数值顺序错了就会互换一遍一遍的走访知道不需要交换为止 冒泡排序算法的运作如下：  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Insertion-sort-example-300px.gif/220px-Insertion-sort-example-300px.gif">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-sort-example-300px.gif">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/4fc55753007cd3c18576f7933f6f089196732029">
+<meta property="og:updated_time" content="2019-05-25T12:46:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在维基百科学数组排序">
+<meta name="twitter:description" content="在维基百科学数组排序1.冒泡排序对比相邻的两个数值顺序错了就会互换一遍一遍的走访知道不需要交换为止 冒泡排序算法的运作如下：  比较相邻的元素。如果第一个比第二个大，就交换他们两个。 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 针对所有的元素重复以上的步骤，除了最后一个。 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数组排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在维基百科学数组排序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="在维基百科学数组排序"><a href="#在维基百科学数组排序" class="headerlink" title="在维基百科学数组排序"></a>在维基百科学数组排序</h1><h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><p>对比相邻的两个数值顺序错了就会互换一遍一遍的走访知道不需要交换为止</p>
+<p>冒泡排序算法的运作如下：</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<p>改进后的冒泡又叫鸡尾酒排序实例如下</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.cocktail_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i, left = <span class="number">0</span>, right = <span class="keyword">this</span>.length - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> temp;</span><br><span class="line">	<span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">		<span class="keyword">for</span> (i = left; i &lt; right; i++)</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>[i] &gt; <span class="keyword">this</span>[i + <span class="number">1</span>]) &#123;</span><br><span class="line">				temp = <span class="keyword">this</span>[i];</span><br><span class="line">				<span class="keyword">this</span>[i] = <span class="keyword">this</span>[i + <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">this</span>[i + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		right--;</span><br><span class="line">		<span class="keyword">for</span> (i = right; i &gt; left; i--)</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>[i - <span class="number">1</span>] &gt; <span class="keyword">this</span>[i]) &#123;</span><br><span class="line">				temp = <span class="keyword">this</span>[i];</span><br><span class="line">				<span class="keyword">this</span>[i] = <span class="keyword">this</span>[i - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">this</span>[i - <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		left++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2-插入排序"><a href="#2-插入排序" class="headerlink" title="2.插入排序"></a>2.插入排序</h2><p>由后往前扫描找到相应位置并插入，为了给插入值位置已排序值会不断的向后挪动</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Insertion-sort-example-300px.gif/220px-Insertion-sort-example-300px.gif" alt></p>
+<p><strong>举例：</strong></p>
+<p>Input: {5 2 4 6 1 3}。</p>
+<p>首先拿起第一张牌, 手上有 {5}。</p>
+<p>拿起第二张牌 2, 把 2 insert 到手上的牌 {5}, 得到 {2 5}。</p>
+<p>拿起第三张牌 4, 把 4 insert 到手上的牌 {2 5}, 得到 {2 4 5}。</p>
+<p>以此类推。</p>
+<h2 id="3-选择排序"><a href="#3-选择排序" class="headerlink" title="3.选择排序"></a>3.选择排序</h2><p>工作原理就是找到最小的存放在数组开头再找一个最大的放在数组末尾知道排序结束</p>
+<p>选择排序的优点就是如果那个数在正确的位置就不会移动</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt></p>
+<h2 id="4-递归排序也叫归并排序"><a href="#4-递归排序也叫归并排序" class="headerlink" title="4.递归排序也叫归并排序"></a>4.递归排序也叫归并排序</h2><p>简单来说就是把一个数组拆分为两份然后在把值分成对对比交换位置依次类推直到数组结束</p>
+<p>官方说法：归并操作（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
+<p>采用分治法:</p>
+<ul>
+<li>分割：递归地把当前序列平均分割成两半。</li>
+<li>整合：在保持元素顺序的同时将上一步得到的子序列整合到一起（归并）。</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-sort-example-300px.gif" alt></p>
+<h2 id="5-计数排序"><a href="#5-计数排序" class="headerlink" title="5.计数排序"></a>5.计数排序</h2><p>通俗地理解，例如有10个年龄不同的人，统计出有8个人的年龄比A小，那A的年龄就排在第9位，用这个方法可以得到其他每个人的位置，也就排好了序。当然，年龄有重复时需要特殊处理（保证稳定性），这就是为什么最后要反向填充目标数组，以及将每个数字的统计减去1</p>
+<p>计数排序不是<a href="https://zh.wikipedia.org/wiki/比较排序" target="_blank" rel="noopener">比较排序</a>，排序的速度快于任何比较排序算法。</p>
+<p>由于用来计数的数组{\displaystyle C}<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4fc55753007cd3c18576f7933f6f089196732029" alt=" C ">的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。例如：计数排序是用来排序0到100之间的数字的最好的算法，但是它不适合按字母顺序排序人名。但是，计数排序可以用在<a href="https://zh.wikipedia.org/wiki/基数排序" target="_blank" rel="noopener">基数排序</a>算法中，能够更有效的排序数据范围很大的数组。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/25/数组排序/" data-id="cjw3idwkd0013njfhmkib2bc0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/23/微信小程序学习mpvue框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">微信小程序学习mpvue框架</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      我的仓库 <a href="https://github.com/ragnar-document" target="_blank">Ragnar</a> 
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

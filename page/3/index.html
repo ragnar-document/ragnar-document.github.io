@@ -55,6 +55,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-使用vuepress搭建简易文档" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/使用vuepress搭建简易文档/">使用vuepress搭建简易文档</a>
+    </h1>
+  
+
+        <a href="/2019/04/26/使用vuepress搭建简易文档/" class="article-date">
+  <time datetime="2019-04-26T11:16:38.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h1 id="使用vuepress搭建简易文档📖"><a href="#使用vuepress搭建简易文档📖" class="headerlink" title="使用vuepress搭建简易文档📖"></a>使用vuepress搭建简易文档📖</h1><p>对于这个静态网站生成工具官方文档是真的看的令人抓🐔特别是语言逻辑上看的是十分痛苦，我是先看别人搭建过程然后再回头看官方文档的😂这样比较好理解，先人踩坑后人享福</p>
+<p>vuepress<a href="https://v1.vuepress.vuejs.org/" target="_blank" rel="noopener">官网</a> </p>
+<p>awesome <a href="https://github.com/ulivz/awesome-vuepress" target="_blank" rel="noopener">更多资源</a> 🎁</p>
+<p>这是我搭建好的文档 <a href="https://ragnar-document.github.io/vue-blog/" target="_blank" rel="noopener">follow me</a></p>
+<p>GitHub地址：<a href="https://github.com/ragnar-document/vue-blog" target="_blank" rel="noopener">👏👏欢迎提交issue</a></p>
+<h3 id="像数-1-2-3-一样容易！屁一堆坑好吧🙄️"><a href="#像数-1-2-3-一样容易！屁一堆坑好吧🙄️" class="headerlink" title="像数 1, 2, 3 一样容易！屁一堆坑好吧🙄️"></a>像数 1, 2, 3 一样容易！屁一堆坑好吧🙄️</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">⚠️ 注意先在Desktop中mkdir一个项目如何<span class="built_in">cd</span>进去才开始👇</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">❌ yarn global add vuepress <span class="comment"># 或者：npm install -g vuepress</span></span><br><span class="line">✌️ yarn global add vuepress@next <span class="comment"># 或者：npm install -g vuepress@next</span></span><br><span class="line"></span><br><span class="line">//第一个坑来了</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个 docs 文件夹</span></span><br><span class="line">mkdir docs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个 markdown 文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'# Hello VuePress!'</span> &gt; docs/README.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始写作</span></span><br><span class="line">npx vuepress dev docs</span><br></pre></td></tr></table></figure>
+<p>⚠️注意</p>
+<p>请确保你的 Node.js 版本 &gt;= 8.6。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">🔩在根目录文件配置你的package.json文件</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"docs:dev"</span>: <span class="string">"vuepress dev docs"</span>,</span><br><span class="line">    <span class="attr">"docs:build"</span>: <span class="string">"vuepress build docs"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置成功运行👇 ✅</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn docs:dev <span class="comment"># 或者：npm run docs:dev</span></span><br></pre></td></tr></table></figure>
+<p>配置目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── docs</span><br><span class="line">│   ├── .vuepress (可选的) 用于存放全局的配置、组件、静态资源等。</span><br><span class="line">│   │   ├── components (可选的) 该目录中的 Vue 组件将会被自动注册为全局组件。</span><br><span class="line">│   │   ├── theme (可选的) 用于存放本地主题。</span><br><span class="line">│   │   │   └── Layout.vue</span><br><span class="line">│   │   ├── public (可选的) 静态资源目录。</span><br><span class="line">│   │   ├── styles (可选的) 用于存放样式相关的文件。</span><br><span class="line">│   │   │   ├── index.styl</span><br><span class="line">│   │   │   └── palette.styl</span><br><span class="line">│   │   ├── templates (可选的, 谨慎配置) 存储 HTML 模板文件。</span><br><span class="line">│   │   │   ├── dev.html /用于开发环境的 HTML 模板文件。</span><br><span class="line">│   │   │   └── ssr.html /构建时基于 Vue SSR 的 HTML 模板文件。</span><br><span class="line">│   │   ├── config.js (可选的)  配置文件的入口文件，也可以是 YML 或 toml。</span><br><span class="line">│   │   └── enhanceApp.js (可选的) 客户端应用的增强。</span><br><span class="line">│   │ </span><br><span class="line">│   ├── README.md</span><br><span class="line">│   ├── guide</span><br><span class="line">│   │   └── README.md</span><br><span class="line">│   └── config.md</span><br><span class="line">│ </span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure>
+<h3 id="接下来我们开始填坑吧😂"><a href="#接下来我们开始填坑吧😂" class="headerlink" title="接下来我们开始填坑吧😂"></a>接下来我们开始填坑吧😂</h3><p>😡建议：vuepress能不能把结构生成📦 啊❕老天 简直步步惊心</p>
+<p>NO.1    <code>cd docs &amp;&amp; mkdir .vuepress</code></p>
+<p>NO.2     <code>cd .vuepress thouch config.js</code></p>
+<p>在config.js🀄️配置一下下面的代码好吧</p>
+<p>提前一起布置好吧：：如果你打算发布到 <code>https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;/</code>（也就是说你的仓库在 <code>https://github.com/&lt;USERNAME&gt;/&lt;REPO&gt;</code>），则将 <code>base</code> 设置为 <code>&quot;/&lt;REPO&gt;/&quot;</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  title: <span class="string">'Hello VuePress'</span>,</span><br><span class="line">  description: <span class="string">'Just playing around'</span></span><br><span class="line">  base: <span class="string">`/vue-blog/`</span>, <span class="comment">//配置你要放的仓库的路径或子路径文件名</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行起 dev server查看效果</p>
+<h3 id="我们先把它部署到GitHub-Pages先然后在细化它👌"><a href="#我们先把它部署到GitHub-Pages先然后在细化它👌" class="headerlink" title="我们先把它部署到GitHub Pages先然后在细化它👌"></a>我们先把它部署到GitHub Pages先然后在细化它👌</h3><p>查看一下根目录的package.json🈶️🌲🈶️下面的这段代码</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"docs:dev"</span>: <span class="string">"vuepress dev docs"</span>,</span><br><span class="line">    <span class="attr">"docs:build"</span>: <span class="string">"vuepress build docs"</span>,</span><br><span class="line">    <span class="attr">"d"</span>: <span class="string">"bash deploy.sh"</span> //顺便把这个也配置了吧 这个是部署 npm run d</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>🈶️的话下一步了哦 </p>
+<p>在根目录下生成<code>thouch deploy.sh</code></p>
+<ol>
+<li>在你的项目中，创建一个如下的 <code>deploy.sh</code> 文件（请自行判断去掉高亮行的注释）: </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 确保脚本抛出遇到的错误</span></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">npm run docs:build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入生成的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> docs/.vuepress/dist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果是发布到自定义域名</span></span><br><span class="line"><span class="comment"># echo 'www.example.com' &gt; CNAME</span></span><br><span class="line"></span><br><span class="line">git init</span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">'deploy'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io</span></span><br><span class="line"><span class="comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git master</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;</span></span><br><span class="line"><span class="comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+<p>—与官网一致</p>
+<ol>
+<li>在你项目的根目录下创建一个名为 <code>.gitlab-ci.yml</code> 的文件，无论何时你提交了更改，它都会帮助你自动构建和部署：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image:</span> <span class="attr">node:9.11.1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pages:</span></span><br><span class="line"><span class="attr"> cache:</span></span><br><span class="line"><span class="attr">   paths:</span></span><br><span class="line"><span class="bullet">   -</span> <span class="string">node_modules/</span></span><br><span class="line"></span><br><span class="line"><span class="attr"> script:</span></span><br><span class="line"><span class="bullet"> -</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="bullet"> -</span> <span class="string">npm</span> <span class="string">run</span> <span class="attr">docs:build</span></span><br><span class="line"><span class="attr"> artifacts:</span></span><br><span class="line"><span class="attr">   paths:</span></span><br><span class="line"><span class="bullet">   -</span> <span class="string">public</span></span><br><span class="line"><span class="attr"> only:</span></span><br><span class="line"><span class="bullet"> -</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>基本上按照以上步骤走的话是没问题的如果🈶️疏漏欢迎👏给我提issue以免误导他人</p>
+<p>—原创—</p>
+<p>阿龙的vuepress文档</p>
+<p><a href="https://github.com/ragnar-document/vue-blog/issues" target="_blank" rel="noopener">⚠️    提意见    ⚠️</a></p>
+<p>欢迎收看，但愿没没浪费你宝贵的时间～～</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/04/26/使用vuepress搭建简易文档/" data-id="cjw3idwk3000tnjfhsoo3n6yc" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuepress/">vuepress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Vue基础2.0x笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -116,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjw0o538r000ez6fh00zg5nvv" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjw3idwjt000onjfhfmuwqxzi" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -165,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/Vue-router 基础1.0X/" data-id="cjw0o538j000bz6fh4nlbliqz" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/24/Vue-router 基础1.0X/" data-id="cjw3idwj5000cnjfhmkd17rwc" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -286,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/关于Js循环操作/" data-id="cjw0o53es004jz6fhofxs2ye4" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/24/关于Js循环操作/" data-id="cjw3idwmv004pnjfh8xqc4bba" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -352,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/滚动吸顶的方法/" data-id="cjw0o53ee004gz6fhmiblp1lb" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/24/滚动吸顶的方法/" data-id="cjw3idwko0019njfhzxb1y531" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -401,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue实例/" data-id="cjw0o539d000oz6fh4809nbu1" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue实例/" data-id="cjw3idwjk000jnjfhxwz5b18t" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -451,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue初体验/" data-id="cjw0o538n000cz6fhuzk7fj6n" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue初体验/" data-id="cjw3idwkt001enjfhjblxh325" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -609,7 +685,7 @@ ref : 标识某个标签
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue向导/" data-id="cjw0o538y000hz6fh1ldr0vfd" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue向导/" data-id="cjw3idwjg000gnjfh9poxjt1d" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -667,7 +743,7 @@ ref : 标识某个标签
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/22/闪亮登场/" data-id="cjw0o53ec004fz6fhinwjpbvk" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/22/闪亮登场/" data-id="cjw3idwkr001bnjfhjf165nqq" class="article-share-link">Share</a>-->
       
       
     </footer>
