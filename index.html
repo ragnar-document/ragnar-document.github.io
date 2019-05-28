@@ -55,6 +55,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Javascript瀑布流布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/28/Javascript瀑布流布局/">Javascript瀑布流布局</a>
+    </h1>
+  
+
+        <a href="/2019/05/28/Javascript瀑布流布局/" class="article-date">
+  <time datetime="2019-05-28T13:32:04.000Z" itemprop="datePublished">2019-05-28</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="Javascript瀑布流布局"><a href="#Javascript瀑布流布局" class="headerlink" title="Javascript瀑布流布局"></a>Javascript瀑布流布局</h2><p>因为在许多app还有图片软件看见这种参差不齐的效果有点好奇所以百度看了一下如何实现，有些人使用css3的栅格化布局实现。我这次学习的是使用js实现瀑布流布局</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>计算每一列项目高度</p>
+<p>对比每一项找到最小一项</p>
+<p>把图片动态的插入到最小一项上</p>
+<p>再次计算图片高度进行插值</p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/pubuliu.png?raw=true" alt></p>
+<h3 id="基本Html"><a href="#基本Html" class="headerlink" title="基本Html"></a>基本Html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>template<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"index.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">id</span>=<span class="string">"line1"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/3.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/4.jpg"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">id</span>=<span class="string">"line2"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/5.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/6.jpg"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">id</span>=<span class="string">"line3"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/9.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/10.jpg"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">id</span>=<span class="string">"line4"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/3.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/5.jpg"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>img标签只是为了初步展示数据完成后可以删除</p>
+<h3 id="找到最小值项目"><a href="#找到最小值项目" class="headerlink" title="找到最小值项目"></a>找到最小值项目</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mindDiv = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">let</span> [line1,line2,line3,line4] = [</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'line1'</span>),</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'line2'</span>),</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'line3'</span>),</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'line4'</span>)]</span><br><span class="line">	<span class="keyword">let</span> [lineImg_1,lineImg_2,lineImg_3,lineImg_4] = [</span><br><span class="line">    line1.children,</span><br><span class="line">    line2.children,</span><br><span class="line">    line3.children,</span><br><span class="line">    line4.children]</span><br><span class="line">	<span class="keyword">let</span> [lineHeight1,lineHeight2,lineHeight3,lineHeight4] = [</span><br><span class="line">    computer(lineImg_1),</span><br><span class="line">    computer(lineImg_2),</span><br><span class="line">    computer(lineImg_3),</span><br><span class="line">    computer(lineImg_4)]</span><br><span class="line">	</span><br><span class="line">  <span class="keyword">let</span> minHeight = <span class="built_in">Math</span>.min(lineHeight1,lineHeight2,lineHeight3,lineHeight4)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (minHeight == lineHeight1) &#123;</span><br><span class="line">		<span class="keyword">return</span> line1</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (minHeight == lineHeight2) &#123;</span><br><span class="line">		<span class="keyword">return</span> line2</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (minHeight == lineHeight3) &#123;</span><br><span class="line">		<span class="keyword">return</span> line3</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (minHeight == lineHeight4) &#123;</span><br><span class="line">		<span class="keyword">return</span> line4</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用了ES6的数组的解构赋值 具体文档<a href="http://caibaojian.com/es6/destructuring.html" target="_blank" rel="noopener">http://caibaojian.com/es6/destructuring.html</a></p>
+<h3 id="计算项目高度"><a href="#计算项目高度" class="headerlink" title="计算项目高度"></a>计算项目高度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> computer =<span class="function">(<span class="params">lineImg</span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (lineImg == <span class="literal">null</span> || lineImg.length == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> height = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lineImg.length; i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> img = lineImg[i];</span><br><span class="line">			<span class="keyword">var</span> h = img.height;</span><br><span class="line">			height += h;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> height</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><p>监听窗口变化超过设定高度就再次执行加载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">	insertImg();</span><br><span class="line">	<span class="built_in">window</span>.document.addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">document</span>.documentElement.scrollTop + <span class="built_in">window</span>.screen.height &gt; <span class="built_in">document</span>.documentElement.scrollHeight) &#123;</span><br><span class="line">			windowHeight += <span class="number">500</span>;</span><br><span class="line">			insertImg()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> insertImg = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> inter = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">document</span>.documentElement.scrollHeight &gt; windowHeight) &#123;</span><br><span class="line">			clearInterval(inter)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> mDiv =  mindDiv();</span><br><span class="line">		imgId ++;</span><br><span class="line">		<span class="keyword">if</span> (imgId &gt; <span class="number">10</span>) &#123;</span><br><span class="line">			imgId = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">		img.setAttribute(<span class="string">"src"</span>,<span class="string">"img/"</span> + imgId + <span class="string">".jpg"</span>)</span><br><span class="line">		mDiv.appendChild(img);</span><br><span class="line">	&#125;,<span class="number">100</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/28/Javascript瀑布流布局/" data-id="cjw7ueudi000n0sfhn1mifm9h" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数组排序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -114,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/25/数组排序/" data-id="cjw3idwkd0013njfhmkib2bc0" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/25/数组排序/" data-id="cjw7ueueg001e0sfh4ohv7rmw" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -183,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/23/微信小程序学习mpvue框架/" data-id="cjw3idwk7000ynjfhwawd32dk" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/23/微信小程序学习mpvue框架/" data-id="cjw7ueudx000z0sfhpuu5tkgt" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/美团技术团队/">美团技术团队</a></li></ul>
@@ -260,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjw3idwid0004njfhycr5oxxj" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范命名规则/" data-id="cjw7ueuea00190sfhozt27b3y" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -311,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjw3idwi10002njfhjxwpd5bv" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjw7ueub200010sfhtagphs3l" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -374,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjw3idwjq000nnjfhj3g43x01" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjw7ueudf000m0sfhkgw9qq9i" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -436,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjw3idwj1000bnjfh1g4o0lki" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjw7ueubn00080sfh1yq5jl28" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -509,7 +560,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjw3idwk5000vnjfh8pn3wjum" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjw7ueudo000s0sfhlyakk1e9" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实例/">实例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -754,7 +805,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjw3idwka0010njfh86n4x7t9" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjw7ueue000120sfh9bkqzerf" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvn/">mvvn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -812,71 +863,10 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjw3idwif0005njfhpyt56m3m" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjw7ueubb00030sfho52hmtlq" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画效果/">动画效果</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-卡梅龙Chameleon体验" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/卡梅龙Chameleon体验/">卡梅龙Chameleon体验</a>
-    </h1>
-  
-
-        <a href="/2019/05/09/卡梅龙Chameleon体验/" class="article-date">
-  <time datetime="2019-05-09T13:13:00.000Z" itemprop="datePublished">2019-05-09</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="卡梅龙Chameleon体验"><a href="#卡梅龙Chameleon体验" class="headerlink" title="卡梅龙Chameleon体验"></a>卡梅龙Chameleon体验</h1><blockquote>
-<h4 id="快速阅读了一下官网的快速上手发现语法和vue超级像所以决定在学vue的同时了解一下同类产品，这是一款一套代码多端同步的框架和vue一样都是mvvn，下载和安装都比较简单，语法和vue基本一致只是多了许多自建内容这是正常操作例如：v-for那么卡梅龙的就是c-for它们都是把自己英文首字母作为标签名前缀使用，这里只做相关简单介绍"><a href="#快速阅读了一下官网的快速上手发现语法和vue超级像所以决定在学vue的同时了解一下同类产品，这是一款一套代码多端同步的框架和vue一样都是mvvn，下载和安装都比较简单，语法和vue基本一致只是多了许多自建内容这是正常操作例如：v-for那么卡梅龙的就是c-for它们都是把自己英文首字母作为标签名前缀使用，这里只做相关简单介绍" class="headerlink" title="快速阅读了一下官网的快速上手发现语法和vue超级像所以决定在学vue的同时了解一下同类产品，这是一款一套代码多端同步的框架和vue一样都是mvvn，下载和安装都比较简单，语法和vue基本一致只是多了许多自建内容这是正常操作例如：v-for那么卡梅龙的就是c-for它们都是把自己英文首字母作为标签名前缀使用，这里只做相关简单介绍"></a>快速阅读了一下官网的快速上手发现语法和vue超级像所以决定在学vue的同时了解一下同类产品，这是一款一套代码多端同步的框架和vue一样都是mvvn，下载和安装都比较简单，语法和vue基本一致只是多了许多自建内容这是正常操作例如：<code>v-for</code>那么卡梅龙的就是<code>c-for</code>它们都是把自己英文首字母作为标签名前缀使用，这里只做相关简单介绍</h4></blockquote>
-<h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a><strong>运行环境</strong></h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node</a> &gt;= 8.10.0 npm &gt;= 5.6.0</p>
-<h3 id="全局安装chameleon-tool构建工具"><a href="#全局安装chameleon-tool构建工具" class="headerlink" title="全局安装chameleon-tool构建工具"></a>全局安装chameleon-tool构建工具</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g chameleon-tool</span><br></pre></td></tr></table></figure>
-<p>不支持第三方包管理器下载,tuchc</p>
-<h4 id="创建项目与启动"><a href="#创建项目与启动" class="headerlink" title="创建项目与启动"></a>创建项目与启动</h4><ul>
-<li>执行 <code>cml init project</code></li>
-<li>输入项目名称</li>
-<li>等待自动执行 npm install 依赖</li>
-<li>切换到项目根目录执行<code>cml dev</code></li>
-</ul>
-<p>创建好后会自动跳转到页面</p>
-<p><img src="https://cmljs.org/doc/assets/home2.png" alt></p>
-<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── chameleon.config.js                 // 项目的配置文件</span><br><span class="line">├── dist                                // 打包产出目录</span><br><span class="line">  ├── alipay                            // 支付宝小程序代码</span><br><span class="line">  ├── baidu                             // 百度小程序代码</span><br><span class="line">  ├── wx                                // 微信小程序代码</span><br><span class="line">├── mock                                // 模拟数据目录</span><br><span class="line">├── node_modules                        // npm包依赖</span><br><span class="line">├── package.json</span><br><span class="line">└── src                                 // 项目源代码</span><br><span class="line">    ├── app                             // app启动入口</span><br><span class="line">    ├── components                      // 组件文件夹</span><br><span class="line">    ├── pages                           // 页面文件夹</span><br><span class="line">    ├── router.config.json              // 路由配置</span><br><span class="line">    └── store                           // 全局状态管理</span><br></pre></td></tr></table></figure>
-<p>总体来说这结构和我们之前到vue呢还有node的结构很像很熟悉所以我们会很快适应</p>
-<h3 id="创建新页面"><a href="#创建新页面" class="headerlink" title="创建新页面"></a>创建新页面</h3><p>在项目根目录下执行<code>cml init page</code>输入页面名称回车即可生产页面到<code>src/pages/first-page/first-page.cml</code></p>
-<p>创建成功提示：[INFO] init page home success!</p>
-<p>它是一个单独的文件夹包含文件</p>
-<h3 id="创建及引用组件"><a href="#创建及引用组件" class="headerlink" title="创建及引用组件"></a>创建及引用组件</h3><p>项目根目录下  执行 <code>cml init component</code>，选择<code>Normal component</code>,输入 first-com， 回车，即可生成文件<code>components/first-com/first-com.cml</code>。 组件也是 cml 文件  结构上与页面相同。</p>
-<p>拷贝如下代码到<code>first-com.cml</code></p>
-<h3 id="数据绑定演示"><a href="#数据绑定演示" class="headerlink" title="数据绑定演示"></a>数据绑定演示</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 数据绑定与计算属性 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"class1"</span>&gt;</span>&#123;&#123; message2 &#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 条件与循环渲染 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">c-if</span>=<span class="string">"&#123;&#123;showlist&#125;&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span></span></span><br><span class="line"><span class="tag">        <span class="attr">c-for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">c-for-index</span>=<span class="string">"idx"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">c-for-item</span>=<span class="string">"itemName"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">c-key</span>=<span class="string">"city"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span>&gt;</span> &#123;&#123;idx&#125;&#125;: &#123;&#123;itemName.city&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 事件绑定 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">c-bind:tap</span>=<span class="string">"changeShow"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>切换展示<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>更多请移步官网</p>
-<p><a href="https://cml.js.org/doc/quick_start/quick_start.html" target="_blank" rel="noopener">https://cml.js.org/doc/quick_start/quick_start.html</a></p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjw3idwki0014njfhpu44m2u5" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chameleon/">Chameleon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架/">前端框架</a></li></ul>
 
     </footer>
   </div>
