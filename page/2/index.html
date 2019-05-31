@@ -55,6 +55,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Css3之探索动画效果" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/10/Css3之探索动画效果/">CSS3之探索动画效果</a>
+    </h1>
+  
+
+        <a href="/2019/05/10/Css3之探索动画效果/" class="article-date">
+  <time datetime="2019-05-10T03:14:02.000Z" itemprop="datePublished">2019-05-10</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="Css3之探索动画效果"><a href="#Css3之探索动画效果" class="headerlink" title="Css3之探索动画效果"></a>Css3之探索动画效果</h2><p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/waterfont.png?raw=true" alt></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>动态让water向右流动</p>
+<p>我们需要用到css属性那就是动画<code>@keyframes</code>关键帧</p>
+<p><code>@keyframes</code> 规则通过在动画序列中定义关键帧（或waypoints）的样式来控制CSS动画序列中的中间步骤。这比<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions" target="_blank" rel="noopener">转换</a>更能控制动画序列的中间步骤。</p>
+<p>如何使用</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> slidein &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300%</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">0%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键帧必须和动画属性<code>animation</code>配合使用</p>
+<ol>
+<li>Animation-name: none(起始值) slide(平滑) bounce(弹跳)</li>
+<li>Animation-delay: 250ms/2s/时间属性    延时作用</li>
+<li>Animation-direction: normal <a href="https://developer.mozilla.org/en-US/docs/CSS/Value_definition_syntax#Single_bar" target="_blank" rel="noopener">|</a> reverse <a href="https://developer.mozilla.org/en-US/docs/CSS/Value_definition_syntax#Single_bar" target="_blank" rel="noopener">|</a> alternate <a href="https://developer.mozilla.org/en-US/docs/CSS/Value_definition_syntax#Single_bar" target="_blank" rel="noopener">|</a> alternate-reverse <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction" target="_blank" rel="noopener">演示</a></li>
+<li>左向右一次就重置 / 右向左一次就重置 / 左右来回第一次向前 / 左右来回第一次向后</li>
+<li>Animation-duration: ms-s    动画完成一个循环所需的持续时间该值必须为正或零，并且该单位是必需的</li>
+<li>Animation-iteration-count: 动画播放次数设置</li>
+</ol>
+<h4 id="在这个例子中我们需要让背景图自动动起来并且重复运动"><a href="#在这个例子中我们需要让背景图自动动起来并且重复运动" class="headerlink" title="在这个例子中我们需要让背景图自动动起来并且重复运动"></a>在这个例子中我们需要让背景图自动动起来并且重复运动</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这是波动文字的例子*/</span></span><br><span class="line"><span class="selector-tag">animation</span>: <span class="selector-tag">wave</span> 30<span class="selector-tag">s</span> <span class="selector-tag">linear</span> <span class="selector-tag">infinite</span>;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> wave&#123;</span><br><span class="line">		    <span class="selector-tag">from</span>&#123;</span><br><span class="line">		        <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="selector-tag">to</span>&#123;</span><br><span class="line">		        <span class="attribute">background-position</span>: <span class="number">1000px</span> <span class="number">0</span>;</span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过改变背景图的位置来制作移动效果</p>
+<h3 id="文字逐一flash效果"><a href="#文字逐一flash效果" class="headerlink" title="文字逐一flash效果"></a>文字逐一flash效果</h3><p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/flash.png?raw=true" alt></p>
+<h4 id="我们使用animation-delay-通过对每一个字母的延迟展示制作出逐步闪烁效果"><a href="#我们使用animation-delay-通过对每一个字母的延迟展示制作出逐步闪烁效果" class="headerlink" title="我们使用animation-delay 通过对每一个字母的延迟展示制作出逐步闪烁效果"></a>我们使用animation-delay 通过对每一个字母的延迟展示制作出逐步闪烁效果</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">			<span class="attribute">font-family</span>: fira code;</span><br><span class="line">			<span class="attribute">font-size</span>: <span class="number">10em</span>;</span><br><span class="line">			<span class="attribute">filter</span>:<span class="built_in">blur</span>(2px);</span><br><span class="line">			<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">			<span class="attribute">animation</span>: animate <span class="number">2.5s</span> linear infinite;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">0s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">0.25s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">0.5s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(4)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">0.75s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(5)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">1s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">span</span><span class="selector-pseudo">:nth-child(6)</span>&#123;</span><br><span class="line">		    <span class="attribute">animation-delay</span>: <span class="number">1.25s</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		@<span class="keyword">keyframes</span> animate&#123;</span><br><span class="line">		    0%,100%&#123;</span><br><span class="line">		        <span class="attribute">filter</span>: <span class="built_in">blur</span>(2px);</span><br><span class="line">		        <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">		        <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">#1e90ff</span>,</span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#1e90ff</span>,  </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">30px</span> <span class="number">#1e90ff</span>,  </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">40px</span> <span class="number">#1e90ff</span>,        </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">100px</span> <span class="number">#1e90ff</span>,  </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span> <span class="number">#1e90ff</span>,  </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">300px</span> <span class="number">#1e90ff</span>,  </span><br><span class="line">		        <span class="number">0</span> <span class="number">0</span> <span class="number">400px</span> <span class="number">#1e90ff</span>;</span><br><span class="line">		    &#125;</span><br><span class="line">		    5%,95%&#123;</span><br><span class="line">		        <span class="attribute">filter</span>: <span class="built_in">blur</span>(0px);</span><br><span class="line">		        <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line"></span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>项目地址：<a href="https://github.com/ragnar-document/Document-dish/tree/master/images/css%2Bhtml" target="_blank" rel="noopener">CSS + HTML</a></p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjwc3gwva0007gsfhk2nst1kn" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画效果/">动画效果</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-卡梅龙Chameleon体验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -104,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjw7ueue200130sfht3sq0c28" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjwc3gwxc0014gsfhynxjf9dr" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chameleon/">Chameleon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架/">前端框架</a></li></ul>
@@ -188,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjw7ueue700170sfhhteqbynx" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjwc3gwxr001dgsfhzngmopnr" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
@@ -311,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/06/逐步实现Node.js+express增删改查一/" data-id="cjw7ueue500140sfh38jdtads" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/06/逐步实现Node.js+express增删改查一/" data-id="cjwc3gwxj0018gsfhtnca6t6v" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
@@ -406,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/05/Es6之Set数据结构/" data-id="cjw7ueubk00070sfhllrd3t47" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/05/Es6之Set数据结构/" data-id="cjwc3gwuw0003gsfh6qegnp8a" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -488,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/03/demo-2-element/" data-id="cjw7ueudv000x0sfhgjw29g6i" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/03/demo-2-element/" data-id="cjwc3gwx7000ygsfh7xbjslyp" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件/">组件</a></li></ul>
@@ -570,7 +628,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/03/demo-1-grid/" data-id="cjw7ueuds000u0sfhxwkcedty" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/03/demo-1-grid/" data-id="cjwc3gwwz000rgsfh53d4rhsg" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -623,7 +681,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/02/VUE笔记生命周期/" data-id="cjw7ueubr000a0sfhrp8rekht" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/02/VUE笔记生命周期/" data-id="cjwc3gwww000ngsfh3qmbdx5g" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -715,7 +773,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjw7ueubd00040sfh6q6lusts" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjwc3gwvc0008gsfh7a2fcuzh" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -795,114 +853,10 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjw7ueubi00050sfhq5xrr9ss" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjwc3gwv00004gsfhi19amxif" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue生态系统之___Vuex插件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/28/Vue生态系统之___Vuex插件/">通过简单计数器学习Vuex</a>
-    </h1>
-  
-
-        <a href="/2019/04/28/Vue生态系统之___Vuex插件/" class="article-date">
-  <time datetime="2019-04-28T11:58:20.000Z" itemprop="datePublished">2019-04-28</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="通过简单计数器学习Vuex"><a href="#通过简单计数器学习Vuex" class="headerlink" title="通过简单计数器学习Vuex"></a>通过简单计数器学习Vuex</h1><p>GIThub vuex实例 🐱 简单计数器案例<br><a href="https://github.com/ragnar-document/Vuex_demo" target="_blank" rel="noopener">https://github.com/ragnar-document/Vuex_demo</a></p>
-<h4 id="Vuex是啥❓"><a href="#Vuex是啥❓" class="headerlink" title="Vuex是啥❓"></a>Vuex是啥❓</h4><p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。简单来说就像一个超级商店里面有许多你需要的的东西。每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器</p>
-<p>Vuex使用单一状态🌲</p>
-<h4 id="重点词汇-🏁"><a href="#重点词汇-🏁" class="headerlink" title="重点词汇 🏁"></a>重点词汇 🏁</h4><ul>
-<li><p><strong>state</strong>（状态/steit/）驱动应用的数据源；每个应用将仅仅包含一个 store 实例</p>
-</li>
-<li><p><strong>mutation</strong>  改变 你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地<strong>提交 (commit)</strong> </p>
-</li>
-<li><p><strong>getters</strong>  获取</p>
-</li>
-<li><p><strong>commit</strong> 指派修改 例：store.commit(‘item’) 通过指派任务触发mutation中的事件</p>
-</li>
-<li><p><strong>modules</strong> 模块</p>
-</li>
-<li><p><strong>methods</strong> 方法</p>
-</li>
-<li><p><strong>view</strong>，以声明方式将 <strong>state</strong> 映射到视图；</p>
-</li>
-<li><p><strong>actions</strong>，响应在 <strong>view</strong> 上的用户输入导致的状态变化。</p>
-</li>
-<li><p><strong>computed</strong>  计算属性</p>
-</li>
-<li><p><strong>dispatch</strong> 分派</p>
-</li>
-<li><p><strong>mapstate</strong> 辅助函数 为了减少声明帮我们生成计算属性</p>
-<p><img src="https://vuex.vuejs.org/vuex.png" alt></p>
-</li>
-</ul>
-<p>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。</p>
-<p>什么情况使用？？不用想肯定是麻烦大型的单页应用才使用吧要不然要你何用😂直接使用store模式就👌了</p>
-<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p>有木有熟悉的味道？？？ 我们已经见过很多次了import将下载好的vuex引入并use使用它</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//新建store文件夹📁存放//在store.js中引入</span><br><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import Vuex from &apos;vuex&apos;;</span><br><span class="line">import Index from &apos;./index&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br></pre></td></tr></table></figure>
-<p>main.js中引入以下文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line">import router from &apos;./router&apos;;</span><br><span class="line">import store from &apos;./store/store&apos;;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  render: h =&gt; h(App),</span><br><span class="line">&#125;).$mount(&apos;#app&apos;);</span><br></pre></td></tr></table></figure>
-<p>首先我们需要知道我们需要在页面上使用字符模版<code></code>把内容渲染出去</p>
-<h3 id="创建store"><a href="#创建store" class="headerlink" title="创建store"></a>创建<code>store</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">	state:&#123;</span><br><span class="line">		count:0</span><br><span class="line">	&#125;,</span><br><span class="line">	mutations:&#123;</span><br><span class="line">		increment(state)&#123;</span><br><span class="line">			state.count ++</span><br><span class="line">		&#125;,</span><br><span class="line">		decrement(state)&#123;</span><br><span class="line">      state.count --</span><br><span class="line">    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>好的我们创建好这个以后就可以开始使用了</p>
-<p>为了能看见它能➕能➖我们是否还需要两个button来控制一下呢？</p>
-<p>当然我们需要所以我们在组件helloworld🀄️添加上两个按键一个是increment另一个是decrement</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;hello&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;increment&quot;&gt;+&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;decrement&quot;&gt;-&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-<p>完成了吗？不我们还差最后一步工作就是在组件中引用这两个方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  increment()&#123;</span><br><span class="line">      //可以不加也能调用</span><br><span class="line">      //this.$store.commit(&apos;increment&apos;)</span><br><span class="line">      //this.increment</span><br><span class="line">      // this.myIncrement</span><br><span class="line">  &#125;,</span><br><span class="line">  decrement()&#123;</span><br><span class="line">      //this.$store.commit(&apos;decrement&apos;)</span><br><span class="line">      //this.decrement</span><br><span class="line">      // this.myDecrement</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面四种方法都可以做到控制加减变化我们可以根据情况来具体使用</p>
-<h2 id="接着我们介绍一下Action"><a href="#接着我们介绍一下Action" class="headerlink" title="接着我们介绍一下Action"></a>接着我们介绍一下Action</h2><ul>
-<li>Action 提交的是 mutation，而不是直接变更状态。</li>
-<li>Action 可以包含任意异步操作。</li>
-</ul>
-<p>我们注册一个</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">   myIncrease(context)&#123;</span><br><span class="line">     context.commit(&apos;increment&apos;)</span><br><span class="line">   &#125;,</span><br><span class="line">   myDecrement(context)&#123;</span><br><span class="line">     context.commit(&apos;decrement&apos;)</span><br><span class="line">   &#125;,</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-<p>我们可以调用context.getters提交  </p>
-<p>我们可以使用action做简单的逻辑操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//helloworl.vue中引入</span><br><span class="line">//创建组件方法分发 action</span><br><span class="line">//传入两种方法</span><br><span class="line">methods:&#123;</span><br><span class="line">  ...mapActions([&apos;myIncrement&apos;,&apos;myDecrement&apos;])</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h4 id="在组件中分发action详解"><a href="#在组件中分发action详解" class="headerlink" title="在组件中分发action详解"></a>在组件中分发action详解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapActions &#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  // ...</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapActions([</span><br><span class="line">      &apos;increment&apos;, // 将 `this.increment()` 映射为 			`this.$store.dispatch(&apos;increment&apos;)`</span><br><span class="line"></span><br><span class="line">      // `mapActions` 也支持载荷：</span><br><span class="line">      &apos;incrementBy&apos; // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch(&apos;incrementBy&apos;, amount)`</span><br><span class="line">    ]),</span><br><span class="line">    ...mapActions(&#123;</span><br><span class="line">      add: &apos;increment&apos; // 将 `this.add()` 映射为 `this.$store.dispatch(&apos;increment&apos;)`</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>还有一个getters放到后面因为使用比较简洁我们注册一个getters</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//在store中注册</span><br><span class="line">  getters:&#123;</span><br><span class="line">    myCount(state)&#123;</span><br><span class="line">      return `hi ~ $&#123;state.count&#125;`</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">// 在app.vue中注入</span><br><span class="line">  import &#123;mapGetters&#125; from &apos;vuex&apos;</span><br><span class="line">  export default &#123;</span><br><span class="line">  computed:&#123;</span><br><span class="line">    ...mapGetters([&apos;myCount&apos;])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Modeule模块"><a href="#Modeule模块" class="headerlink" title="Modeule模块"></a>Modeule模块</h3><p>当内容相当多的时候代码会相当臃肿复杂所以我们需要将它插分为模块</p>
-<p>官方实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">store.state.a // -&gt; moduleA 的状态</span><br></pre></td></tr></table></figure>
-<p>单独页面引入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import Index from &apos;./index&apos;</span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules:&#123;</span><br><span class="line">    Index</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
-<p>还有最后<code></code> 的指向问题就是分离模块后指向错所以不能得到正确数据无法渲染所以我们需要为count重新指向</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">      count: state =&gt; &#123;</span><br><span class="line">        return state.Index.count</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="更多补充"><a href="#更多补充" class="headerlink" title="更多补充"></a>更多补充</h3><h4 id="mapState"><a href="#mapState" class="headerlink" title="mapState"></a><a href="https://vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">mapState</a></h4><p>为组件创建计算属性以返回 Vuex store 中的状态。</p>
-<h4 id="mapGetters"><a href="#mapGetters" class="headerlink" title="mapGetters"></a><a href="https://vuex.vuejs.org/zh/guide/getters.html#mapgetters-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">mapGetters</a></h4><p>为组件创建计算属性以返回 getter 的返回值。</p>
-<h4 id="mapActions"><a href="#mapActions" class="headerlink" title="mapActions"></a><a href="https://vuex.vuejs.org/zh/guide/actions.html#%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%88%86%E5%8F%91-action" target="_blank" rel="noopener">mapActions</a></h4><p>创建组件方法分发 action。</p>
-<h4 id="mapMutations"><a href="#mapMutations" class="headerlink" title="mapMutations"></a><a href="https://vuex.vuejs.org/zh/guide/mutations.html#%E5%9C%A8%E7%BB%84%E4%BB%B6%E4%B8%AD%E6%8F%90%E4%BA%A4-mutation" target="_blank" rel="noopener">mapMutations</a></h4><p>创建组件方法提交 mutation</p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/" data-id="cjw7ueudk000p0sfhnklvxn1g" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/">vuex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </footer>
   </div>
@@ -915,7 +869,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
