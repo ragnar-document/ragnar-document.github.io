@@ -55,6 +55,141 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-demo-1-grid" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/03/demo-1-grid/">Bootstrap入门</a>
+    </h1>
+  
+
+        <a href="/2019/05/03/demo-1-grid/" class="article-date">
+  <time datetime="2019-05-03T03:04:30.000Z" itemprop="datePublished">2019-05-03</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>Bootstrap的网格系统使用一系列容器，行和列来布局和对齐内容。它采用<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener">flexbox</a>构建，完全响应。</p>
+<p>下面是他的属性值</p>
+<table>
+<thead>
+<tr>
+<th>超小 &lt;576px</th>
+<th>小 &gt;=576px</th>
+<th>中等 &gt;=769px</th>
+<th>大 &gt;=992</th>
+<th>超大 &gt;=1200px</th>
+<th>12列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动</td>
+<td>540px</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>最大</td>
+</tr>
+<tr>
+<td>.col-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+<td>.col-xl-</td>
+<td>前缀</td>
+</tr>
+</tbody>
+</table>
+<p><code>.col</code>不填属性就是等宽，后面可以跟数字定宽    例如：<code>.col-1\.col-2\....等至12</code></p>
+<p>利用特定于断点的列类，可以轻松地进行列大小调整，而无需使用明确的编号类<code>.col-sm-6</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="container"&gt;</span><br><span class="line">  &lt;div class="row"&gt;</span><br><span class="line">    &lt;div class="col-sm"&gt;	// 可替换 上面第三行内容</span><br><span class="line">      <span class="selector-tag">One</span> <span class="selector-tag">of</span> <span class="selector-tag">three</span> <span class="selector-tag">columns</span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="col-sm"&gt;</span><br><span class="line">      <span class="selector-tag">One</span> <span class="selector-tag">of</span> <span class="selector-tag">three</span> <span class="selector-tag">columns</span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="col-sm"&gt;</span><br><span class="line">      <span class="selector-tag">One</span> <span class="selector-tag">of</span> <span class="selector-tag">three</span> <span class="selector-tag">columns</span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="可变宽内容"><a href="#可变宽内容" class="headerlink" title="可变宽内容"></a>可变宽内容</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//例如</span><br><span class="line">&lt;div class="col col-lg-2"&gt;</span><br><span class="line">&lt;div class="col-md-auto"&gt;</span><br><span class="line">使用col-&#123;breakpoint&#125;-auto类根据内容的自然宽度调整列的大小。</span><br></pre></td></tr></table></figure>
+<h3 id="等宽多排"><a href="#等宽多排" class="headerlink" title="等宽多排"></a>等宽多排</h3><p>使用下面语句对内容进行分割类似于<code>&lt;br&gt;</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="w-100"&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="垂直对齐"><a href="#垂直对齐" class="headerlink" title="垂直对齐"></a>垂直对齐</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="row align-items-start"&gt; // 顶部对齐</span><br><span class="line">&lt;div class="row align-items-center"&gt; // 居中对齐</span><br><span class="line">&lt;div class="row align-items-end"&gt; // 底部对齐</span><br></pre></td></tr></table></figure>
+<h3 id="水平对齐"><a href="#水平对齐" class="headerlink" title="水平对齐"></a>水平对齐</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class="row justify-content-start"&gt; //左对齐</span><br><span class="line"> &lt;div class="row justify-content-center"&gt; //居中对齐</span><br><span class="line"> &lt;div class="row justify-content-end"&gt; //右对齐</span><br><span class="line"> &lt;div class="row justify-content-around"&gt; </span><br><span class="line">//两边对齐-类似flex的justify-content: space-around;</span><br><span class="line"> &lt;div class="row justify-content-between"&gt;</span><br><span class="line">//两边对齐-类似flex的justify-content: space-between;</span><br></pre></td></tr></table></figure>
+<h3 id="清除盒子margin与padding"><a href="#清除盒子margin与padding" class="headerlink" title="清除盒子margin与padding"></a>清除盒子margin与padding</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="row no-gutters"&gt;//在需要的地方添加no-gutters</span><br></pre></td></tr></table></figure>
+<h3 id="使用-order-类来控制内容的可视顺序。这些类是响应式的"><a href="#使用-order-类来控制内容的可视顺序。这些类是响应式的" class="headerlink" title="使用.order-类来控制内容的可视顺序。这些类是响应式的"></a>使用<code>.order-</code>类来控制内容的<strong>可视顺序</strong>。这些类是响应式的</h3><p><code>.order-1</code>～<code>.order-12</code> 这是控制元素出现的顺序，数字越大越靠后</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="col order-1"&gt; ~ &lt;div class="col order-12"&gt;</span><br><span class="line">//此外还有控制头尾顺序</span><br><span class="line">&lt;div class="col order-first"&gt; - &lt;div class="col order-last"&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="增加左边距"><a href="#增加左边距" class="headerlink" title="增加左边距"></a>增加左边距</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//使用.offset-md-*类将列向右移动。这些类按*列增加列的左边距</span><br><span class="line">&lt;div class="col-md-4 offset-md-4"&gt;.col-md-4 .offset-md-4&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/03/demo-1-grid/" data-id="cjwexiyqu0012bafh8v6c1oal" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-VUE笔记生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02/VUE笔记生命周期/">VUE笔记：生命周期</a>
+    </h1>
+  
+
+        <a href="/2019/05/02/VUE笔记生命周期/" class="article-date">
+  <time datetime="2019-05-02T05:42:29.000Z" itemprop="datePublished">2019-05-02</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="VUE笔记：生命周期"><a href="#VUE笔记：生命周期" class="headerlink" title="VUE笔记：生命周期"></a>VUE笔记：生命周期</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>vue中的生命周期通俗来说就和人一样吧！是一个事件发生的过程。</p>
+<p>一个人从受精卵 &gt;&gt; 胎儿 &gt;&gt; 出生 &gt;&gt;  儿童 &gt;&gt;  青年 &gt;&gt; 中年 &gt;&gt; 老年 &gt;&gt; 死亡。这就是一个人的变化也就叫生命周期</p>
+<p>本篇文章由三部分组成    <strong>/单词/官方实例/完整例子</strong>     组成；</p>
+<h4 id="单词学习"><a href="#单词学习" class="headerlink" title="单词学习"></a>单词学习</h4><p>Lifecycle  【 lain,saikl 】：生命周期，生活过程</p>
+<p>Events 【 i’vents 】: 事件，项目</p>
+<p>injections 【 ɪn’dʒɛkʃən 】注册，注射 💉</p>
+<p>reactivity  【,riæk’tivəti, ri:-】反应</p>
+<p>compile    【 kəm’paɪl 】编译</p>
+<p>mount      【 maʊnt 】增加 ，山峰⛰️</p>
+<p>teardown    【 ‘tεədaun 】拆卸</p>
+<p>destroyed  【 dis’trɔid 】 销毁</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>当你到了created以后数据才真正创建出来，如果我们在添加一个函数<code>beforeCreate</code>中进行调用,你会发现     <code>a is undefined</code>也就是这里的a还没有创建出来。至少要到<strong>created</strong>才能进行调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeCreate: <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt; "a is: 1"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/ragnar-document/Document-dish/blob/master/images/lifecycle.png?raw=true" alt></p>
+<h3 id="完整案例"><a href="#完整案例" class="headerlink" title="完整案例"></a>完整案例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">"button"</span> value=<span class="string">"Button"</span> @click=<span class="string">"msg='No'"</span>&gt;</span><br><span class="line">        &lt;h3 id=<span class="string">'h3'</span>&gt;&#123;&#123;msg&#125;&#125;&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(</span><br><span class="line">            &#123;</span><br><span class="line">                el: <span class="string">'#app'</span>,</span><br><span class="line">                data:&#123;</span><br><span class="line">                    msg:<span class="string">'ok'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                methods: &#123;</span><br><span class="line">                    show()&#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="string">'执行了'</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                beforeCreate() &#123;</span><br><span class="line">                    <span class="comment">//这是遇到的第一个生命周期函数表示实例完全会被创建出来，会执行</span></span><br><span class="line">                       <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)  <span class="comment">//这时候console会显示undefined</span></span><br><span class="line">                       <span class="keyword">this</span>.show()   <span class="comment">//this.show is not a method</span></span><br><span class="line">                       <span class="comment">//注意在beforeCreate生命周期函数执行的时候，data和methods中的数据都还没有被初始化</span></span><br><span class="line">                &#125;,</span><br><span class="line">                created() &#123;</span><br><span class="line">                    <span class="comment">//这是遇到的第二个生命周期函数</span></span><br><span class="line">                        <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span><br><span class="line">                        <span class="keyword">this</span>.show()</span><br><span class="line">                        <span class="comment">//在created中，data和methods都已经初始化好了</span></span><br><span class="line">                        <span class="comment">//如果要调用methods中的方法，最早只能在created中操作</span></span><br><span class="line">                        </span><br><span class="line">                &#125;,</span><br><span class="line">                beforeMount() &#123;</span><br><span class="line">                    <span class="comment">//这是遇到的第3个生命周期函数，表示模板已经编译完成，但是尚未把模板渲染到页面中去</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'h3'</span>).innerText)</span><br><span class="line">                    <span class="comment">//在beforeMount执行的时候，页面中的元素没有被真正替换过来，只是之前的一些模板字符串</span></span><br><span class="line">                    </span><br><span class="line">                &#125;,</span><br><span class="line">                mounted() &#123;</span><br><span class="line">                    <span class="comment">//这是遇到的第四个生命周期函数，表示内存中的模板，已经真实的挂载到了浏览器的页面中，用户已经看到了渲染好的页面</span></span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'h3'</span>).innerText)</span><br><span class="line">                    <span class="comment">//注意：mounted是实例创建中的最后一个生命周期函数，当执行完mounted，实例就完全被创建好了</span></span><br><span class="line">                &#125;,</span><br><span class="line">                beforeUpdate() &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'界面上元素的内容'</span>+<span class="built_in">document</span>.getElementById(<span class="string">'h3'</span>).innerText)</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'data中的msg数据是'</span>+<span class="keyword">this</span>.msg)</span><br><span class="line">                &#125;,</span><br><span class="line">                updated() &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'界面上元素的内容'</span> + <span class="built_in">document</span>.getElementById(<span class="string">'h3'</span>).innerText)</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'data中的msg数据是'</span> + <span class="keyword">this</span>.msg)</span><br><span class="line">                    <span class="comment">//页面和data数据已经保持一致了</span></span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/02/VUE笔记生命周期/" data-id="cjwexiyqb000hbafhzyrksfv2" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Es6之关于this （上）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -135,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjwdm1p1j000ny1fhnpqfx64c" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjwexiypw0008bafhnsgfxsrs" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -215,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjwdm1p0u0005y1fhd15z2af6" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjwexiypt0006bafhvv8mzg3k" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -319,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/" data-id="cjwdm1p1r000vy1fhdp71yc29" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/" data-id="cjwexiyqp000vbafh34mvycov" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/">vuex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -369,7 +504,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/27/CSS命名规范指南_BEM风格/" data-id="cjwdm1otj0000y1fhsiy919en" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/27/CSS命名规范指南_BEM风格/" data-id="cjwexiypo0004bafh6p1wie23" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li></ul>
@@ -445,7 +580,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/26/使用vuepress搭建简易文档/" data-id="cjwdm1p1v0010y1fhrcg5gyk4" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/26/使用vuepress搭建简易文档/" data-id="cjwexiyqs000zbafhapld9r5h" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuepress/">vuepress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -518,7 +653,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjwdm1p1m000qy1fheibb52pl" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjwexiyqk000rbafhn6ok2eit" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -567,7 +702,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/Vue-router 基础1.0X/" data-id="cjwdm1p1g000jy1fhsokmv6qp" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/24/Vue-router 基础1.0X/" data-id="cjwexiyqi000obafhqg2qwivm" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -688,125 +823,10 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/关于Js循环操作/" data-id="cjwdm1p400058y1fhw9brgi1i" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/24/关于Js循环操作/" data-id="cjwexiyt2005ebafh7wzdt9re" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-滚动吸顶的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/24/滚动吸顶的方法/">关于滚动吸顶的方法</a>
-    </h1>
-  
-
-        <a href="/2019/04/24/滚动吸顶的方法/" class="article-date">
-  <time datetime="2019-04-24T01:12:29.000Z" itemprop="datePublished">2019-04-24</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h2 id="第一种使用CSS中的position-sticky-实现"><a href="#第一种使用CSS中的position-sticky-实现" class="headerlink" title="第一种使用CSS中的position:sticky    实现"></a>第一种使用CSS中的<code>position:sticky</code>    实现</h2><p>使用条件：</p>
-<ol>
-<li>父元素不能 <code>overflow:hidden</code> 或者 <code>overflow:auto</code> 属性</li>
-<li>必须指定 <code>top、bottom、left、right</code> 4 个值之一，否则只会处于相对定位</li>
-<li>父元素的高度不能低于 <code>sticky</code> 元素的高度</li>
-<li><code>sticky</code> 元素仅在其父元素内生效<h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">     position: -webkit-sticky; </span><br><span class="line">     position: sticky;</span><br><span class="line">     top: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>并不是很好因为这个 API 还只是<strong>实验性的属性</strong>。不过这个 API 在 IOS 系统的兼容性还是比较好的。</p>
-<h2 id="使用Jquery-的-offset（）-top-实现"><a href="#使用Jquery-的-offset（）-top-实现" class="headerlink" title="使用Jquery 的 offset（）.top 实现"></a>使用Jquery 的 offset（）.top 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,self.handleScrollone);</span><br><span class="line">....</span><br><span class="line">handleScrollone: function( ) &#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    let scrrollTop = $(&apos;html&apos;).scrollTop( ); //获取滚动高度</span><br><span class="line">    let offsetTop = $(&apos;.title_box&apos;).offset( ).top;    //盒子高度</span><br><span class="line">    self.titleFixed = scrollTop &gt; Top;    //判断滚动高度是否大于盒子高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用原生JavaScript 实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,Navflexd);</span><br><span class="line">Navflexd:function( )&#123;</span><br><span class="line">    let scrollTop = document.documentElement.scrollTop;</span><br><span class="line">    //需要定位的距离 </span><br><span class="line">    let    navigatorBarTop = 需要定位的距离；</span><br><span class="line">    //判断滚动距离大于定位距离就定位</span><br><span class="line">    //获取当前浏览器是否在定位状态如果和上一步结构不一样就执行下面</span><br><span class="line">    if（设定好的定位值 ！== 导航需要定位距离）&#123;</span><br><span class="line">        //更新设定好的值  </span><br><span class="line">        X = Y;</span><br><span class="line">        //获取需要定位的元素</span><br><span class="line">        //判断是否需要定位if（导航需要定位距离）classname上添加上active</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><ul>
-<li>说明：vm.$refs 一个对象，持有已注册过 ref 的所有子组件（或HTML元素）</li>
-<li>使用：在 HTML元素 中，添加ref属性，然后在JS中通过vm.$refs.属性来获取</li>
-<li>注意：如果获取的是一个子组件，那么通过ref就能获取到子组件中的data和methods<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;, self.handleScrollTwo); </span><br><span class="line">handleScrollTwo: function() &#123; </span><br><span class="line">    let self = this;</span><br><span class="line">    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    let offsetTop = self.getOffset(self.$refs.prode_tab_fixed);</span><br><span class="line">    self.titleFixed = scrollTop &gt; offsetTop;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>### </p>
-<p>使用 <code>obj.getBoundingClientRect().top</code> 实现 <a href="[https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">MDN</a>)</p>
-<p><strong>定义：</strong></p>
-<p>这个 <code>API</code> 可以告诉你页面中某个元素<strong>相对浏览器视窗</strong>上下左右的距离。</p>
-<p><strong>使用：</strong><br>tab 吸顶可以使用 <code>obj.getBoundingClientRect().top</code> 代替 <code>scrollTop - offsetTop</code>,代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;div class=&quot;pride_tab_fixed&quot; ref=&quot;pride_tab_fixed&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pride_tab&quot; :class=&quot;titleFixed == true ? &apos;isFixed&apos; :&apos;&apos;&quot;&gt;</span><br><span class="line">        // some code</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// vue</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return&#123;</span><br><span class="line">        titleFixed: false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    activated()&#123;</span><br><span class="line">      this.titleFixed = false;</span><br><span class="line">      window.addEventListener(&apos;scroll&apos;, this.handleScroll);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      //滚动监听，头部固定</span><br><span class="line">      handleScroll: function () &#123;</span><br><span class="line">        let offsetTop = this.$refs.pride_tab_fixed.getBoundingClientRect().top;</span><br><span class="line">        this.titleFixed = offsetTop &lt; 0;</span><br><span class="line">        // some code</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-<h4 id="offsetTop-和-getBoundingClientRect-区别"><a href="#offsetTop-和-getBoundingClientRect-区别" class="headerlink" title="offsetTop 和 getBoundingClientRect() 区别"></a>offsetTop 和 getBoundingClientRect() 区别</h4><p><strong>1. getBoundingClientRect():</strong></p>
-<p>该<code>**Element.getBoundingClientRect()**</code>方法返回元素的大小及其相对于视口的位置。。</p>
-<p>该函数返回一个 <code>object</code> 对象，有6个属性： <code>top, right, buttom, left, width, height。</code> (在 IE 中，默认坐标从(2,2)开始计算，只返回 <code>top,lef,right,bottom</code> 四个值)</p>
-<p><strong>2. offsetTop:</strong></p>
-<p>用于获得当前元素到定位父级（ element.offsetParent ）顶部的距离（偏移值）。</p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/滚动吸顶的方法/" data-id="cjwdm1p260019y1fh5nh6ecno" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue实例" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/Vue实例/">Vue 实例</a>
-    </h1>
-  
-
-        <a href="/2019/04/23/Vue实例/" class="article-date">
-  <time datetime="2019-04-23T09:47:28.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h3 id="创建VUE实例有点类似构造函数var一个值再new"><a href="#创建VUE实例有点类似构造函数var一个值再new" class="headerlink" title="创建VUE实例有点类似构造函数var一个值再new"></a>创建VUE实例有点类似构造函数var一个值再new</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    //content</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="vue应用通过new-Vue-创建"><a href="#vue应用通过new-Vue-创建" class="headerlink" title="vue应用通过new Vue 创建"></a>vue应用通过<code>new Vue</code> 创建</h3><p>﻿<br>根vue实例注意要大写V，一个vue应用是由可选可嵌套的组件构成拿office文档举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">根实例 </span><br><span class="line">└─ TodoList   例子盒子</span><br><span class="line">    ├─ TodoItem     盒子的小项目</span><br><span class="line">    │ ├─ DeleteTodoButton     小项目中的删除键</span><br><span class="line">    │ └─ EditTodoButton        小项目中的编辑键</span><br><span class="line">    └─ TodoListFooter     盒子的底部</span><br><span class="line">            ├─ ClearTodosButton           清除todos            </span><br><span class="line">            └─ TodoListStatistics            统计todo</span><br></pre></td></tr></table></figure></p>
-<h3 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h3><p>当一个 Vue 实例被创建时，它将<code>data</code>对象中的所有的属性加入到 Vue 的<strong>响应式系统</strong>中。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。<br>例如：<br><img src="images/vue.png" alt><br>﻿<br>当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时<code>data</code>中存在的属性才是<strong>响应式</strong>的。也就是说如果你添加一个新的属性，比如：<br><img src="images/altervue.png" alt><br>﻿<br>和单例模式的data一样你知道你后面会使用到一些值所以可以在data中设置好</p>
-<h3 id="Object-freeze"><a href="#Object-freeze" class="headerlink" title="Object.freeze()"></a><code>Object.freeze()</code></h3><p>它可以阻止更新内容让系统无法跟踪<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; foo: &apos;bar&apos; &#125; </span><br><span class="line">﻿</span><br><span class="line">Object.freeze(obj) </span><br><span class="line">﻿</span><br><span class="line">new Vue(&#123; el: &apos;#app&apos;, data: obj &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>那么使用到{ foo }的标签将不会更新</p>
-<h3 id="关于-data带有前缀"><a href="#关于-data带有前缀" class="headerlink" title="关于$data带有前缀"></a>关于$data带有前缀</h3><p>他们是一些有用的实例属性及方法他们带有$以便与用户自定义属性区分开来 具体参考 <a href="[https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7](https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7">传送门再此</a>)</p>
-<h2 id="生命钩子的理解"><a href="#生命钩子的理解" class="headerlink" title="生命钩子的理解"></a>生命钩子的理解</h2><p>以下来CSDN自闰土大叔的讲解</p>
-<blockquote>
-<p>当面试官问：“谈谈你对vue的生命周期的理解”，听到这句话你是不是心里暗自窃喜：这也太容易了吧，不就是beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这几个钩子函数么，创建=&gt;挂载=&gt;更新=&gt;销毁，So easy ！！！<br>生命周期图<br><img src="images/lifecycle.png" alt><br>﻿<br>不能随意使用箭头函数因为箭头函数的this指向的是最顶层的而不是实例vm<br>不要在选项属性或回调上使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a>，比如<code>created: () =&gt; console.log(this.a)</code>或<code>vm.$watch(&#39;a&#39;, newValue =&gt; this.myMethod())</code>。因为箭头函数并没有<code>this</code>，<code>this</code>会作为变量一直向上级词法作用域查找，直至找到位置，经常导致<code>Uncaught TypeError: Cannot read property of undefined</code>或<code>Uncaught TypeError: this.myMethod is not a function</code>之类的错误。</p>
-</blockquote>
-<p>﻿</p>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue实例/" data-id="cjwdm1p1p000ty1fhj6xk00vk" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </footer>
   </div>

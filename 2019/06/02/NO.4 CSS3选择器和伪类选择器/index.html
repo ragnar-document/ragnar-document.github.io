@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>NO.4 CSS3选择器和伪类选择器 | Ragnar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NO.4 CSS3选择器和伪类选择器 后代选择器(以空格分隔)  1234div p&amp;#123;  background-color:yellow;&amp;#125;  子元素选择器(以大于号分隔）  1234div &amp;gt; p&amp;#123;  background-color:yellow;&amp;#125;  相邻兄弟选择器（以加号分隔）  1234div + p&amp;#123;  background-co">
+<meta name="keywords" content="前端,HTML,第一阶段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NO.4 CSS3选择器和伪类选择器">
+<meta property="og:url" content="http://yoursite.com/2019/06/02/NO.4 CSS3选择器和伪类选择器/index.html">
+<meta property="og:site_name" content="Ragnar">
+<meta property="og:description" content="NO.4 CSS3选择器和伪类选择器 后代选择器(以空格分隔)  1234div p&amp;#123;  background-color:yellow;&amp;#125;  子元素选择器(以大于号分隔）  1234div &amp;gt; p&amp;#123;  background-color:yellow;&amp;#125;  相邻兄弟选择器（以加号分隔）  1234div + p&amp;#123;  background-co">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-02T12:35:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NO.4 CSS3选择器和伪类选择器">
+<meta name="twitter:description" content="NO.4 CSS3选择器和伪类选择器 后代选择器(以空格分隔)  1234div p&amp;#123;  background-color:yellow;&amp;#125;  子元素选择器(以大于号分隔）  1234div &amp;gt; p&amp;#123;  background-color:yellow;&amp;#125;  相邻兄弟选择器（以加号分隔）  1234div + p&amp;#123;  background-co">
+  
+    <link rel="alternate" href="/atom.xml" title="Ragnar" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Ragnar</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-NO.4 CSS3选择器和伪类选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NO.4 CSS3选择器和伪类选择器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="NO-4-CSS3选择器和伪类选择器"><a href="#NO-4-CSS3选择器和伪类选择器" class="headerlink" title="NO.4 CSS3选择器和伪类选择器"></a>NO.4 CSS3选择器和伪类选择器</h2><ul>
+<li>后代选择器(以空格分隔)</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attribute">background-color</span>:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>子元素选择器(以大于号分隔）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div &gt; p</span><br><span class="line">&#123;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>相邻兄弟选择器（以加号分隔）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div + p</span><br><span class="line">&#123;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通兄弟选择器（以破折号分隔）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div ~ p</span><br><span class="line">&#123;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a:link &#123;color:#000000;&#125;      /* 未访问链接*/</span><br><span class="line">a:visited &#123;color:#00FF00;&#125;  /* 已访问链接 */</span><br><span class="line">a:hover &#123;color:#FF00FF;&#125;  /* 鼠标移动到链接上 */</span><br><span class="line">a:active &#123;color:#0000FF;&#125;  /* 鼠标点击时 */</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> a:hover 必须在 a:link 和 a:visited 之后，需要严格按顺序才能看到效果。</p>
+<p><strong>注意：</strong> a:active 必须在 a:hover 之后。</p>
+<h4 id="first-child"><a href="#first-child" class="headerlink" title=": first-child"></a>: first-child</h4><p>选择父元素的第一个子元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attribute">color</span>:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>匹配p中所有的i</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> <span class="selector-tag">i</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attribute">color</span>:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="last-child"><a href="#last-child" class="headerlink" title=": last-child"></a>: last-child</h4><p>选择父元素的最后一个子元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>：<span class="selector-tag">last-child</span> </span><br><span class="line">&#123; </span><br><span class="line">background：#ff0000; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="nth-child-n"><a href="#nth-child-n" class="headerlink" title=": nth-child(n)"></a>: nth-child(n)</h4><p>匹配父元素中的第n个元元素，元素类型没有限制</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>: <span class="selector-tag">nth-child</span>(<span class="selector-tag">n</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="attribute">background</span>:yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="target"><a href="#target" class="headerlink" title=": target"></a>: target</h4><p>锚的名称是在一个文件中链接到某个元素的URL元素被链接到目标元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:target</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#D4D4D4</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#e5eecc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/02/NO.4 CSS3选择器和伪类选择器/" data-id="cjwexiyq8000ebafhidfnpg83" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/第一阶段/">第一阶段</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/02/NO.3 HTML表单元素/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">NO.3 HTML表单元素</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 dongxinglong<br>
+      我的仓库 <a href="https://github.com/ragnar-document" target="_blank">Ragnar</a> 
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

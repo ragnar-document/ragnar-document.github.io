@@ -55,6 +55,121 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-滚动吸顶的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/24/滚动吸顶的方法/">关于滚动吸顶的方法</a>
+    </h1>
+  
+
+        <a href="/2019/04/24/滚动吸顶的方法/" class="article-date">
+  <time datetime="2019-04-24T01:12:29.000Z" itemprop="datePublished">2019-04-24</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="第一种使用CSS中的position-sticky-实现"><a href="#第一种使用CSS中的position-sticky-实现" class="headerlink" title="第一种使用CSS中的position:sticky    实现"></a>第一种使用CSS中的<code>position:sticky</code>    实现</h2><p>使用条件：</p>
+<ol>
+<li>父元素不能 <code>overflow:hidden</code> 或者 <code>overflow:auto</code> 属性</li>
+<li>必须指定 <code>top、bottom、left、right</code> 4 个值之一，否则只会处于相对定位</li>
+<li>父元素的高度不能低于 <code>sticky</code> 元素的高度</li>
+<li><code>sticky</code> 元素仅在其父元素内生效<h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">     position: -webkit-sticky; </span><br><span class="line">     position: sticky;</span><br><span class="line">     top: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>并不是很好因为这个 API 还只是<strong>实验性的属性</strong>。不过这个 API 在 IOS 系统的兼容性还是比较好的。</p>
+<h2 id="使用Jquery-的-offset（）-top-实现"><a href="#使用Jquery-的-offset（）-top-实现" class="headerlink" title="使用Jquery 的 offset（）.top 实现"></a>使用Jquery 的 offset（）.top 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,self.handleScrollone);</span><br><span class="line">....</span><br><span class="line">handleScrollone: function( ) &#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    let scrrollTop = $(&apos;html&apos;).scrollTop( ); //获取滚动高度</span><br><span class="line">    let offsetTop = $(&apos;.title_box&apos;).offset( ).top;    //盒子高度</span><br><span class="line">    self.titleFixed = scrollTop &gt; Top;    //判断滚动高度是否大于盒子高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用原生JavaScript 实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;,Navflexd);</span><br><span class="line">Navflexd:function( )&#123;</span><br><span class="line">    let scrollTop = document.documentElement.scrollTop;</span><br><span class="line">    //需要定位的距离 </span><br><span class="line">    let    navigatorBarTop = 需要定位的距离；</span><br><span class="line">    //判断滚动距离大于定位距离就定位</span><br><span class="line">    //获取当前浏览器是否在定位状态如果和上一步结构不一样就执行下面</span><br><span class="line">    if（设定好的定位值 ！== 导航需要定位距离）&#123;</span><br><span class="line">        //更新设定好的值  </span><br><span class="line">        X = Y;</span><br><span class="line">        //获取需要定位的元素</span><br><span class="line">        //判断是否需要定位if（导航需要定位距离）classname上添加上active</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><ul>
+<li>说明：vm.$refs 一个对象，持有已注册过 ref 的所有子组件（或HTML元素）</li>
+<li>使用：在 HTML元素 中，添加ref属性，然后在JS中通过vm.$refs.属性来获取</li>
+<li>注意：如果获取的是一个子组件，那么通过ref就能获取到子组件中的data和methods<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;, self.handleScrollTwo); </span><br><span class="line">handleScrollTwo: function() &#123; </span><br><span class="line">    let self = this;</span><br><span class="line">    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    let offsetTop = self.getOffset(self.$refs.prode_tab_fixed);</span><br><span class="line">    self.titleFixed = scrollTop &gt; offsetTop;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>### </p>
+<p>使用 <code>obj.getBoundingClientRect().top</code> 实现 <a href="[https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">MDN</a>)</p>
+<p><strong>定义：</strong></p>
+<p>这个 <code>API</code> 可以告诉你页面中某个元素<strong>相对浏览器视窗</strong>上下左右的距离。</p>
+<p><strong>使用：</strong><br>tab 吸顶可以使用 <code>obj.getBoundingClientRect().top</code> 代替 <code>scrollTop - offsetTop</code>,代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;div class=&quot;pride_tab_fixed&quot; ref=&quot;pride_tab_fixed&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;pride_tab&quot; :class=&quot;titleFixed == true ? &apos;isFixed&apos; :&apos;&apos;&quot;&gt;</span><br><span class="line">        // some code</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// vue</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return&#123;</span><br><span class="line">        titleFixed: false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    activated()&#123;</span><br><span class="line">      this.titleFixed = false;</span><br><span class="line">      window.addEventListener(&apos;scroll&apos;, this.handleScroll);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      //滚动监听，头部固定</span><br><span class="line">      handleScroll: function () &#123;</span><br><span class="line">        let offsetTop = this.$refs.pride_tab_fixed.getBoundingClientRect().top;</span><br><span class="line">        this.titleFixed = offsetTop &lt; 0;</span><br><span class="line">        // some code</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="offsetTop-和-getBoundingClientRect-区别"><a href="#offsetTop-和-getBoundingClientRect-区别" class="headerlink" title="offsetTop 和 getBoundingClientRect() 区别"></a>offsetTop 和 getBoundingClientRect() 区别</h4><p><strong>1. getBoundingClientRect():</strong></p>
+<p>该<code>**Element.getBoundingClientRect()**</code>方法返回元素的大小及其相对于视口的位置。。</p>
+<p>该函数返回一个 <code>object</code> 对象，有6个属性： <code>top, right, buttom, left, width, height。</code> (在 IE 中，默认坐标从(2,2)开始计算，只返回 <code>top,lef,right,bottom</code> 四个值)</p>
+<p><strong>2. offsetTop:</strong></p>
+<p>用于获得当前元素到定位父级（ element.offsetParent ）顶部的距离（偏移值）。</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/04/24/滚动吸顶的方法/" data-id="cjwexiyrf001qbafh989hj15s" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue实例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/Vue实例/">Vue 实例</a>
+    </h1>
+  
+
+        <a href="/2019/04/23/Vue实例/" class="article-date">
+  <time datetime="2019-04-23T09:47:28.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h3 id="创建VUE实例有点类似构造函数var一个值再new"><a href="#创建VUE实例有点类似构造函数var一个值再new" class="headerlink" title="创建VUE实例有点类似构造函数var一个值再new"></a>创建VUE实例有点类似构造函数var一个值再new</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    //content</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="vue应用通过new-Vue-创建"><a href="#vue应用通过new-Vue-创建" class="headerlink" title="vue应用通过new Vue 创建"></a>vue应用通过<code>new Vue</code> 创建</h3><p>﻿<br>根vue实例注意要大写V，一个vue应用是由可选可嵌套的组件构成拿office文档举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">根实例 </span><br><span class="line">└─ TodoList   例子盒子</span><br><span class="line">    ├─ TodoItem     盒子的小项目</span><br><span class="line">    │ ├─ DeleteTodoButton     小项目中的删除键</span><br><span class="line">    │ └─ EditTodoButton        小项目中的编辑键</span><br><span class="line">    └─ TodoListFooter     盒子的底部</span><br><span class="line">            ├─ ClearTodosButton           清除todos            </span><br><span class="line">            └─ TodoListStatistics            统计todo</span><br></pre></td></tr></table></figure></p>
+<h3 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h3><p>当一个 Vue 实例被创建时，它将<code>data</code>对象中的所有的属性加入到 Vue 的<strong>响应式系统</strong>中。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。<br>例如：<br><img src="images/vue.png" alt><br>﻿<br>当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时<code>data</code>中存在的属性才是<strong>响应式</strong>的。也就是说如果你添加一个新的属性，比如：<br><img src="images/altervue.png" alt><br>﻿<br>和单例模式的data一样你知道你后面会使用到一些值所以可以在data中设置好</p>
+<h3 id="Object-freeze"><a href="#Object-freeze" class="headerlink" title="Object.freeze()"></a><code>Object.freeze()</code></h3><p>它可以阻止更新内容让系统无法跟踪<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; foo: &apos;bar&apos; &#125; </span><br><span class="line">﻿</span><br><span class="line">Object.freeze(obj) </span><br><span class="line">﻿</span><br><span class="line">new Vue(&#123; el: &apos;#app&apos;, data: obj &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>那么使用到{ foo }的标签将不会更新</p>
+<h3 id="关于-data带有前缀"><a href="#关于-data带有前缀" class="headerlink" title="关于$data带有前缀"></a>关于$data带有前缀</h3><p>他们是一些有用的实例属性及方法他们带有$以便与用户自定义属性区分开来 具体参考 <a href="[https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7](https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7">传送门再此</a>)</p>
+<h2 id="生命钩子的理解"><a href="#生命钩子的理解" class="headerlink" title="生命钩子的理解"></a>生命钩子的理解</h2><p>以下来CSDN自闰土大叔的讲解</p>
+<blockquote>
+<p>当面试官问：“谈谈你对vue的生命周期的理解”，听到这句话你是不是心里暗自窃喜：这也太容易了吧，不就是beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这几个钩子函数么，创建=&gt;挂载=&gt;更新=&gt;销毁，So easy ！！！<br>生命周期图<br><img src="images/lifecycle.png" alt><br>﻿<br>不能随意使用箭头函数因为箭头函数的this指向的是最顶层的而不是实例vm<br>不要在选项属性或回调上使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a>，比如<code>created: () =&gt; console.log(this.a)</code>或<code>vm.$watch(&#39;a&#39;, newValue =&gt; this.myMethod())</code>。因为箭头函数并没有<code>this</code>，<code>this</code>会作为变量一直向上级词法作用域查找，直至找到位置，经常导致<code>Uncaught TypeError: Cannot read property of undefined</code>或<code>Uncaught TypeError: this.myMethod is not a function</code>之类的错误。</p>
+</blockquote>
+<p>﻿</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue实例/" data-id="cjwexiyqm000sbafhimrlg7jf" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Vue初体验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -93,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue初体验/" data-id="cjwdm1p1l000oy1fhl03qsfc4" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue初体验/" data-id="cjwexiyqg000mbafhiidww5k9" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -251,7 +366,7 @@ ref : 标识某个标签
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/23/Vue向导/" data-id="cjwdm1p1o000ry1fh2vyjmo6d" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/23/Vue向导/" data-id="cjwexiyqe000jbafhrj5ssgkp" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -309,7 +424,7 @@ ref : 标识某个标签
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/22/闪亮登场/" data-id="cjwdm1p2h001ly1fh97r2bq7a" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/22/闪亮登场/" data-id="cjwexiyrd001nbafhijd22wyx" class="article-share-link">Share</a>-->
       
       
     </footer>
