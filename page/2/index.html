@@ -55,6 +55,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS规范分类方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/CSS规范分类方法/">CSS规范_分类方法</a>
+    </h1>
+  
+
+        <a href="/2019/05/22/CSS规范分类方法/" class="article-date">
+  <time datetime="2019-05-22T10:00:59.000Z" itemprop="datePublished">2019-05-22</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="CSS规范-分类方法"><a href="#CSS规范-分类方法" class="headerlink" title="CSS规范_分类方法"></a>CSS规范_分类方法</h2><ul>
+<li><p>CSS文件的分类和引用顺序</p>
+<p>通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。`</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;assets/css/global.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">&lt;link href=&quot;assets/css/index.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br><span class="line">&lt;link href=&quot;assets/css/skin.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>CSS内部的分类及其顺序</p>
+<p>重置（reset）和默认（base）（tags）：消除默认样式和浏览器差异，并设置部分标签的初始样式，以减少后面的重复劳动！你可以根据你的网站需求设置！统一处理：建议在这个位置统一调用背景图（这里指多个布局或模块或元件共用的图）和清除浮动（这里指通用性较高的布局、模块、元件内的清除）等统一设置处理的样式！布局（grid）（.g-）：将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等！模块（module）（.m-）：通常是一个语义化的可以重复使用的较大的整体！比如导航、登录、注册、各种列表、评论、搜索等！元件（unit）（.u-）：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！功能（function）（.f-）：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！皮肤（skin）（.s-）：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！状态（.z-）：为状态类样式加入前缀，统一标识，方便识别，她只能组合使用或作为后代出现（.u-ipt.z-dis{}，.m-list li.z-sel{}），具体详见命名规则的扩展相关项。功能类和皮肤类样式为表现化的样式，请不要滥用！以上顺序可以按需求适当调整。以上分类的命名方法详见命名规则</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 重置 */</span></span><br><span class="line"><span class="selector-tag">div</span>,<span class="selector-tag">p</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">li</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="comment">/* 默认 */</span></span><br><span class="line"><span class="selector-tag">strong</span>,<span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>:normal;<span class="attribute">font-weight</span>:bold;&#125;</span><br><span class="line"><span class="comment">/* 统一调用背景图 */</span></span><br><span class="line"><span class="selector-class">.m-logo</span> <span class="selector-tag">a</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">a</span>,<span class="selector-class">.m-nav</span> <span class="selector-tag">em</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(images/sprite.png) no-repeat <span class="number">9999px</span> <span class="number">9999px</span>;&#125;</span><br><span class="line"><span class="comment">/* 统一清除浮动 */</span></span><br><span class="line"><span class="selector-class">.g-bdc</span><span class="selector-pseudo">:after</span>,<span class="selector-class">.m-dimg</span> <span class="selector-tag">ul</span><span class="selector-pseudo">:after</span>,<span class="selector-class">.u-tab</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">visibility</span>:hidden;<span class="attribute">clear</span>:both;<span class="attribute">height</span>:<span class="number">0</span>;<span class="attribute">overflow</span>:hidden;<span class="attribute">content</span>:<span class="string">'.'</span>;&#125;</span><br><span class="line"><span class="selector-class">.g-bdc</span>,<span class="selector-class">.m-dimg</span> <span class="selector-tag">ul</span>,<span class="selector-class">.u-tab</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>;&#125;</span><br><span class="line"><span class="comment">/* 布局 */</span></span><br><span class="line"><span class="selector-class">.g-sd</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">300px</span>;&#125;</span><br><span class="line"><span class="comment">/* 模块 */</span></span><br><span class="line"><span class="selector-class">.m-logo</span>&#123;<span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">50px</span>;&#125;</span><br><span class="line"><span class="comment">/* 元件 */</span></span><br><span class="line"><span class="selector-class">.u-btn</span>&#123;<span class="attribute">height</span>:<span class="number">20px</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#333</span>;&#125;</span><br><span class="line"><span class="comment">/* 功能 */</span></span><br><span class="line"><span class="selector-class">.f-tac</span>&#123;<span class="attribute">text-align</span>:center;&#125;</span><br><span class="line"><span class="comment">/* 皮肤 */</span></span><br><span class="line"><span class="selector-class">.s-fc</span>,<span class="selector-tag">a</span><span class="selector-class">.s-fc</span><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">color</span>:<span class="number">#fff</span>;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Copyright © 1997-2013 NetEase. All Rights Reserved.</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/22/CSS规范分类方法/" data-id="cjwgcsd710004xsfhtzzsg350" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML规范代码格式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -106,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjwexiyqn000ubafhqi334sby" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范代码格式/" data-id="cjwgcsda6000exsfhknhj6jkd" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -168,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjwexiyq1000bbafhouml7rpx" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/22/HTML规范整体结构/" data-id="cjwgcsd7y000bxsfhfc2tgcnd" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网易开发规范/">网易开发规范</a></li></ul>
@@ -241,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjwexiyqw0014bafhw8sm685o" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/14/firstWachatitem/" data-id="cjwgcsdau0015xsfhb7srr4u1" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实例/">实例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -486,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjwexiyqy0017bafhdbovx8gz" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/12/初入微信小程序/" data-id="cjwgcsdas0014xsfhidq1aiby" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mvvn/">mvvn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wx/">wx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
@@ -544,7 +595,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjwexiypr0005bafh7g8trt2l" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/10/Css3之探索动画效果/" data-id="cjwgcscg40000xsfh0x81z03b" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画效果/">动画效果</a></li></ul>
@@ -605,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjwexiyqz0018bafhvfet61yt" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/09/卡梅龙Chameleon体验/" data-id="cjwgcsdb1001bxsfhwcq63mbb" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chameleon/">Chameleon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架/">前端框架</a></li></ul>
@@ -689,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjwexiyrb001lbafhwyu10n4x" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/07/逐步实现Node.js+express增删改查二 /" data-id="cjwgcsdba001ixsfh48ih917e" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
@@ -812,7 +863,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/06/逐步实现Node.js+express增删改查一/" data-id="cjwexiyra001ibafhgrnugetl" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/06/逐步实现Node.js+express增删改查一/" data-id="cjwgcsdb8001gxsfh49qhn9sn" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
@@ -907,92 +958,10 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/05/Es6之Set数据结构/" data-id="cjwexiypy0009bafht6bavdf1" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/05/Es6之Set数据结构/" data-id="cjwgcsd7l0006xsfhaql7eqk7" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-demo-2-element" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/03/demo-2-element/">Bootstrap组件</a>
-    </h1>
-  
-
-        <a href="/2019/05/03/demo-2-element/" class="article-date">
-  <time datetime="2019-05-03T08:48:51.000Z" itemprop="datePublished">2019-05-03</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h4 id="文本警报"><a href="#文本警报" class="headerlink" title="文本警报"></a>文本警报</h4><p>通过增加以下class属性可以更改文本属性</p>
-<table>
-<thead>
-<tr>
-<th>alert-primary</th>
-<th>alert-secondary</th>
-<th>alert-success</th>
-<th>alert-danger</th>
-<th>alert-warning</th>
-<th>alert-info</th>
-<th>alert-light</th>
-<th>alert-dark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主要-蓝</td>
-<td>二级-灰</td>
-<td>成功-绿</td>
-<td>危险-红</td>
-<td>警告-黄</td>
-<td>信息-天蓝</td>
-<td>灯光-白</td>
-<td>黑暗-黑灰</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="alert alert-primary" role="alert"&gt;</span><br></pre></td></tr></table></figure>
-<p>如果文本中有链接可以增加以下更改颜色同步文本颜色</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class="alert-link"</span><br></pre></td></tr></table></figure>
-<p>同样还可以在其他地方设置只需要使用表一的属性名即可</p>
-<h4 id="驳回关闭"><a href="#驳回关闭" class="headerlink" title="驳回关闭"></a>驳回关闭</h4><p>我们可以在需要关闭的元素内部添加,记得引入js文件</p>
-<p>需要添加一个dismiss按键和<code>.alert-dismissible</code>类，他会在右侧添加删除按钮</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//父级元素必须有.fade 和 .show</span><br><span class="line">&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;</span><br><span class="line"></span><br><span class="line">&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;</span><br><span class="line">    &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;</span><br><span class="line">  &lt;/button&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="徽章"><a href="#徽章" class="headerlink" title="徽章"></a>徽章</h2><h4 id="标题徽章"><a href="#标题徽章" class="headerlink" title="标题徽章"></a>标题徽章</h4><p>在你需要变成标签徽章的标签里设置<code>badge badge-secondary</code>这个属性即可</p>
-<h4 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h4><p>请注意，根据屏幕阅读器和类似辅助技术的使用者的不同，徽章可能会令人困惑。虽然徽章的样式提供了关于其目的的视觉提示，但是这些用户将被简单地呈现徽章的内容。根据具体情况，这些徽章可能看起来像句子，链接或按钮末尾的随机附加单词或数字。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type="button" class="btn btn-primary"&gt;</span><br><span class="line">  Notifications &lt;span class="badge badge-light"&gt;4&lt;/span&gt;</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="给标签徽章各种颜色"><a href="#给标签徽章各种颜色" class="headerlink" title="给标签徽章各种颜色"></a>给标签徽章各种颜色</h4><p>颜色与文本报错一样用途是改变背景颜色</p>
-<p>使用<code>.badge-pill</code>修饰符类可以使徽章更圆润</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class="badge .badge-pill badge-primary"&gt;Primary&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-secondary"&gt;Secondary&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-warning"&gt;Warning&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-light"&gt;Light&lt;/span&gt;</span><br><span class="line">&lt;span class="badge badge-dark"&gt;Dark&lt;/span&gt;</span><br></pre></td></tr></table></figure>
-<p>同样我们链接也可以使用 使用元素<code>.badge-*</code>上的上下文类<em>可以</em><code>&lt;a&gt;</code>快速为悬停和焦点状态提供<em>可操作的</em>标记。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="#" class="badge badge-success"&gt;Success&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="面包屑"><a href="#面包屑" class="headerlink" title="面包屑"></a>面包屑</h4><p>和地址导航有点类似和它名字不相关哈哈哈</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav aria-label="breadcrumb"&gt;</span><br><span class="line">  &lt;ol class="breadcrumb"&gt;</span><br><span class="line">    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li class="breadcrumb-item active" aria-current="page"&gt;Data&lt;/li&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/03/demo-2-element/" data-id="cjwexiyr1001abafhvzr1dj96" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件/">组件</a></li></ul>
 
     </footer>
   </div>
