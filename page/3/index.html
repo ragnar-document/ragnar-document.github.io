@@ -55,6 +55,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Es6之Set数据结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/05/Es6之Set数据结构/">Es6学习笔记：Set数据结构</a>
+    </h1>
+  
+
+        <a href="/2019/05/05/Es6之Set数据结构/" class="article-date">
+  <time datetime="2019-05-05T12:18:01.000Z" itemprop="datePublished">2019-05-05</time>
+</a>
+      </header>
+    
+    <div class="article-entry-abstract" itemprop="articleBody">
+      
+        <!--<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>基本属性它和数组类似，但是数组中的成员值是唯一的没有重复值，<code>Set</code>本身是一个构造函数用来生产一个数据结构</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> content = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</span><br><span class="line"><span class="built_in">console</span>.log(content) <span class="comment">//1,2,3,4,5,6</span></span><br></pre></td></tr></table></figure>
+<h3 id="set实例和方法"><a href="#set实例和方法" class="headerlink" title="set实例和方法"></a>set实例和方法</h3><p>Set结构的实例有以下属性</p>
+<p>构造函数，默认就是set函数：<code>Set.prototype.constructor</code></p>
+<p>返回总数，<code>Set.prototype.size</code>可以简写为<code>Set.size</code></p>
+<h3 id="操作方法和遍历方法"><a href="#操作方法和遍历方法" class="headerlink" title="操作方法和遍历方法"></a>操作方法和遍历方法</h3><table>
+<thead>
+<tr>
+<th>add(value)</th>
+<th>delete(value)</th>
+<th>has(value)</th>
+<th>clear()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>添加数值返回set本身</td>
+<td>删除某个值返回布尔值表示是否成功删除</td>
+<td>返回布尔值查看该值是否存在与set</td>
+<td>清除所有set成员不返回值</td>
+</tr>
+<tr>
+<td>keys( )</td>
+<td>values(  )</td>
+<td>entries( )</td>
+<td>forEach( )</td>
+</tr>
+<tr>
+<td>返回键名的遍历器</td>
+<td>返回键值的遍历器</td>
+<td>返回键值对的遍历器</td>
+<td>使用回调遍历每一项</td>
+</tr>
+<tr>
+<td>map( )</td>
+<td>filter( )</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>遍历返回新数组</td>
+<td>过滤筛选数值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>Array.from</code>方法可以把Set结构转化为数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="keyword">var</span> array = <span class="built_in">Array</span>.from(items);</span><br></pre></td></tr></table></figure>
+<p>去重方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ces</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(array));</span><br><span class="line">&#125;</span><br><span class="line">ces([......])</span><br><span class="line">     <span class="comment">//let arr = [1,2,2,3,4,3,6,5];</span></span><br><span class="line"><span class="keyword">let</span> unique = [...new <span class="built_in">Set</span>(arr)];</span><br></pre></td></tr></table></figure>
+<p>遍历测试</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通用测试属性	</span></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">set</span> = new Set(['red', 'green', 'blue']);</span><br><span class="line"></span><br><span class="line">//依次替换<span class="keyword">set</span>属性测试</span><br><span class="line">for (let item of <span class="keyword">set</span>.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//由于Set结构没有键名，只有键值（或者说键名和键值是同一个值），所以key方法和value方法的行为完全一致。</span></span><br></pre></td></tr></table></figure>
+<p>Set结构默认可遍历对象所以可以之间使用<code>for ... of</code>循环♻️遍历set</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">of</span> <span class="keyword">set</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//扩展运算符（...）内部使用for...of循环，所以也可以用于Set结构。</span></span><br><span class="line"><span class="keyword">let</span> arr = [...set];</span><br></pre></td></tr></table></figure>
+<p>如果想遍历的同时改变数组有两种方法可以选择</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//map()</span></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"><span class="keyword">set</span> = new Set([...<span class="keyword">set</span>].map(val =&gt; val * 2));</span><br><span class="line">// <span class="keyword">set</span>的值是2, 4, 6</span><br><span class="line"></span><br><span class="line">//Array.from()</span><br><span class="line">let <span class="keyword">set</span> = new Set([1, 2, 3]);</span><br><span class="line"><span class="keyword">set</span> = new Set(Array.from(<span class="keyword">set</span>, val =&gt; val * 2));</span><br><span class="line">// <span class="keyword">set</span>的值是2, 4, 6</span><br></pre></td></tr></table></figure>
+<p>初次拟写～不断更新添加笔记</p>
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <!--<a data-url="http://yoursite.com/2019/05/05/Es6之Set数据结构/" data-id="cjwhslqfg0008f1fhok65fhdb" class="article-share-link">Share</a>-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-demo-2-element" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -125,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/03/demo-2-element/" data-id="cjwgcsday0018xsfhaiud05du" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/03/demo-2-element/" data-id="cjwhslqgn0018f1fh40r4zk97" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件/">组件</a></li></ul>
@@ -207,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/03/demo-1-grid/" data-id="cjwgcsdao0010xsfhbefsgf4m" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/03/demo-1-grid/" data-id="cjwhslqgg000zf1fh6f2g9cvf" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -260,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/02/VUE笔记生命周期/" data-id="cjwgcsdab000lxsfhsd2ht4ca" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/02/VUE笔记生命周期/" data-id="cjwhslqg5000of1fh1gzjfslh" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -352,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjwgcsd7q0008xsfhms55x9u6" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/05/01/Es6之关于this （上）/" data-id="cjwhslqfc0005f1fhunltmm6q" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -432,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjwgcsd740005xsfhog9x65jf" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/30/ES6之箭头函数/" data-id="cjwhslqfe0006f1fh26f7e9mo" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -536,7 +631,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/" data-id="cjwgcsdam000xxsfheet7xqrj" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/28/Vue生态系统之___Vuex插件/" data-id="cjwhslqgb000vf1fhwvsywg84" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/">vuex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -586,7 +681,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/27/CSS命名规范指南_BEM风格/" data-id="cjwgcsd7u0009xsfhnwrz6j4j" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/27/CSS命名规范指南_BEM风格/" data-id="cjwhslqfi0009f1fh9cu5nnqq" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命名规范/">命名规范</a></li></ul>
@@ -662,7 +757,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/26/使用vuepress搭建简易文档/" data-id="cjwgcsdaq0012xsfh09v15bsi" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/26/使用vuepress搭建简易文档/" data-id="cjwhslqgi0012f1fh5le6vzsr" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuepress/">vuepress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -735,56 +830,7 @@
       
     </div>
     <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjwgcsdag000qxsfh24l18yfn" class="article-share-link">Share</a>-->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue-router 基础1.0X" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/24/Vue-router 基础1.0X/">Vue-router 基础1.0X</a>
-    </h1>
-  
-
-        <a href="/2019/04/24/Vue-router 基础1.0X/" class="article-date">
-  <time datetime="2019-04-24T11:46:26.000Z" itemprop="datePublished">2019-04-24</time>
-</a>
-      </header>
-    
-    <div class="article-entry-abstract" itemprop="articleBody">
-      
-        <!--<h1 id="Vue-Router学习笔记以及Demo实例"><a href="#Vue-Router学习笔记以及Demo实例" class="headerlink" title=":-: Vue-Router学习笔记以及Demo实例"></a>:-: Vue-Router学习笔记以及Demo实例</h1><hr>
-<h3 id="实例Demo下载-1-0版本有待改进-⏬"><a href="#实例Demo下载-1-0版本有待改进-⏬" class="headerlink" title="实例Demo下载 1.0版本有待改进 ⏬"></a>实例Demo下载 1.0版本有待改进 ⏬</h3><p><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-1" target="_blank" rel="noopener">router0-1 安装和基本配置 </a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-2" target="_blank" rel="noopener">router0-2 传参及获取传参 </a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-3" target="_blank" rel="noopener">router0-3 子路由设置 </a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-4" target="_blank" rel="noopener">router0-4 手动访问和传参</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-5" target="_blank" rel="noopener">router0-5 命名视图</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-6" target="_blank" rel="noopener">router0-6 导航钩子</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-7" target="_blank" rel="noopener">router0-7 元数据及路由匹配</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-8" target="_blank" rel="noopener">router0-8 路由组件传参</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-9" target="_blank" rel="noopener">router0-9 缓存数据</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-10" target="_blank" rel="noopener">router0-10 单个路由过渡，基于单个路由的动态过度</a><br><a href="https://github.com/ragnar-document/Vue-router/tree/master/router0-11" target="_blank" rel="noopener">router0-11 进入离开的过渡效果</a></p>
-<hr>
-<h3 id="起步-start-🏃🏃‍♀️"><a href="#起步-start-🏃🏃‍♀️" class="headerlink" title="起步 start 🏃🏃‍♀️"></a>起步 <strong><em>start</em></strong> 🏃🏃‍♀️</h3><p>为了方便学习我们就只创建一个html文件作为演示文件  </p>
-<h3 id="html部分-☠️"><a href="#html部分-☠️" class="headerlink" title="html部分  ☠️"></a><strong>html部分</strong>  ☠️</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line"></span><br><span class="line">//router-link == &lt;a&gt; 它们具有相同的功能那就是跳转 </span><br><span class="line">// to 是指定跳转地址使用的  在router中设置path配套使用</span><br><span class="line">// :to =&quot;&#123;name: &apos;user&apos;&#125;&quot;  在router中设置name记得配套使用</span><br><span class="line"></span><br><span class="line">        &lt;router-link to=&quot;/&quot;&gt;Home&lt;/router-link&gt;</span><br><span class="line">        &lt;router-link to=&quot;/about&quot;&gt;About&lt;/router-link&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">//router-view 渲染视图模版</span><br><span class="line"> &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="JavaScript-💻"><a href="#JavaScript-💻" class="headerlink" title="JavaScript 💻"></a>JavaScript 💻</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//第一步设置路由地址格式都是差不多是基础版本需要自行添加更多</span><br><span class="line">//template 模版也可以放到外面写然后再引进来也没关系官网的便是为了方便我嵌套进路径中去了</span><br><span class="line"></span><br><span class="line">var routes = [</span><br><span class="line">        &#123;</span><br><span class="line">          path: &apos;/&apos;,</span><br><span class="line">          component: &#123;</span><br><span class="line">            template: `</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">              &lt;h1&gt;首页&lt;/h1&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            `,</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ];</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//第二步是实例话VuRouter</span><br><span class="line">var router = new VueRouter(&#123;</span><br><span class="line">        routes: routes,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//第三步挂载到 页面上去</span><br><span class="line">new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        router: router,</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="动态传参-dynamic-condition"><a href="#动态传参-dynamic-condition" class="headerlink" title="动态传参   dynamic condition"></a>动态传参   <strong><em>dynamic condition</em></strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">   &lt;router-link to=&quot;/user/蛋蛋&quot;&gt;获取方法&lt;/router-link&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;</span><br><span class="line">// 动态路径参数 以冒号开头</span><br><span class="line">  path: &apos;/user/:name&apos;,</span><br><span class="line">    component: &#123;</span><br><span class="line">       template: `</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">//$router.params.name 获取路由参数名称</span><br><span class="line">         &lt;h1&gt;获取用户名: &#123;&#123;$route.params.name&#125;&#125;&lt;/h1&gt; </span><br><span class="line">//$router.query.age 获取询问年龄</span><br><span class="line">         &lt;h1&gt;获取年纪: &#123;&#123;$route.query.age&#125;&#125;&lt;/h1&gt; </span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       `,</span><br><span class="line">   &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h3 id="添加子路由"><a href="#添加子路由" class="headerlink" title="添加子路由"></a>添加子路由</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//在👨父级路由下添加</span><br><span class="line">children:[</span><br><span class="line">&#123;</span><br><span class="line">    path: &apos;name&apos;,</span><br><span class="line">        component:&#123;</span><br><span class="line">            template:`</span><br><span class="line">                &lt;div&gt;模版字符串&lt;/div&gt;</span><br><span class="line">            `</span><br><span class="line">        &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//👨父级内容tempate中添加以下内容</span><br><span class="line">添加router-link 🔗 to指向后需要添加append  （to=&quot;more&quot; append）</span><br><span class="line">添加router-view 渲染router-link的内容出来</span><br></pre></td></tr></table></figure>
--->
-      
-    </div>
-    <footer class="article-footer">
-      <!--<a data-url="http://yoursite.com/2019/04/24/Vue-router 基础1.0X/" data-id="cjwgcsdaj000sxsfhrhp3pi07" class="article-share-link">Share</a>-->
+      <!--<a data-url="http://yoursite.com/2019/04/25/Vue基础2.0x笔记/" data-id="cjwhslqgd000xf1fhijw0m3ny" class="article-share-link">Share</a>-->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-router/">vue-router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
